@@ -1,0 +1,67 @@
+name: Refresh CPMA Dashboard
+
+on:
+  schedule:
+    - cron: '0 3 * * 1-5'
+  workflow_dispatch:
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Check if US market was open today
+        id: market_check
+        run: |
+          python3 -c "
+          from datetime import date
+          HOLIDAYS = [
+              '2026-01-01','2026-01-19','2026-02-16','2026-04-03',
+              '2026-05-25','2026-06-19','2026-07-03','2026-09-07',
+              '2026-11-26','2026-12-25',
+          ]
+          today = date.today().isoformat()
+          is_weekday = date.today().weekday() < 5
+          is_holiday = today in HOLIDAYS
+          if is_weekday and not is_holiday:
+              print('Market open')
+              open('market_open.txt','w').write('true')
+          else:
+              print('Market closed')
+              open('market_open.txt','w').write('false')
+          "
+          echo "market_open=$(cat market_open.txt)" >> $GITHUB_OUTPUT
+
+      - name: Fetch fresh data from FMP API
+        if: steps.market_check.outputs.market_open == 'true'
+        env:
+          FMP_API_KEY: ${{ secrets.FMP_API_KEY }}
+        run: |
+          API_KEY="${FMP_API_KEY:-demo}"
+          python3 cpma_data_feed.py --api-key "$API_KEY" --output cpma_comps_data.json
+
+      - name: Rebuild dashboard with fresh data
+        if: steps.market_check.outputs.market_open == 'true'
+        run: |
+          python3 cpma_refresh.py --api-key dummy --skip-fetch --dashboard-dir .
+
+      - name: Commit and push updated dashboard
+        if: steps.market_check.outputs.market_open == 'true'
+        run: |
+          git config user.name "CPMA Bot"
+          git config user.email "actions@github.com"
+          git add index.html cpma_comps_data.json
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+          else
+            DATE=$(date +"%Y-%m-%d")
+            git commit -m "Refresh market data for $DATE"
+            git push
+          fi
