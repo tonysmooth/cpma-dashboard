@@ -2,7 +2,7 @@ name: Refresh CPMA Dashboard
 
 on:
   schedule:
-    - cron: '0 3 * * 1-5'→ Runs at 03:00, Monday through Friday
+    - cron: '0 3 * * 1-5'
   workflow_dispatch:
 
 
@@ -68,4 +68,3 @@ jobs:
             DATE=$(date +"%Y-%m-%d")
             git commit -m "Refresh market data for $DATE"
             git push
-          fi
