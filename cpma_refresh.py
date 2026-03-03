@@ -122,14 +122,6 @@ def rebuild_dashboard(dashboard_path, data_json):
     new_data_block = f"let DATA = {compact_json};"
 
     # Replace
-    new_html = html[:start_idx] + new_data_block + html[end_idx:]    if end_idx < len(html) and html[end_idx] == ';':
-        end_idx += 1
-
-    # Build new DATA assignment
-    compact_json = json.dumps(data_json, separators=(',', ':'), default=str)
-    new_data_block = f"let DATA = {compact_json};"
-
-    # Replace
     new_html = html[:start_idx] + new_data_block + html[end_idx:]
 
     # Update the "Last Updated" text in the header
