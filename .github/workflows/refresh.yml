@@ -2,8 +2,12 @@ name: Refresh CPMA Dashboard
 
 on:
   schedule:
-    - cron: '0 3 * * 1-5'
+    - cron: '0 3 * * 1-5'→ Runs at 03:00, Monday through Friday
   workflow_dispatch:
+
+
+permissions:
+  contents: write
 
 jobs:
   refresh:
