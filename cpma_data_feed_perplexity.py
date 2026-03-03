@@ -223,6 +223,8 @@ CRITICAL: Return ONLY the JSON array, nothing else. No markdown, no code blocks,
     if response is None:
         return None
 
+    # Debug: show raw response preview
+    print(f"  [DEBUG] Raw response ({len(response)} chars): {response[:400]}...")
     data = extract_json_from_response(response)
     if data is None:
         print(f"  [WARN] Failed to parse JSON from response. First 300 chars:")
@@ -233,6 +235,33 @@ CRITICAL: Return ONLY the JSON array, nothing else. No markdown, no code blocks,
 
 
 # âââ Data Processing ââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
+
+def parse_numeric(val):
+    """Parse a value that might be a number or formatted string."""
+    if val is None:
+        return None
+    if isinstance(val, (int, float)):
+        return float(val) if val != 0 else None
+    if isinstance(val, str):
+        s = val.strip().replace(",", "").replace("$", "")
+        s = s.replace(" ", "")
+        if not s or s.lower() in ("null", "n/a", "na", "nm", "none", "-", ""):
+            return None
+        multiplier = 1.0
+        if s.upper().endswith("B"):
+            multiplier = 1000.0
+            s = s[:-1]
+        elif s.upper().endswith("M"):
+            multiplier = 1.0
+            s = s[:-1]
+        elif s.upper().endswith("K"):
+            multiplier = 0.001
+            s = s[:-1]
+        try:
+            return float(s) * multiplier if float(s) != 0 else None
+        except ValueError:
+            return None
+    return None
 
 def safe_div(a, b):
     """Safe division returning None if not possible."""
@@ -251,13 +280,13 @@ def process_company(raw_data, company_meta):
     }
 
     # Current price metrics
-    result["share_price"] = raw_data.get("share_price")
-    result["market_cap"] = raw_data.get("market_cap_millions")
-    result["enterprise_value"] = raw_data.get("enterprise_value_millions")
+    result["share_price"] = parse_numeric(raw_data.get("share_price"))
+    result["market_cap"] = parse_numeric(raw_data.get("market_cap_millions"))
+    result["enterprise_value"] = parse_numeric(raw_data.get("enterprise_value_millions"))
 
     # 52-week metrics
-    high = raw_data.get("high_52wk")
-    low = raw_data.get("low_52wk")
+    high = parse_numeric(raw_data.get("high_52wk"))
+    low = parse_numeric(raw_data.get("low_52wk"))
     price = result.get("share_price")
     result["year_high"] = high
     result["year_low"] = low
@@ -265,10 +294,10 @@ def process_company(raw_data, company_meta):
         result["pct_52wk"] = round((price / high) * 100, 1)
 
     # Revenue
-    rev_2023 = raw_data.get("revenue_2023_millions")
-    rev_2024 = raw_data.get("revenue_2024_millions")
-    rev_2025e = raw_data.get("revenue_2025e_millions")
-    rev_2026e = raw_data.get("revenue_2026e_millions")
+    rev_2023 = parse_numeric(raw_data.get("revenue_2023_millions"))
+    rev_2024 = parse_numeric(raw_data.get("revenue_2024_millions"))
+    rev_2025e = parse_numeric(raw_data.get("revenue_2025e_millions"))
+    rev_2026e = parse_numeric(raw_data.get("revenue_2026e_millions"))
 
     result["revenue_2024"] = rev_2024
     result["revenue_2025e"] = rev_2025e
@@ -279,9 +308,9 @@ def process_company(raw_data, company_meta):
     result["rev_growth_2025"] = safe_div(rev_2025e - rev_2024, rev_2024) if rev_2025e and rev_2024 else None
 
     # EBITDA
-    ebitda_2024 = raw_data.get("ebitda_2024_millions")
-    ebitda_2025e = raw_data.get("ebitda_2025e_millions")
-    ebitda_2026e = raw_data.get("ebitda_2026e_millions")
+    ebitda_2024 = parse_numeric(raw_data.get("ebitda_2024_millions"))
+    ebitda_2025e = parse_numeric(raw_data.get("ebitda_2025e_millions"))
+    ebitda_2026e = parse_numeric(raw_data.get("ebitda_2026e_millions"))
 
     result["ebitda_2024"] = ebitda_2024
     result["ebitda_2025e"] = ebitda_2025e
@@ -293,9 +322,9 @@ def process_company(raw_data, company_meta):
     result["ebitda_margin_2026"] = safe_div(ebitda_2026e, rev_2026e)
 
     # Net income
-    ni_2024 = raw_data.get("net_income_2024_millions")
-    ni_2025e = raw_data.get("net_income_2025e_millions")
-    ni_2026e = raw_data.get("net_income_2026e_millions")
+    ni_2024 = parse_numeric(raw_data.get("net_income_2024_millions"))
+    ni_2025e = parse_numeric(raw_data.get("net_income_2025e_millions"))
+    ni_2026e = parse_numeric(raw_data.get("net_income_2026e_millions"))
 
     # Trading multiples
     ev = result.get("enterprise_value")
@@ -548,3 +577,8 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+ Claude is active in this tab group  
+Open chat
+ 
+Dismiss
