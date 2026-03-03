@@ -68,3 +68,4 @@ jobs:
             DATE=$(date +"%Y-%m-%d")
             git commit -m "Refresh market data for $DATE"
             git push
+          fi
