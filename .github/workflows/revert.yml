@@ -1,0 +1,18 @@
+name: Revert Bad Data
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  revert:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Revert bad data commit
+        run: |
+          git config user.name "CPMA Bot"
+          git config user.email "actions@github.com"
+          git revert c485cacf9dfa --no-edit
+          git push
