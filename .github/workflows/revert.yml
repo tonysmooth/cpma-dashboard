@@ -14,5 +14,5 @@ jobs:
         run: |
           git config user.name "CPMA Bot"
           git config user.email "actions@github.com"
-          git revert c485cacf9dfa --no-edit
+          git revert 4116e3d --no-edit
           git push
