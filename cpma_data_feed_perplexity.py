@@ -578,7 +578,5 @@ def main():
 if __name__ == "__main__":
     main()
 
- Claude is active in this tab group  
-Open chat
- 
-Dismiss
+if __name__ == "__main__":
+        main()
