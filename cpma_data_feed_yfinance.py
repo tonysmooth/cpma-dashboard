@@ -334,7 +334,7 @@ def process_company(raw_data, company_meta):
         result["ev_rev_2024"] = safe_div(ev, rev_2024)
         result["ev_rev_2025"] = safe_div(ev, rev_2025e)
         result["ev_rev_2026"] = safe_div(ev, rev_2026e)
-        result["ev_ebitda_2024"] = safe_div(ev, ebitda_2024)
+Page_DownPage_DownPage_DownPage_DownPage_DownPage_DownPage_DownPage_DownPage_DownPage_Down        result["ev_ebitda_2024"] = safe_div(ev, ebitda_2024)
         result["ev_ebitda_2025"] = safe_div(ev, ebitda_2025e)
         result["ev_ebitda_2026"] = safe_div(ev, ebitda_2026e)
 
