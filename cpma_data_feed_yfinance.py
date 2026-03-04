@@ -461,46 +461,77 @@ def compute_category_averages(companies_data, categories):
 
 
 def build_price_series(companies):
-    """Build indexed price series for each category."""
+    """Build indexed price series for each category AND per-company price history.
+
+    Returns:
+        (category_price_series, price_history)
+        - category_price_series: {category_name: [{date, indexed}, ...], "S&P 500": [{date, indexed}, ...]}
+        - price_history: {display_ticker: [{date, indexed}, ...]}
+    """
     import yfinance as yf
 
     print("\nFetching price history for indexed series...")
-    series = {}
+    category_series = {}
+    price_history = {}
 
+    # --- Per-company and category price histories ---
     for cat in CATEGORIES:
         cat_companies = [c for c in companies if c["category"] == cat]
-        cat_prices = {}
+        cat_prices = {}  # {date_str: [indexed_values]}
 
         for comp in cat_companies:
             ticker = comp["ticker"]
+            display_ticker = comp["display_ticker"]
             yf_ticker = YFINANCE_TICKER_OVERRIDES.get(ticker, ticker)
             try:
                 tk = yf.Ticker(yf_ticker)
                 hist = tk.history(period="1y")
                 if hist is not None and not hist.empty:
                     first_close = hist["Close"].iloc[0]
+                    company_series = []
                     for date, row in hist.iterrows():
                         date_str = date.strftime("%Y-%m-%d")
-                        indexed = (row["Close"] / first_close) * 100
+                        indexed = round((row["Close"] / first_close) * 100, 2)
+                        company_series.append({"date": date_str, "indexed": indexed})
                         if date_str not in cat_prices:
                             cat_prices[date_str] = []
                         cat_prices[date_str].append(indexed)
+                    # Store per-company indexed series
+                    price_history[display_ticker] = company_series
                 time.sleep(0.3)
             except Exception as e:
                 print(f"  [WARN] Price history error for {ticker}: {e}")
 
-        # Average the indexed prices for each date
-        series[cat] = {}
+        # Average the indexed prices for each date â array of {date, indexed}
+        cat_series = []
         for date_str in sorted(cat_prices.keys()):
             vals = cat_prices[date_str]
-            series[cat][date_str] = round(statistics.mean(vals), 2)
+            cat_series.append({"date": date_str, "indexed": round(statistics.mean(vals), 2)})
+        category_series[cat] = cat_series
 
-    return series
+    # --- S&P 500 benchmark ---
+    print("  Fetching S&P 500 benchmark (^GSPC)...")
+    try:
+        sp = yf.Ticker("^GSPC")
+        hist = sp.history(period="1y")
+        if hist is not None and not hist.empty:
+            first_close = hist["Close"].iloc[0]
+            sp_series = []
+            for date, row in hist.iterrows():
+                date_str = date.strftime("%Y-%m-%d")
+                indexed = round((row["Close"] / first_close) * 100, 2)
+                sp_series.append({"date": date_str, "indexed": indexed})
+            category_series["S&P 500"] = sp_series
+            print(f"    Got {len(sp_series)} data points for S&P 500")
+    except Exception as e:
+        print(f"  [WARN] S&P 500 fetch error: {e}")
+
+    return category_series, price_history
 
 
 # ---------------------------------------------------------------------------
 #  Main
-# ---------------------------------------------------------------------
+# ---------------------------------------------------------------------------
 
 def main():
     parser = argparse.ArgumentParser(description="CPMA Public Comps Data Feed")
@@ -591,9 +622,10 @@ def main():
     summaries = compute_category_averages(companies_data, CATEGORIES)
 
     # Step 7: Build price series (optional)
-    price_series = {}
+    category_price_series = {}
+    price_history = {}
     if not args.no_price_series:
-        price_series = build_price_series(COMPANIES)
+        category_price_series, price_history = build_price_series(COMPANIES)
     else:
         print("\nSkipping price series (--no-price-series)")
 
@@ -607,7 +639,8 @@ def main():
         },
         "companies": companies_data,
         "category_summaries": summaries,
-        "category_price_series": price_series,
+        "category_price_series": category_price_series,
+        "price_history": price_history,
     }
 
     with open(output_path, "w") as f:
