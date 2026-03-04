@@ -5,8 +5,13 @@ CPMA Public Comps Data Feed (yfinance + Perplexity Sonar API)
 Fetches real-time market data for Engineering & Construction public comparables.
 Uses yfinance for price/fundamentals and optionally Perplexity for forward estimates.
 
+Fiscal year windows are determined dynamically from the current date:
+  LFY = last completed fiscal year (actuals)
+  CFY = current fiscal year (estimates)
+  NFY = next fiscal year (estimates)
+
 Usage:
-    python cpma_data_feed_yfinance.py                        # Uses PERPLEXITY_API_KEY env var
+    python cpma_data_feed_yfinance.py                       # Uses PERPLEXITY_API_KEY env var
     python cpma_data_feed_yfinance.py --no-perplexity        # yfinance only
     python cpma_data_feed_yfinance.py --output data.json     # Custom output path
 
@@ -25,12 +30,20 @@ from datetime import datetime, timedelta
 from pathlib import Path
 
 # ---------------------------------------------------------------------------
+#  Dynamic Fiscal Year Windows
+# ---------------------------------------------------------------------------
+_now = datetime.now()
+LFY = _now.year - 1   # Last Fiscal Year (actuals)  — e.g. 2025
+CFY = _now.year        # Current Fiscal Year (estimates) — e.g. 2026
+NFY = _now.year + 1    # Next Fiscal Year (estimates) — e.g. 2027
+
+# ---------------------------------------------------------------------------
 #  Company Universe
 # ---------------------------------------------------------------------------
 
 COMPANIES = [
     # Construction Contractors
-    {"ticker": "ACS.MC",    "name": "ACS, Actividades de Construccion y Servicios", "category": "Construction Contractors",                    "display_ticker": "ACS"},
+    {"ticker": "ACS.MC",    "name": "ACS, Actividades de Construccion y Servicios", "category": "Construction Contractors",                     "display_ticker": "ACS"},
     {"ticker": "SKA-B.ST",  "name": "Skanska",                                     "category": "Construction Contractors",                    "display_ticker": "SKA.B"},
     {"ticker": "AGX",       "name": "Argan",                                        "category": "Construction Contractors",                    "display_ticker": "AGX"},
     {"ticker": "TPC",       "name": "Tutor Perini",                                 "category": "Construction Contractors",                    "display_ticker": "TPC"},
@@ -148,36 +161,55 @@ def fetch_yfinance_data(ticker_str):
         }
 
         # Historical financials from income statement
+        # Dynamically look for LFY (e.g. 2025) and LFY-1 (e.g. 2024) data
         try:
             inc = tk.income_stmt
             if inc is not None and not inc.empty:
-                # Income statement columns are dates, most recent first
                 cols = sorted(inc.columns, reverse=True)
 
-                # Try to get FY2024 and FY2023 data
                 for col in cols:
                     year = col.year if hasattr(col, 'year') else None
-                    if year == 2024:
-                        data["revenue_2024"] = millions(inc.at["Total Revenue", col]) if "Total Revenue" in inc.index else None
-                        data["ebitda_2024"] = millions(inc.at["EBITDA", col]) if "EBITDA" in inc.index else None
-                        data["net_income_2024"] = millions(inc.at["Net Income", col]) if "Net Income" in inc.index else None
-                    elif year == 2023:
-                        data["revenue_2023"] = millions(inc.at["Total Revenue", col]) if "Total Revenue" in inc.index else None
+                    if year == LFY:
+                        data["revenue_lfy"] = millions(inc.at["Total Revenue", col]) if "Total Revenue" in inc.index else None
+                        data["ebitda_lfy"] = millions(inc.at["EBITDA", col]) if "EBITDA" in inc.index else None
+                        data["net_income_lfy"] = millions(inc.at["Net Income", col]) if "Net Income" in inc.index else None
+                    elif year == LFY - 1:
+                        data["revenue_lfy_minus1"] = millions(inc.at["Total Revenue", col]) if "Total Revenue" in inc.index else None
+
+                # Fallback: if LFY not available, try LFY-1 as the "actual" year
+                # (some companies may not have filed their latest annual yet)
+                if not data.get("revenue_lfy") and data.get("revenue_lfy_minus1"):
+                    # Try to find LFY-1 full data as fallback actuals
+                    for col in cols:
+                        year = col.year if hasattr(col, 'year') else None
+                        if year == LFY - 1:
+                            data["revenue_lfy"] = millions(inc.at["Total Revenue", col]) if "Total Revenue" in inc.index else None
+                            data["ebitda_lfy"] = millions(inc.at["EBITDA", col]) if "EBITDA" in inc.index else None
+                            data["net_income_lfy"] = millions(inc.at["Net Income", col]) if "Net Income" in inc.index else None
+                        elif year == LFY - 2:
+                            data["revenue_lfy_minus1"] = millions(inc.at["Total Revenue", col]) if "Total Revenue" in inc.index else None
+                            break
+                    print(f"    [INFO] Using FY{LFY-1} as fallback actuals (FY{LFY} not yet available)")
         except Exception as e:
             print(f"    [WARN] Income statement error for {ticker_str}: {e}")
 
         # Forward estimates from analyst data
+        # Look for CFY (current fiscal year) and NFY (next fiscal year) estimates
         try:
             rev_est = tk.revenue_estimate
             if rev_est is not None and not rev_est.empty:
+                print(f"    [DEBUG] Revenue estimate columns: {list(rev_est.columns)}")
                 for col in rev_est.columns:
                     col_str = str(col)
-                    if "2025" in col_str or "+1y" in col_str.lower():
+                    # Match by year number or relative year labels
+                    if str(CFY) in col_str or "0y" in col_str.lower():
                         avg_val = rev_est.at["avg", col] if "avg" in rev_est.index else None
-                        data["revenue_2025e"] = millions(avg_val)
-                    elif "2026" in col_str or "+2y" in col_str.lower():
+                        data["revenue_cfy_e"] = millions(avg_val)
+                        print(f"    [DEBUG] Matched CFY revenue ({col_str}): {data['revenue_cfy_e']}")
+                    elif str(NFY) in col_str or "+1y" in col_str.lower():
                         avg_val = rev_est.at["avg", col] if "avg" in rev_est.index else None
-                        data["revenue_2026e"] = millions(avg_val)
+                        data["revenue_nfy_e"] = millions(avg_val)
+                        print(f"    [DEBUG] Matched NFY revenue ({col_str}): {data['revenue_nfy_e']}")
         except Exception as e:
             print(f"    [WARN] Revenue estimate error for {ticker_str}: {e}")
 
@@ -185,12 +217,13 @@ def fetch_yfinance_data(ticker_str):
         try:
             earn_est = tk.earnings_estimate
             if earn_est is not None and not earn_est.empty:
+                print(f"    [DEBUG] Earnings estimate columns: {list(earn_est.columns)}")
                 for col in earn_est.columns:
                     col_str = str(col)
-                    if "2025" in col_str or "+1y" in col_str.lower():
-                        data["eps_2025e"] = earn_est.at["avg", col] if "avg" in earn_est.index else None
-                    elif "2026" in col_str or "+2y" in col_str.lower():
-                        data["eps_2026e"] = earn_est.at["avg", col] if "avg" in earn_est.index else None
+                    if str(CFY) in col_str or "0y" in col_str.lower():
+                        data["eps_cfy_e"] = earn_est.at["avg", col] if "avg" in earn_est.index else None
+                    elif str(NFY) in col_str or "+1y" in col_str.lower():
+                        data["eps_nfy_e"] = earn_est.at["avg", col] if "avg" in earn_est.index else None
         except Exception as e:
             print(f"    [WARN] Earnings estimate error for {ticker_str}: {e}")
 
@@ -256,7 +289,10 @@ def perplexity_query(prompt, api_key, system_prompt=None):
 
 
 def fetch_perplexity_estimates(companies_needing_estimates, api_key):
-    """Use Perplexity to fill in forward estimates for companies missing them."""
+    """Use Perplexity to fill in forward estimates for companies missing them.
+
+    Asks for CFY and NFY estimates (dynamically determined from current date).
+    """
     if not api_key or not companies_needing_estimates:
         return {}
 
@@ -268,38 +304,53 @@ def fetch_perplexity_estimates(companies_needing_estimates, api_key):
         tickers = [c["display_ticker"] for c in batch]
         names = [f'{c["display_ticker"]} ({c["name"]})' for c in batch]
 
-        print(f"\n  [Perplexity] Fetching estimates for: {', '.join(tickers)}")
+        print(f"\n  [Perplexity] Fetching FY{CFY}/FY{NFY} estimates for: {', '.join(tickers)}")
 
-        prompt = f"""For these companies, provide consensus analyst estimates in JSON format.
+        prompt = f"""For these engineering & construction companies, provide consensus Wall Street analyst estimates in JSON format.
 Companies: {', '.join(names)}
 
 Return a JSON array where each item has:
-- "ticker_id": the ticker symbol
-- "revenue_2025e_millions": FY2025 consensus revenue estimate in USD millions (number or null)
-- "revenue_2026e_millions": FY2026 consensus revenue estimate in USD millions (number or null)
-- "ebitda_2025e_millions": FY2025 consensus EBITDA estimate in USD millions (number or null)
-- "ebitda_2026e_millions": FY2026 consensus EBITDA estimate in USD millions (number or null)
-- "net_income_2025e_millions": FY2025 consensus net income estimate in USD millions (number or null)
-- "net_income_2026e_millions": FY2026 consensus net income estimate in USD millions (number or null)
+- "ticker_id": the ticker symbol exactly as shown above (e.g. "ACS", "SKA.B", "DG", etc.)
+- "revenue_{CFY}e_millions": FY{CFY} consensus revenue estimate in USD millions (number or null)
+- "revenue_{NFY}e_millions": FY{NFY} consensus revenue estimate in USD millions (number or null)
+- "ebitda_{CFY}e_millions": FY{CFY} consensus EBITDA estimate in USD millions (number or null)
+- "ebitda_{NFY}e_millions": FY{NFY} consensus EBITDA estimate in USD millions (number or null)
+- "net_income_{CFY}e_millions": FY{CFY} consensus net income estimate in USD millions (number or null)
+- "net_income_{NFY}e_millions": FY{NFY} consensus net income estimate in USD millions (number or null)
 
+Important: For non-US companies, convert estimates to USD millions using current exchange rates.
 Return ONLY the JSON array. No markdown, no explanations."""
 
         response = perplexity_query(prompt, api_key,
-            system_prompt="You are a financial data assistant. Return only valid JSON arrays with numeric values in USD millions.")
+            system_prompt="You are a financial data assistant. Return only valid JSON arrays with numeric values in USD millions. Use current exchange rates for non-USD companies.")
 
         if response:
             try:
-                # Extract JSON from response
                 import re
                 json_match = re.search(r'\[.*\]', response, re.DOTALL)
                 if json_match:
                     data = json.loads(json_match.group())
                     for item in data:
-                        tid = item.get("ticker_id", "")
-                        results[tid] = item
-                        print(f"    Got estimates for {tid}")
+                        tid = item.get("ticker_id", "").strip()
+                        # Normalize ticker matching — try exact match first,
+                        # then try matching without exchange suffixes
+                        matched_ticker = None
+                        for expected in tickers:
+                            if tid.upper() == expected.upper():
+                                matched_ticker = expected
+                                break
+                            # Try partial match (e.g. "ACS" matches "ACS")
+                            if tid.upper().split(".")[0] == expected.upper().split(".")[0]:
+                                matched_ticker = expected
+                                break
+                        if matched_ticker:
+                            results[matched_ticker] = item
+                            print(f"    Got estimates for {matched_ticker} (from response ticker: {tid})")
+                        else:
+                            print(f"    [WARN] Could not match Perplexity ticker '{tid}' to any expected ticker")
             except (json.JSONDecodeError, Exception) as e:
                 print(f"    [WARN] Failed to parse Perplexity response: {e}")
+                print(f"    Response was: {response[:200]}...")
 
         time.sleep(2)  # Rate limiting
 
@@ -311,7 +362,11 @@ Return ONLY the JSON array. No markdown, no explanations."""
 # ---------------------------------------------------------------------------
 
 def process_company(yf_data, company_meta, perplexity_estimates=None):
-    """Transform yfinance data into dashboard format."""
+    """Transform yfinance data into dashboard format.
+
+    Output field names use actual year numbers (e.g. rev_growth_2025, ev_rev_2026)
+    based on the dynamic LFY/CFY/NFY constants.
+    """
     result = {
         "ticker": company_meta["display_ticker"],
         "fmp_ticker": company_meta["ticker"],
@@ -337,76 +392,77 @@ def process_company(yf_data, company_meta, perplexity_estimates=None):
         result["pct_52wk"] = round((price / high) * 100, 2)
 
     # Revenue data
-    rev_2023 = yf_data.get("revenue_2023")
-    rev_2024 = yf_data.get("revenue_2024")
-    rev_2025e = yf_data.get("revenue_2025e")
-    rev_2026e = yf_data.get("revenue_2026e")
+    rev_lfy_minus1 = yf_data.get("revenue_lfy_minus1")
+    rev_lfy = yf_data.get("revenue_lfy")
+    rev_cfy_e = yf_data.get("revenue_cfy_e")
+    rev_nfy_e = yf_data.get("revenue_nfy_e")
 
     # Fill in from Perplexity estimates if available
     pplx = perplexity_estimates or {}
     ticker_id = company_meta["display_ticker"]
     if ticker_id in pplx:
         est = pplx[ticker_id]
-        if rev_2025e is None:
-            rev_2025e = est.get("revenue_2025e_millions")
-        if rev_2026e is None:
-            rev_2026e = est.get("revenue_2026e_millions")
+        if rev_cfy_e is None:
+            rev_cfy_e = est.get(f"revenue_{CFY}e_millions")
+        if rev_nfy_e is None:
+            rev_nfy_e = est.get(f"revenue_{NFY}e_millions")
 
-    result["revenue_2024"] = rev_2024
-    result["revenue_2025e"] = rev_2025e
-    result["revenue_2026e"] = rev_2026e
+    # Output with actual year numbers
+    result[f"revenue_{LFY}"] = rev_lfy
+    result[f"revenue_{CFY}e"] = rev_cfy_e
+    result[f"revenue_{NFY}e"] = rev_nfy_e
 
     # Revenue growth
-    result["rev_growth_2024"] = safe_div(rev_2024 - rev_2023, rev_2023) if rev_2024 and rev_2023 else None
-    result["rev_growth_2025"] = safe_div(rev_2025e - rev_2024, rev_2024) if rev_2025e and rev_2024 else None
+    result[f"rev_growth_{LFY}"] = safe_div(rev_lfy - rev_lfy_minus1, rev_lfy_minus1) if rev_lfy and rev_lfy_minus1 else None
+    result[f"rev_growth_{CFY}"] = safe_div(rev_cfy_e - rev_lfy, rev_lfy) if rev_cfy_e and rev_lfy else None
 
     # EBITDA data
-    ebitda_2024 = yf_data.get("ebitda_2024")
-    ebitda_2025e = None
-    ebitda_2026e = None
+    ebitda_lfy = yf_data.get("ebitda_lfy")
+    ebitda_cfy_e = None
+    ebitda_nfy_e = None
 
     if ticker_id in pplx:
         est = pplx[ticker_id]
-        ebitda_2025e = est.get("ebitda_2025e_millions")
-        ebitda_2026e = est.get("ebitda_2026e_millions")
+        ebitda_cfy_e = est.get(f"ebitda_{CFY}e_millions")
+        ebitda_nfy_e = est.get(f"ebitda_{NFY}e_millions")
 
-    result["ebitda_2024"] = ebitda_2024
-    result["ebitda_2025e"] = ebitda_2025e
-    result["ebitda_2026e"] = ebitda_2026e
+    result[f"ebitda_{LFY}"] = ebitda_lfy
+    result[f"ebitda_{CFY}e"] = ebitda_cfy_e
+    result[f"ebitda_{NFY}e"] = ebitda_nfy_e
 
     # EBITDA margins
-    result["ebitda_margin_2024"] = safe_div(ebitda_2024, rev_2024)
-    result["ebitda_margin_2025"] = safe_div(ebitda_2025e, rev_2025e)
-    result["ebitda_margin_2026"] = safe_div(ebitda_2026e, rev_2026e)
+    result[f"ebitda_margin_{LFY}"] = safe_div(ebitda_lfy, rev_lfy)
+    result[f"ebitda_margin_{CFY}"] = safe_div(ebitda_cfy_e, rev_cfy_e)
+    result[f"ebitda_margin_{NFY}"] = safe_div(ebitda_nfy_e, rev_nfy_e)
 
     # EV multiples
     ev = result.get("enterprise_value")
-    result["ev_rev_2024"] = safe_div(ev, rev_2024)
-    result["ev_rev_2025"] = safe_div(ev, rev_2025e)
-    result["ev_rev_2026"] = safe_div(ev, rev_2026e)
-    result["ev_ebitda_2024"] = safe_div(ev, ebitda_2024)
-    result["ev_ebitda_2025"] = safe_div(ev, ebitda_2025e)
-    result["ev_ebitda_2026"] = safe_div(ev, ebitda_2026e)
+    result[f"ev_rev_{LFY}"] = safe_div(ev, rev_lfy)
+    result[f"ev_rev_{CFY}"] = safe_div(ev, rev_cfy_e)
+    result[f"ev_rev_{NFY}"] = safe_div(ev, rev_nfy_e)
+    result[f"ev_ebitda_{LFY}"] = safe_div(ev, ebitda_lfy)
+    result[f"ev_ebitda_{CFY}"] = safe_div(ev, ebitda_cfy_e)
+    result[f"ev_ebitda_{NFY}"] = safe_div(ev, ebitda_nfy_e)
 
     # PE ratios
-    ni_2024 = yf_data.get("net_income_2024")
+    ni_lfy = yf_data.get("net_income_lfy")
     mcap = result.get("market_cap")
-    result["pe_2024"] = safe_div(mcap, ni_2024)
+    result[f"pe_{LFY}"] = safe_div(mcap, ni_lfy)
 
     # Forward PE from share price and EPS estimates
-    eps_2025 = yf_data.get("eps_2025e")
-    eps_2026 = yf_data.get("eps_2026e")
-    if price and eps_2025 and eps_2025 > 0:
-        result["pe_2025"] = round(price / eps_2025, 2)
+    eps_cfy = yf_data.get("eps_cfy_e")
+    eps_nfy = yf_data.get("eps_nfy_e")
+    if price and eps_cfy and eps_cfy > 0:
+        result[f"pe_{CFY}"] = round(price / eps_cfy, 2)
     elif ticker_id in pplx:
-        ni_2025e = pplx[ticker_id].get("net_income_2025e_millions")
-        result["pe_2025"] = safe_div(mcap, ni_2025e)
+        ni_cfy_e = pplx[ticker_id].get(f"net_income_{CFY}e_millions")
+        result[f"pe_{CFY}"] = safe_div(mcap, ni_cfy_e)
 
-    if price and eps_2026 and eps_2026 > 0:
-        result["pe_2026"] = round(price / eps_2026, 2)
+    if price and eps_nfy and eps_nfy > 0:
+        result[f"pe_{NFY}"] = round(price / eps_nfy, 2)
     elif ticker_id in pplx:
-        ni_2026e = pplx[ticker_id].get("net_income_2026e_millions")
-        result["pe_2026"] = safe_div(mcap, ni_2026e)
+        ni_nfy_e = pplx[ticker_id].get(f"net_income_{NFY}e_millions")
+        result[f"pe_{NFY}"] = safe_div(mcap, ni_nfy_e)
 
     return result
 
@@ -420,10 +476,10 @@ def validate_company(company_data):
         issues.append("no market_cap")
     if not company_data.get("enterprise_value"):
         issues.append("no enterprise_value")
-    if not company_data.get("revenue_2024") and not company_data.get("revenue_2025e"):
+    if not company_data.get(f"revenue_{LFY}") and not company_data.get(f"revenue_{CFY}e"):
         issues.append("no revenue data")
 
-    margin = company_data.get("ebitda_margin_2024")
+    margin = company_data.get(f"ebitda_margin_{LFY}")
     if margin is not None and (margin < -1.0 or margin > 0.8):
         issues.append(f"suspicious EBITDA margin: {margin:.2%}")
 
@@ -433,11 +489,11 @@ def validate_company(company_data):
 def compute_category_averages(companies_data, categories):
     """Compute mean/median for key metrics by category."""
     metrics = [
-        "rev_growth_2024", "rev_growth_2025",
-        "ebitda_margin_2024", "ebitda_margin_2025", "ebitda_margin_2026",
-        "ev_rev_2024", "ev_rev_2025", "ev_rev_2026",
-        "ev_ebitda_2024", "ev_ebitda_2025", "ev_ebitda_2026",
-        "pe_2024", "pe_2025", "pe_2026",
+        f"rev_growth_{LFY}", f"rev_growth_{CFY}",
+        f"ebitda_margin_{LFY}", f"ebitda_margin_{CFY}", f"ebitda_margin_{NFY}",
+        f"ev_rev_{LFY}", f"ev_rev_{CFY}", f"ev_rev_{NFY}",
+        f"ev_ebitda_{LFY}", f"ev_ebitda_{CFY}", f"ev_ebitda_{NFY}",
+        f"pe_{LFY}", f"pe_{CFY}", f"pe_{NFY}",
     ]
 
     summaries = {}
@@ -608,6 +664,7 @@ def main():
     print("=" * 60)
     print("CPMA Public Comps Data Feed (yfinance + Perplexity)")
     print(f"Date: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+    print(f"Fiscal year windows: LFY={LFY}A, CFY={CFY}E, NFY={NFY}E")
     print(f"Companies: {len(COMPANIES)}")
     print(f"Perplexity estimates: {'enabled' if api_key else 'disabled'}")
     print("=" * 60)
@@ -625,7 +682,7 @@ def main():
     companies_needing_estimates = []
     for comp in COMPANIES:
         d = yf_data.get(comp["ticker"])
-        if d and not d.get("revenue_2025e"):
+        if d and not d.get("revenue_cfy_e"):
             companies_needing_estimates.append(comp)
 
     print(f"\n--- Step 2: Forward estimates needed for {len(companies_needing_estimates)}/{len(COMPANIES)} companies ---")
@@ -652,7 +709,7 @@ def main():
     # Step 5: Data quality check
     has_price = sum(1 for c in companies_data if c.get("share_price"))
     has_ev = sum(1 for c in companies_data if c.get("enterprise_value"))
-    has_revenue = sum(1 for c in companies_data if c.get("revenue_2024") or c.get("revenue_2025e"))
+    has_revenue = sum(1 for c in companies_data if c.get(f"revenue_{LFY}") or c.get(f"revenue_{CFY}e"))
 
     print(f"\n{'='*60}")
     print("Data Quality Report:")
@@ -660,9 +717,19 @@ def main():
     print(f"  Companies with EV:       {has_ev}/{len(COMPANIES)}")
     print(f"  Companies with revenue:  {has_revenue}/{len(COMPANIES)}")
 
+    # Detailed forward estimate coverage
+    has_rev_cfy = sum(1 for c in companies_data if c.get(f"revenue_{CFY}e"))
+    has_rev_nfy = sum(1 for c in companies_data if c.get(f"revenue_{NFY}e"))
+    has_ebitda_cfy = sum(1 for c in companies_data if c.get(f"ebitda_{CFY}e"))
+    has_pe_cfy = sum(1 for c in companies_data if c.get(f"pe_{CFY}"))
+    print(f"  Revenue {CFY}E coverage: {has_rev_cfy}/{len(COMPANIES)}")
+    print(f"  Revenue {NFY}E coverage: {has_rev_nfy}/{len(COMPANIES)}")
+    print(f"  EBITDA {CFY}E coverage:  {has_ebitda_cfy}/{len(COMPANIES)}")
+    print(f"  PE {CFY}E coverage:      {has_pe_cfy}/{len(COMPANIES)}")
+
     # Quality gates
     MIN_PRICE_THRESHOLD = 30
-    MIN_REVENUE_THRESHOLD = 15  # Lower threshold since forward estimates may be limited
+    MIN_REVENUE_THRESHOLD = 15
 
     if has_price < MIN_PRICE_THRESHOLD:
         print(f"\n[ABORT] Only {has_price} companies have price data (need {MIN_PRICE_THRESHOLD}+).")
@@ -693,6 +760,11 @@ def main():
             "source": "yfinance (Yahoo Finance) + Perplexity Sonar API",
             "num_companies": len(companies_data),
             "categories": CATEGORIES,
+            "fiscal_years": {
+                "lfy": LFY,
+                "cfy": CFY,
+                "nfy": NFY,
+            },
         },
         "companies": companies_data,
         "category_summaries": summaries,
