@@ -11,7 +11,7 @@ Fiscal year windows are determined dynamically from the current date:
   NFY = next fiscal year (estimates)
 
 Usage:
-    python cpma_data_feed_yfinance.py                       # Uses PERPLEXITY_API_KEY env var
+    python cpma_data_feed_yfinance.py                        # Uses PERPLEXITY_API_KEY env var
     python cpma_data_feed_yfinance.py --no-perplexity        # yfinance only
     python cpma_data_feed_yfinance.py --output data.json     # Custom output path
 
@@ -19,7 +19,9 @@ Output: cpma_comps_data.json (consumed by the HTML dashboard)
 """
 
 import json
+import math
 import os
+import re
 import sys
 import time
 import argparse
@@ -43,7 +45,7 @@ NFY = _now.year + 1    # Next Fiscal Year (estimates) — e.g. 2027
 
 COMPANIES = [
     # Construction Contractors
-    {"ticker": "ACS.MC",    "name": "ACS, Actividades de Construccion y Servicios", "category": "Construction Contractors",                     "display_ticker": "ACS"},
+    {"ticker": "ACS.MC",    "name": "ACS, Actividades de Construccion y Servicios", "category": "Construction Contractors",                    "display_ticker": "ACS"},
     {"ticker": "SKA-B.ST",  "name": "Skanska",                                     "category": "Construction Contractors",                    "display_ticker": "SKA.B"},
     {"ticker": "AGX",       "name": "Argan",                                        "category": "Construction Contractors",                    "display_ticker": "AGX"},
     {"ticker": "TPC",       "name": "Tutor Perini",                                 "category": "Construction Contractors",                    "display_ticker": "TPC"},
@@ -123,15 +125,38 @@ def safe_div(a, b):
     return a / b
 
 
+def safe_subtract(a, b):
+    """Safe subtraction returning None if either arg is None."""
+    if a is None or b is None:
+        return None
+    return a - b
+
+
 def millions(val):
-    """Convert a value to millions (yfinance returns raw numbers)."""
+    """Convert a value to millions (yfinance returns raw numbers).
+
+    Returns 0.0 for zero values (not None) — $0 revenue is valid data.
+    """
     if val is None:
         return None
     try:
         v = float(val)
-        return v / 1_000_000 if v != 0 else None
+        return v / 1_000_000
     except (ValueError, TypeError):
         return None
+
+
+def sanitize_for_json(obj):
+    """Recursively replace NaN/Infinity with None for clean JSON output."""
+    if isinstance(obj, float):
+        if math.isnan(obj) or math.isinf(obj):
+            return None
+        return obj
+    elif isinstance(obj, dict):
+        return {k: sanitize_for_json(v) for k, v in obj.items()}
+    elif isinstance(obj, list):
+        return [sanitize_for_json(v) for v in obj]
+    return obj
 
 
 # ---------------------------------------------------------------------------
@@ -176,20 +201,34 @@ def fetch_yfinance_data(ticker_str):
                     elif year == LFY - 1:
                         data["revenue_lfy_minus1"] = millions(inc.at["Total Revenue", col]) if "Total Revenue" in inc.index else None
 
-                # Fallback: if LFY not available, try LFY-1 as the "actual" year
-                # (some companies may not have filed their latest annual yet)
-                if not data.get("revenue_lfy") and data.get("revenue_lfy_minus1"):
-                    # Try to find LFY-1 full data as fallback actuals
+                # Fallback: if LFY not found by calendar year, try matching
+                # by the most recent fiscal year ending in the LFY calendar year.
+                # Some companies have non-calendar fiscal years (e.g., IBM Oct-Sep,
+                # Accenture Sep-Aug) — their FY2025 report may have a date in 2025
+                # but not exactly year==2025 depending on pandas date parsing.
+                if not data.get("revenue_lfy"):
+                    # Try the most recent column whose year is LFY or LFY-1
                     for col in cols:
                         year = col.year if hasattr(col, 'year') else None
-                        if year == LFY - 1:
+                        if year in (LFY, LFY - 1):
                             data["revenue_lfy"] = millions(inc.at["Total Revenue", col]) if "Total Revenue" in inc.index else None
                             data["ebitda_lfy"] = millions(inc.at["EBITDA", col]) if "EBITDA" in inc.index else None
                             data["net_income_lfy"] = millions(inc.at["Net Income", col]) if "Net Income" in inc.index else None
-                        elif year == LFY - 2:
-                            data["revenue_lfy_minus1"] = millions(inc.at["Total Revenue", col]) if "Total Revenue" in inc.index else None
-                            break
-                    print(f"    [INFO] Using FY{LFY-1} as fallback actuals (FY{LFY} not yet available)")
+                            if data.get("revenue_lfy"):
+                                if year == LFY - 1:
+                                    print(f"    [INFO] Using FY{LFY-1} as fallback actuals (FY{LFY} not yet available)")
+                                break
+
+                # Also try to get prior year revenue for growth calculation
+                if not data.get("revenue_lfy_minus1"):
+                    for col in cols:
+                        year = col.year if hasattr(col, 'year') else None
+                        if year in (LFY - 1, LFY - 2):
+                            candidate = millions(inc.at["Total Revenue", col]) if "Total Revenue" in inc.index else None
+                            # Don't use the same value we already used for revenue_lfy
+                            if candidate and candidate != data.get("revenue_lfy"):
+                                data["revenue_lfy_minus1"] = candidate
+                                break
         except Exception as e:
             print(f"    [WARN] Income statement error for {ticker_str}: {e}")
 
@@ -288,10 +327,49 @@ def perplexity_query(prompt, api_key, system_prompt=None):
         return None
 
 
-def fetch_perplexity_estimates(companies_needing_estimates, api_key):
+def _match_ticker(response_ticker, expected_tickers, company_names_map=None):
+    """Match a ticker from Perplexity response to one of the expected tickers.
+
+    Handles various formats: exact match, base ticker match (ignoring exchange
+    suffixes), and fuzzy company name matching.
+
+    Args:
+        response_ticker: Ticker string from Perplexity response
+        expected_tickers: List of expected display_ticker strings
+        company_names_map: Optional dict {display_ticker: company_name}
+
+    Returns:
+        Matched display_ticker or None
+    """
+    tid = response_ticker.strip().upper()
+
+    # 1. Exact match
+    for expected in expected_tickers:
+        if tid == expected.upper():
+            return expected
+
+    # 2. Base ticker match (strip exchange suffix)
+    tid_base = tid.split(".")[0]
+    for expected in expected_tickers:
+        if tid_base == expected.upper().split(".")[0]:
+            return expected
+
+    # 3. Company name matching (if name appears as the ticker_id)
+    if company_names_map:
+        for expected, name in company_names_map.items():
+            # Check if the response contains the company name or vice versa
+            name_words = name.upper().split()
+            if any(word in tid for word in name_words if len(word) > 3):
+                return expected
+
+    return None
+
+
+def fetch_perplexity_estimates(companies_needing_estimates, api_key, max_retries=2):
     """Use Perplexity to fill in forward estimates for companies missing them.
 
     Asks for CFY and NFY estimates (dynamically determined from current date).
+    Includes retry logic for failed batches.
     """
     if not api_key or not companies_needing_estimates:
         return {}
@@ -302,6 +380,7 @@ def fetch_perplexity_estimates(companies_needing_estimates, api_key):
     for i in range(0, len(companies_needing_estimates), batch_size):
         batch = companies_needing_estimates[i:i+batch_size]
         tickers = [c["display_ticker"] for c in batch]
+        names_map = {c["display_ticker"]: c["name"] for c in batch}
         names = [f'{c["display_ticker"]} ({c["name"]})' for c in batch]
 
         print(f"\n  [Perplexity] Fetching FY{CFY}/FY{NFY} estimates for: {', '.join(tickers)}")
@@ -321,38 +400,43 @@ Return a JSON array where each item has:
 Important: For non-US companies, convert estimates to USD millions using current exchange rates.
 Return ONLY the JSON array. No markdown, no explanations."""
 
-        response = perplexity_query(prompt, api_key,
-            system_prompt="You are a financial data assistant. Return only valid JSON arrays with numeric values in USD millions. Use current exchange rates for non-USD companies.")
+        # Retry logic
+        for attempt in range(max_retries + 1):
+            response = perplexity_query(prompt, api_key,
+                system_prompt="You are a financial data assistant. Return only valid JSON arrays with numeric values in USD millions. Use current exchange rates for non-USD companies.")
 
-        if response:
-            try:
-                import re
-                json_match = re.search(r'\[.*\]', response, re.DOTALL)
-                if json_match:
-                    data = json.loads(json_match.group())
-                    for item in data:
-                        tid = item.get("ticker_id", "").strip()
-                        # Normalize ticker matching — try exact match first,
-                        # then try matching without exchange suffixes
-                        matched_ticker = None
-                        for expected in tickers:
-                            if tid.upper() == expected.upper():
-                                matched_ticker = expected
-                                break
-                            # Try partial match (e.g. "ACS" matches "ACS")
-                            if tid.upper().split(".")[0] == expected.upper().split(".")[0]:
-                                matched_ticker = expected
-                                break
-                        if matched_ticker:
-                            results[matched_ticker] = item
-                            print(f"    Got estimates for {matched_ticker} (from response ticker: {tid})")
+            if response:
+                try:
+                    json_match = re.search(r'\[.*\]', response, re.DOTALL)
+                    if json_match:
+                        data = json.loads(json_match.group())
+                        batch_matched = 0
+                        for item in data:
+                            tid = item.get("ticker_id", "").strip()
+                            matched_ticker = _match_ticker(tid, tickers, names_map)
+                            if matched_ticker:
+                                results[matched_ticker] = item
+                                batch_matched += 1
+                                print(f"    Got estimates for {matched_ticker} (from response ticker: {tid})")
+                            else:
+                                print(f"    [WARN] Could not match Perplexity ticker '{tid}' to any expected ticker")
+
+                        if batch_matched > 0:
+                            break  # Success, exit retry loop
                         else:
-                            print(f"    [WARN] Could not match Perplexity ticker '{tid}' to any expected ticker")
-            except (json.JSONDecodeError, Exception) as e:
-                print(f"    [WARN] Failed to parse Perplexity response: {e}")
-                print(f"    Response was: {response[:200]}...")
+                            print(f"    [WARN] No tickers matched in response (attempt {attempt+1})")
+                except (json.JSONDecodeError, Exception) as e:
+                    print(f"    [WARN] Failed to parse Perplexity response (attempt {attempt+1}): {e}")
+                    print(f"    Response was: {response[:200]}...")
+            else:
+                print(f"    [WARN] Empty Perplexity response (attempt {attempt+1})")
 
-        time.sleep(2)  # Rate limiting
+            if attempt < max_retries:
+                wait_time = 3 * (attempt + 1)
+                print(f"    Retrying in {wait_time}s...")
+                time.sleep(wait_time)
+
+        time.sleep(2)  # Rate limiting between batches
 
     return results
 
@@ -412,9 +496,9 @@ def process_company(yf_data, company_meta, perplexity_estimates=None):
     result[f"revenue_{CFY}e"] = rev_cfy_e
     result[f"revenue_{NFY}e"] = rev_nfy_e
 
-    # Revenue growth
-    result[f"rev_growth_{LFY}"] = safe_div(rev_lfy - rev_lfy_minus1, rev_lfy_minus1) if rev_lfy and rev_lfy_minus1 else None
-    result[f"rev_growth_{CFY}"] = safe_div(rev_cfy_e - rev_lfy, rev_lfy) if rev_cfy_e and rev_lfy else None
+    # Revenue growth (using safe_subtract to avoid None arithmetic errors)
+    result[f"rev_growth_{LFY}"] = safe_div(safe_subtract(rev_lfy, rev_lfy_minus1), rev_lfy_minus1)
+    result[f"rev_growth_{CFY}"] = safe_div(safe_subtract(rev_cfy_e, rev_lfy), rev_lfy)
 
     # EBITDA data
     ebitda_lfy = yf_data.get("ebitda_lfy")
@@ -695,6 +779,62 @@ def main():
     elif not api_key:
         print("  Perplexity disabled, skipping forward estimates")
 
+    # Step 3b: Identify companies still missing LFY actuals and try Perplexity
+    companies_missing_actuals = []
+    for comp in COMPANIES:
+        d = yf_data.get(comp["ticker"])
+        if d and not d.get("revenue_lfy"):
+            companies_missing_actuals.append(comp)
+
+    if api_key and companies_missing_actuals:
+        print(f"\n--- Step 3b: Fetching LFY actuals via Perplexity for {len(companies_missing_actuals)} companies ---")
+        tickers_missing = [c["display_ticker"] for c in companies_missing_actuals]
+        names_missing = [f'{c["display_ticker"]} ({c["name"]})' for c in companies_missing_actuals]
+
+        actuals_prompt = f"""For these companies, provide FY{LFY} (fiscal year {LFY}) ACTUAL reported financials in JSON format.
+Companies: {', '.join(names_missing)}
+
+Return a JSON array where each item has:
+- "ticker_id": the ticker symbol exactly as shown above
+- "revenue_{LFY}_millions": FY{LFY} actual reported revenue in USD millions (number or null)
+- "ebitda_{LFY}_millions": FY{LFY} actual reported EBITDA in USD millions (number or null)
+- "net_income_{LFY}_millions": FY{LFY} actual reported net income in USD millions (number or null)
+
+Important: These are ACTUAL reported figures, not estimates. For non-US companies, convert to USD millions.
+Return ONLY the JSON array. No markdown, no explanations."""
+
+        response = perplexity_query(actuals_prompt, api_key,
+            system_prompt="You are a financial data assistant. Return only valid JSON arrays with numeric values in USD millions. Use current exchange rates for non-USD companies.")
+
+        if response:
+            try:
+                json_match = re.search(r'\[.*\]', response, re.DOTALL)
+                if json_match:
+                    data = json.loads(json_match.group())
+                    names_map = {c["display_ticker"]: c["name"] for c in companies_missing_actuals}
+                    for item in data:
+                        tid = item.get("ticker_id", "").strip()
+                        matched = _match_ticker(tid, tickers_missing, names_map)
+                        if matched:
+                            # Find the company ticker and inject into yf_data
+                            for comp in companies_missing_actuals:
+                                if comp["display_ticker"] == matched:
+                                    d = yf_data.get(comp["ticker"])
+                                    if d is not None:
+                                        rev = item.get(f"revenue_{LFY}_millions")
+                                        ebitda = item.get(f"ebitda_{LFY}_millions")
+                                        ni = item.get(f"net_income_{LFY}_millions")
+                                        if rev:
+                                            d["revenue_lfy"] = rev
+                                        if ebitda:
+                                            d["ebitda_lfy"] = ebitda
+                                        if ni:
+                                            d["net_income_lfy"] = ni
+                                        print(f"    [Perplexity] Got FY{LFY} actuals for {matched}: rev={rev}, ebitda={ebitda}, ni={ni}")
+                                    break
+            except (json.JSONDecodeError, Exception) as e:
+                print(f"    [WARN] Failed to parse Perplexity actuals response: {e}")
+
     # Step 4: Process all companies
     print("\n--- Step 3: Processing companies ---")
     companies_data = []
@@ -772,6 +912,9 @@ def main():
         "price_history": price_history,
     }
 
+    # Sanitize NaN/Infinity values before writing JSON
+    output = sanitize_for_json(output)
+
     with open(output_path, "w") as f:
         json.dump(output, f, indent=2, default=str)
 
@@ -782,4 +925,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
