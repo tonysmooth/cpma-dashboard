@@ -460,8 +460,34 @@ def compute_category_averages(companies_data, categories):
     return summaries
 
 
+def _snap_to_monday(date_str):
+    """Snap a YYYY-MM-DD date string to the Monday of that week."""
+    from datetime import timedelta
+    d = datetime.strptime(date_str, "%Y-%m-%d")
+    monday = d - timedelta(days=d.weekday())  # weekday(): Mon=0 … Sun=6
+    return monday.strftime("%Y-%m-%d")
+
+
+def _weekly_indexed(hist_df):
+    """Convert a daily yfinance history DataFrame into weekly indexed data.
+
+    Returns a dict {monday_date_str: last_close_of_that_week} so that each
+    trading week is represented exactly once.  The caller normalises to
+    index-100 after collecting all companies.
+    """
+    weekly = {}  # monday_str -> last close price seen that week
+    for date, row in hist_df.iterrows():
+        monday = _snap_to_monday(date.strftime("%Y-%m-%d"))
+        weekly[monday] = row["Close"]  # keep overwriting → last day of week wins
+    return weekly
+
+
 def build_price_series(companies):
     """Build indexed price series for each category AND per-company price history.
+
+    All series are snapped to weekly (Monday) buckets so every category and
+    company shares the same x-axis dates — required because the dashboard
+    chart uses Chart.js ``type:"category"`` labels from the first dataset.
 
     Returns:
         (category_price_series, price_history)
@@ -474,58 +500,89 @@ def build_price_series(companies):
     category_series = {}
     price_history = {}
 
-    # --- Per-company and category price histories ---
+    # Collect a master set of Monday dates across ALL companies so every
+    # series uses the same x-axis labels.
+    master_mondays = set()
+
+    # --- Per-company raw weekly closes ---
+    company_weekly = {}  # display_ticker -> {monday_str: close}
+    company_cat = {}     # display_ticker -> category
+
+    for comp in companies:
+        ticker = comp["ticker"]
+        display_ticker = comp["display_ticker"]
+        yf_ticker = YFINANCE_TICKER_OVERRIDES.get(ticker, ticker)
+        try:
+            tk = yf.Ticker(yf_ticker)
+            hist = tk.history(period="1y")
+            if hist is not None and not hist.empty:
+                weekly = _weekly_indexed(hist)
+                company_weekly[display_ticker] = weekly
+                company_cat[display_ticker] = comp["category"]
+                master_mondays.update(weekly.keys())
+            time.sleep(0.3)
+        except Exception as e:
+            print(f"  [WARN] Price history error for {ticker}: {e}")
+
+    # Sort master Mondays once
+    sorted_mondays = sorted(master_mondays)
+
+    # --- Build per-company indexed series (index 100 at first available week) ---
+    for dticker, weekly in company_weekly.items():
+        first_close = None
+        series = []
+        for monday in sorted_mondays:
+            if monday in weekly:
+                if first_close is None:
+                    first_close = weekly[monday]
+                indexed = round((weekly[monday] / first_close) * 100, 2)
+                series.append({"date": monday, "indexed": indexed})
+            elif first_close is not None and series:
+                # Carry forward last value for weeks where this company
+                # had no trading day (holiday, etc.)
+                series.append({"date": monday, "indexed": series[-1]["indexed"]})
+        price_history[dticker] = series
+
+    # --- Build category averages from per-company series ---
     for cat in CATEGORIES:
-        cat_companies = [c for c in companies if c["category"] == cat]
-        cat_prices = {}  # {date_str: [indexed_values]}
-
-        for comp in cat_companies:
-            ticker = comp["ticker"]
-            display_ticker = comp["display_ticker"]
-            yf_ticker = YFINANCE_TICKER_OVERRIDES.get(ticker, ticker)
-            try:
-                tk = yf.Ticker(yf_ticker)
-                hist = tk.history(period="1y")
-                if hist is not None and not hist.empty:
-                    first_close = hist["Close"].iloc[0]
-                    company_series = []
-                    for date, row in hist.iterrows():
-                        date_str = date.strftime("%Y-%m-%d")
-                        indexed = round((row["Close"] / first_close) * 100, 2)
-                        company_series.append({"date": date_str, "indexed": indexed})
-                        if date_str not in cat_prices:
-                            cat_prices[date_str] = []
-                        cat_prices[date_str].append(indexed)
-                    # Store per-company indexed series
-                    price_history[display_ticker] = company_series
-                time.sleep(0.3)
-            except Exception as e:
-                print(f"  [WARN] Price history error for {ticker}: {e}")
-
-        # Average the indexed prices for each date â array of {date, indexed}
+        cat_tickers = [dt for dt, c in company_cat.items() if c == cat]
+        if not cat_tickers:
+            continue
         cat_series = []
-        for date_str in sorted(cat_prices.keys()):
-            vals = cat_prices[date_str]
-            cat_series.append({"date": date_str, "indexed": round(statistics.mean(vals), 2)})
+        for monday in sorted_mondays:
+            vals = []
+            for dt in cat_tickers:
+                for pt in price_history.get(dt, []):
+                    if pt["date"] == monday:
+                        vals.append(pt["indexed"])
+                        break
+            if vals:
+                cat_series.append({"date": monday, "indexed": round(statistics.mean(vals), 2)})
         category_series[cat] = cat_series
 
-    # --- S&P 500 benchmark ---
+    # --- S&P 500 benchmark (same weekly grid) ---
     print("  Fetching S&P 500 benchmark (^GSPC)...")
     try:
         sp = yf.Ticker("^GSPC")
         hist = sp.history(period="1y")
         if hist is not None and not hist.empty:
-            first_close = hist["Close"].iloc[0]
+            sp_weekly = _weekly_indexed(hist)
+            first_close = None
             sp_series = []
-            for date, row in hist.iterrows():
-                date_str = date.strftime("%Y-%m-%d")
-                indexed = round((row["Close"] / first_close) * 100, 2)
-                sp_series.append({"date": date_str, "indexed": indexed})
+            for monday in sorted_mondays:
+                if monday in sp_weekly:
+                    if first_close is None:
+                        first_close = sp_weekly[monday]
+                    indexed = round((sp_weekly[monday] / first_close) * 100, 2)
+                    sp_series.append({"date": monday, "indexed": indexed})
+                elif first_close is not None and sp_series:
+                    sp_series.append({"date": monday, "indexed": sp_series[-1]["indexed"]})
             category_series["S&P 500"] = sp_series
             print(f"    Got {len(sp_series)} data points for S&P 500")
     except Exception as e:
         print(f"  [WARN] S&P 500 fetch error: {e}")
 
+    print(f"  Weekly dates: {len(sorted_mondays)} Mondays")
     return category_series, price_history
 
 
@@ -653,3 +710,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
