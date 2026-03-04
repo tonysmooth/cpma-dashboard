@@ -5,7 +5,6 @@ on:
     - cron: '0 3 * * 1-5'
   workflow_dispatch:
 
-
 permissions:
   contents: write
 
@@ -27,29 +26,29 @@ jobs:
           python3 -c "
           from datetime import date
           HOLIDAYS = [
-              '2026-01-01','2026-01-19','2026-02-16','2026-04-03',
-              '2026-05-25','2026-06-19','2026-07-03','2026-09-07',
-              '2026-11-26','2026-12-25',
+            '2026-01-01','2026-01-19','2026-02-16','2026-04-03',
+            '2026-05-25','2026-06-19','2026-07-03','2026-09-07',
+            '2026-11-26','2026-12-25',
           ]
           today = date.today().isoformat()
           is_weekday = date.today().weekday() < 5
           is_holiday = today in HOLIDAYS
           if is_weekday and not is_holiday:
-              print('Market open')
-              open('market_open.txt','w').write('true')
+            print('Market open')
+            open('market_open.txt','w').write('true')
           else:
-              print('Market closed')
-              open('market_open.txt','w').write('false')
+            print('Market closed')
+            open('market_open.txt','w').write('false')
           "
           echo "market_open=$(cat market_open.txt)" >> $GITHUB_OUTPUT
 
-      - name: Fetch fresh data from Perplexity Sonar API
+      - name: Fetch fresh data from yfinance + Perplexity
         if: steps.market_check.outputs.market_open == 'true'
         env:
           PERPLEXITY_API_KEY: ${{ secrets.PERPLEXITY_API_KEY }}
         run: |
-          API_KEY="${PERPLEXITY_API_KEY}"
-          python3 cpma_data_feed_perplexity.py --api-key "$API_KEY" --output cpma_comps_data.json
+          pip install yfinance
+          python3 cpma_data_feed_yfinance.py --api-key "$PERPLEXITY_API_KEY" --output cpma_comps_data.json
 
       - name: Rebuild dashboard with fresh data
         if: steps.market_check.outputs.market_open == 'true'
