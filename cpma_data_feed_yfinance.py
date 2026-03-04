@@ -1,32 +1,32 @@
 #!/usr/bin/env python3
 """
-CPMA Public Comps Data Feed (Perplexity Sonar API)
-===================================================
+CPMA Public Comps Data Feed (yfinance + Perplexity Sonar API)
+=============================================================
 Fetches real-time market data for Engineering & Construction public comparables.
-Uses Perplexity Sonar API with access to Fiscal.ai and Morningstar data.
+Uses yfinance for price/fundamentals and optionally Perplexity for forward estimates.
 
 Usage:
-    python cpma_data_feed_perplexity.py                          # Uses PERPLEXITY_API_KEY env var
-    python cpma_data_feed_perplexity.py --api-key YOUR_KEY       # Uses provided key
-    python cpma_data_feed_perplexity.py --output data.json       # Custom output path
+    python cpma_data_feed_yfinance.py                        # Uses PERPLEXITY_API_KEY env var
+    python cpma_data_feed_yfinance.py --no-perplexity        # yfinance only
+    python cpma_data_feed_yfinance.py --output data.json     # Custom output path
 
 Output: cpma_comps_data.json (consumed by the HTML dashboard)
 """
 
 import json
 import os
-import re
 import sys
 import time
 import argparse
 import statistics
 import urllib.request
 import urllib.error
-from datetime import datetime
+from datetime import datetime, timedelta
 from pathlib import Path
 
-
-# âââ Company Universe âââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
+# ---------------------------------------------------------------------------
+#  Company Universe
+# ---------------------------------------------------------------------------
 
 COMPANIES = [
     # Construction Contractors
@@ -38,47 +38,47 @@ COMPANIES = [
     {"ticker": "BWMN",      "name": "Bowman Consulting",                            "category": "Construction Contractors",                    "display_ticker": "BWMN"},
 
     # Diversified Engineering and Construction
-    {"ticker": "DG.PA",     "name": "VINCI",            "category": "Diversified Engineering and Construction", "display_ticker": "DG"},
-    {"ticker": "HOT.DE",    "name": "HOCHTIEF",         "category": "Diversified Engineering and Construction", "display_ticker": "HOT"},
-    {"ticker": "EN.PA",     "name": "Bouygues",         "category": "Diversified Engineering and Construction", "display_ticker": "EN"},
-    {"ticker": "J",         "name": "Jacobs Solutions",  "category": "Diversified Engineering and Construction", "display_ticker": "J"},
-    {"ticker": "1802.T",    "name": "Obayashi",         "category": "Diversified Engineering and Construction", "display_ticker": "1802"},
-    {"ticker": "ACM",       "name": "AECOM",            "category": "Diversified Engineering and Construction", "display_ticker": "ACM"},
-    {"ticker": "STN.TO",    "name": "Stantec",          "category": "Diversified Engineering and Construction", "display_ticker": "STN"},
-    {"ticker": "ATRL.TO",   "name": "Atkinsrealis",     "category": "Diversified Engineering and Construction", "display_ticker": "ATRL"},
-    {"ticker": "KBR",       "name": "KBR",              "category": "Diversified Engineering and Construction", "display_ticker": "KBR"},
-    {"ticker": "ARCAD.AS",  "name": "Arcadis",          "category": "Diversified Engineering and Construction", "display_ticker": "ARCAD"},
-    {"ticker": "WBD.MI",    "name": "Webuild",          "category": "Diversified Engineering and Construction", "display_ticker": "WBD"},
-    {"ticker": "FLR",       "name": "Fluor",            "category": "Diversified Engineering and Construction", "display_ticker": "FLR"},
+    {"ticker": "DG.PA",     "name": "VINCI",                                        "category": "Diversified Engineering and Construction",    "display_ticker": "DG"},
+    {"ticker": "HOT.DE",    "name": "HOCHTIEF",                                     "category": "Diversified Engineering and Construction",    "display_ticker": "HOT"},
+    {"ticker": "EN.PA",     "name": "Bouygues",                                     "category": "Diversified Engineering and Construction",    "display_ticker": "EN"},
+    {"ticker": "J",         "name": "Jacobs Solutions",                             "category": "Diversified Engineering and Construction",    "display_ticker": "J"},
+    {"ticker": "1802.T",    "name": "Obayashi Corporation",                         "category": "Diversified Engineering and Construction",    "display_ticker": "1802"},
+    {"ticker": "ACM",       "name": "AECOM",                                        "category": "Diversified Engineering and Construction",    "display_ticker": "ACM"},
+    {"ticker": "STN",       "name": "Stantec",                                      "category": "Diversified Engineering and Construction",    "display_ticker": "STN"},
+    {"ticker": "ATRL.PA",   "name": "Altarea",                                      "category": "Diversified Engineering and Construction",    "display_ticker": "ATRL"},
+    {"ticker": "KBR",       "name": "KBR Inc",                                      "category": "Diversified Engineering and Construction",    "display_ticker": "KBR"},
+    {"ticker": "ARCAD.PA",  "name": "Arcadis",                                      "category": "Diversified Engineering and Construction",    "display_ticker": "ARCAD"},
+    {"ticker": "WBD",       "name": "Webuild",                                      "category": "Diversified Engineering and Construction",    "display_ticker": "WBD"},
+    {"ticker": "FLR",       "name": "Fluor Corporation",                            "category": "Diversified Engineering and Construction",    "display_ticker": "FLR"},
 
     # Specialty Engineering and Construction
-    {"ticker": "FIX",       "name": "Comfort Systems USA",  "category": "Specialty Engineering and Construction", "display_ticker": "FIX"},
-    {"ticker": "EME",       "name": "EMCOR Group",          "category": "Specialty Engineering and Construction", "display_ticker": "EME"},
-    {"ticker": "WSP.TO",    "name": "WSP Global",           "category": "Specialty Engineering and Construction", "display_ticker": "WSP"},
-    {"ticker": "APG",       "name": "APi Group Corp",       "category": "Specialty Engineering and Construction", "display_ticker": "APG"},
-    {"ticker": "DY",        "name": "Dycom Industries",     "category": "Specialty Engineering and Construction", "display_ticker": "DY"},
-    {"ticker": "TTEK",      "name": "Tetra Tech",           "category": "Specialty Engineering and Construction", "display_ticker": "TTEK"},
-    {"ticker": "GBF.DE",    "name": "Bilfinger",            "category": "Specialty Engineering and Construction", "display_ticker": "GBF"},
+    {"ticker": "FIX",       "name": "Comfort Systems USA",                          "category": "Specialty Engineering and Construction",      "display_ticker": "FIX"},
+    {"ticker": "EME",       "name": "EMCOR Group",                                  "category": "Specialty Engineering and Construction",      "display_ticker": "EME"},
+    {"ticker": "WSP.TO",    "name": "WSP Global",                                   "category": "Specialty Engineering and Construction",      "display_ticker": "WSP"},
+    {"ticker": "APG.AX",    "name": "APM Human Services International",             "category": "Specialty Engineering and Construction",      "display_ticker": "APG"},
+    {"ticker": "DY",        "name": "Dycom Industries",                             "category": "Specialty Engineering and Construction",      "display_ticker": "DY"},
+    {"ticker": "TTEK",      "name": "Tetra Tech",                                   "category": "Specialty Engineering and Construction",      "display_ticker": "TTEK"},
+    {"ticker": "GBF.VI",    "name": "Strabag SE",                                   "category": "Specialty Engineering and Construction",      "display_ticker": "GBF"},
 
     # Infrastructure Services
-    {"ticker": "STRL",      "name": "Sterling Infrastructure",   "category": "Infrastructure Services", "display_ticker": "STRL"},
-    {"ticker": "ROAD",      "name": "Construction Partners",     "category": "Infrastructure Services", "display_ticker": "ROAD"},
-    {"ticker": "GVA",       "name": "Granite Construction",      "category": "Infrastructure Services", "display_ticker": "GVA"},
-    {"ticker": "BBY.L",     "name": "Balfour Beatty",            "category": "Infrastructure Services", "display_ticker": "BBY"},
+    {"ticker": "STRL",      "name": "Sterling Infrastructure",                      "category": "Infrastructure Services",                    "display_ticker": "STRL"},
+    {"ticker": "ROAD",      "name": "Construction Partners",                        "category": "Infrastructure Services",                    "display_ticker": "ROAD"},
+    {"ticker": "GVA",       "name": "Granite Construction",                         "category": "Infrastructure Services",                    "display_ticker": "GVA"},
+    {"ticker": "BBY",       "name": "Balfour Beatty",                               "category": "Infrastructure Services",                    "display_ticker": "BBY"},
 
     # Utility Services
-    {"ticker": "PWR",       "name": "Quanta Services",    "category": "Utility Services", "display_ticker": "PWR"},
-    {"ticker": "MTZ",       "name": "MasTec",             "category": "Utility Services", "display_ticker": "MTZ"},
-    {"ticker": "PRIM",      "name": "Primoris Services",  "category": "Utility Services", "display_ticker": "PRIM"},
-    {"ticker": "MYRG",      "name": "MYR Group",          "category": "Utility Services", "display_ticker": "MYRG"},
-    {"ticker": "AMRC",      "name": "Ameresco",           "category": "Utility Services", "display_ticker": "AMRC"},
+    {"ticker": "PWR",       "name": "Quanta Services",                              "category": "Utility Services",                           "display_ticker": "PWR"},
+    {"ticker": "MTZ",       "name": "MasTec",                                       "category": "Utility Services",                           "display_ticker": "MTZ"},
+    {"ticker": "PRIM",      "name": "Primoris Services",                            "category": "Utility Services",                           "display_ticker": "PRIM"},
+    {"ticker": "MYRG",      "name": "MYR Group",                                    "category": "Utility Services",                           "display_ticker": "MYRG"},
+    {"ticker": "AMRC",      "name": "Ameresco",                                     "category": "Utility Services",                           "display_ticker": "AMRC"},
 
     # Management Consulting
-    {"ticker": "IBM",       "name": "IBM",                   "category": "Management Consulting", "display_ticker": "IBM"},
-    {"ticker": "ACN",       "name": "Accenture",             "category": "Management Consulting", "display_ticker": "ACN"},
-    {"ticker": "BAH",       "name": "Booz Allen Hamilton",   "category": "Management Consulting", "display_ticker": "BAH"},
-    {"ticker": "FCN",       "name": "FTI Consulting",        "category": "Management Consulting", "display_ticker": "FCN"},
-    {"ticker": "HURN",      "name": "Huron Consulting",      "category": "Management Consulting", "display_ticker": "HURN"},
+    {"ticker": "IBM",       "name": "IBM",                                          "category": "Management Consulting",                      "display_ticker": "IBM"},
+    {"ticker": "ACN",       "name": "Accenture",                                    "category": "Management Consulting",                      "display_ticker": "ACN"},
+    {"ticker": "BAH",       "name": "Booz Allen Hamilton",                          "category": "Management Consulting",                      "display_ticker": "BAH"},
+    {"ticker": "FCN",       "name": "FTI Consulting",                               "category": "Management Consulting",                      "display_ticker": "FCN"},
+    {"ticker": "HURN",      "name": "Huron Consulting Group",                       "category": "Management Consulting",                      "display_ticker": "HURN"},
 ]
 
 CATEGORIES = [
@@ -90,188 +90,228 @@ CATEGORIES = [
     "Management Consulting",
 ]
 
-PERPLEXITY_API_URL = "https://api.perplexity.ai/chat/completions"
+# Some tickers need special handling for yfinance
+# BBY on London = BBY.L, WBD on Milan = WBD.MI, ARCAD on Amsterdam = ARCAD.AS
+YFINANCE_TICKER_OVERRIDES = {
+    "BBY":      "BBY.L",
+    "WBD":      "WBD.MI",
+    "ARCAD.PA": "ARCAD.AS",
+}
 
 
-# âââ API Helpers ââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
-
-def perplexity_query(prompt, api_key, system_prompt=None, temperature=0.1):
-    """Make a chat completion request to Perplexity Sonar API."""
-    messages = []
-    if system_prompt:
-        messages.append({"role": "system", "content": system_prompt})
-    messages.append({"role": "user", "content": prompt})
-
-    payload = {
-        "model": "sonar-pro",
-        "messages": messages,
-        "temperature": temperature,
-    }
-
-    headers = {
-        "Authorization": f"Bearer {api_key}",
-        "Content-Type": "application/json",
-    }
-
-    try:
-        req = urllib.request.Request(
-            PERPLEXITY_API_URL,
-            data=json.dumps(payload).encode("utf-8"),
-            headers=headers,
-            method="POST",
-        )
-        with urllib.request.urlopen(req, timeout=60) as resp:
-            response = json.loads(resp.read().decode("utf-8"))
-        content = response["choices"][0]["message"]["content"]
-        return content
-    except urllib.error.HTTPError as e:
-        body = e.read().decode("utf-8", errors="replace") if e.fp else ""
-        print(f"  [ERROR] Perplexity HTTP {e.code}: {body[:200]}")
-        return None
-    except Exception as e:
-        print(f"  [ERROR] Perplexity API error: {e}")
-        return None
-
-
-def extract_json_from_response(text):
-    """Extract JSON array or object from Perplexity response text."""
-    if text is None:
-        return None
-
-    # Try to find JSON in code blocks first
-    code_block = re.search(r"```(?:json)?\s*\n?([\s\S]*?)\n?```", text)
-    if code_block:
-        text = code_block.group(1).strip()
-
-    # Try to find a JSON array
-    arr_match = re.search(r"(\[[\s\S]*\])", text)
-    if arr_match:
-        try:
-            return json.loads(arr_match.group(1))
-        except json.JSONDecodeError:
-            pass
-
-    # Try to find a JSON object
-    obj_match = re.search(r"(\{[\s\S]*\})", text)
-    if obj_match:
-        try:
-            result = json.loads(obj_match.group(1))
-            # Wrap single object in array
-            return [result] if isinstance(result, dict) else result
-        except json.JSONDecodeError:
-            pass
-
-    # Last resort: try parsing the whole text
-    try:
-        result = json.loads(text.strip())
-        return [result] if isinstance(result, dict) else result
-    except json.JSONDecodeError:
-        return None
-
-
-def fetch_batch(companies_batch, api_key):
-    """Query Perplexity for financial data on a batch of companies."""
-    company_lines = []
-    for c in companies_batch:
-        exchange_hint = ""
-        if "." in c["ticker"]:
-            parts = c["ticker"].split(".")
-            exchange_hint = f" (exchange suffix: .{parts[-1]})"
-        elif c["ticker"][0].isdigit():
-            exchange_hint = f" (Tokyo Stock Exchange)"
-        company_lines.append(
-            f'- {c["display_ticker"]}: {c["name"]}{exchange_hint} [ticker_id: {c["ticker"]}]'
-        )
-
-    companies_list = "\n".join(company_lines)
-
-    system_prompt = (
-        "You are a financial data extraction system. You MUST return ONLY a valid JSON array "
-        "with no additional text, no markdown formatting, no explanations. "
-        "Use null for any data point you cannot find. All monetary values in USD millions."
-    )
-
-    user_prompt = f"""Look up the following public companies and return their current financial data.
-Use the most recent available data from financial databases (Morningstar, Fiscal.ai, Yahoo Finance, etc).
-
-Companies:
-{companies_list}
-
-Return a JSON array where each element has EXACTLY these fields:
-{{
-  "ticker_id": "the ticker_id from the list above",
-  "share_price": current share price in local currency (number),
-  "market_cap_millions": market capitalization in USD millions (number),
-  "enterprise_value_millions": enterprise value in USD millions (number),
-  "high_52wk": 52-week high price in local currency (number),
-  "low_52wk": 52-week low price in local currency (number),
-  "revenue_2024_millions": FY2024 actual revenue in USD millions (number),
-  "revenue_2025e_millions": FY2025 estimated/consensus revenue in USD millions (number),
-  "revenue_2026e_millions": FY2026 estimated/consensus revenue in USD millions (number),
-  "ebitda_2024_millions": FY2024 actual EBITDA in USD millions (number),
-  "ebitda_2025e_millions": FY2025 estimated/consensus EBITDA in USD millions (number),
-  "ebitda_2026e_millions": FY2026 estimated/consensus EBITDA in USD millions (number),
-  "net_income_2024_millions": FY2024 actual net income in USD millions (number),
-  "net_income_2025e_millions": FY2025 estimated net income in USD millions (number),
-  "net_income_2026e_millions": FY2026 estimated net income in USD millions (number),
-  "revenue_2023_millions": FY2023 actual revenue in USD millions (for computing 2024 growth)
-}}
-
-CRITICAL: Return ONLY the JSON array, nothing else. No markdown, no code blocks, no explanations."""
-
-    response = perplexity_query(user_prompt, api_key, system_prompt=system_prompt)
-    if response is None:
-        return None
-
-    # Debug: show raw response preview
-    print(f"  [DEBUG] Raw response ({len(response)} chars): {response[:400]}...")
-    data = extract_json_from_response(response)
-    if data is None:
-        print(f"  [WARN] Failed to parse JSON from response. First 300 chars:")
-        print(f"  {response[:300]}")
-        return None
-
-    return data
-
-
-# âââ Data Processing ââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
-
-def parse_numeric(val):
-    """Parse a value that might be a number or formatted string."""
-    if val is None:
-        return None
-    if isinstance(val, (int, float)):
-        return float(val) if val != 0 else None
-    if isinstance(val, str):
-        s = val.strip().replace(",", "").replace("$", "")
-        s = s.replace(" ", "")
-        if not s or s.lower() in ("null", "n/a", "na", "nm", "none", "-", ""):
-            return None
-        multiplier = 1.0
-        if s.upper().endswith("B"):
-            multiplier = 1000.0
-            s = s[:-1]
-        elif s.upper().endswith("M"):
-            multiplier = 1.0
-            s = s[:-1]
-        elif s.upper().endswith("K"):
-            multiplier = 0.001
-            s = s[:-1]
-        try:
-            return float(s) * multiplier if float(s) != 0 else None
-        except ValueError:
-            return None
-    return None
+# ---------------------------------------------------------------------------
+#  Helpers
+# ---------------------------------------------------------------------------
 
 def safe_div(a, b):
-    """Safe division returning None if not possible."""
+    """Safe division returning None if divisor is zero or args are None."""
     if a is None or b is None or b == 0:
         return None
     return a / b
 
 
-def process_company(raw_data, company_meta):
-    """Transform Perplexity response data into dashboard format."""
+def millions(val):
+    """Convert a value to millions (yfinance returns raw numbers)."""
+    if val is None:
+        return None
+    try:
+        v = float(val)
+        return v / 1_000_000 if v != 0 else None
+    except (ValueError, TypeError):
+        return None
+
+
+# ---------------------------------------------------------------------------
+#  yfinance data fetching
+# ---------------------------------------------------------------------------
+
+def fetch_yfinance_data(ticker_str):
+    """Fetch financial data for a single company using yfinance."""
+    import yfinance as yf
+
+    yf_ticker = YFINANCE_TICKER_OVERRIDES.get(ticker_str, ticker_str)
+    print(f"    Fetching yfinance data for {ticker_str} (as {yf_ticker})...")
+
+    try:
+        tk = yf.Ticker(yf_ticker)
+        info = tk.info or {}
+
+        # Basic price/valuation data
+        data = {
+            "share_price": info.get("currentPrice") or info.get("regularMarketPrice"),
+            "market_cap": millions(info.get("marketCap")),
+            "enterprise_value": millions(info.get("enterpriseValue")),
+            "year_high": info.get("fiftyTwoWeekHigh"),
+            "year_low": info.get("fiftyTwoWeekLow"),
+            "trailing_pe": info.get("trailingPE"),
+            "forward_pe": info.get("forwardPE"),
+        }
+
+        # Historical financials from income statement
+        try:
+            inc = tk.income_stmt
+            if inc is not None and not inc.empty:
+                # Income statement columns are dates, most recent first
+                cols = sorted(inc.columns, reverse=True)
+
+                # Try to get FY2024 and FY2023 data
+                for col in cols:
+                    year = col.year if hasattr(col, 'year') else None
+                    if year == 2024:
+                        data["revenue_2024"] = millions(inc.at["Total Revenue", col]) if "Total Revenue" in inc.index else None
+                        data["ebitda_2024"] = millions(inc.at["EBITDA", col]) if "EBITDA" in inc.index else None
+                        data["net_income_2024"] = millions(inc.at["Net Income", col]) if "Net Income" in inc.index else None
+                    elif year == 2023:
+                        data["revenue_2023"] = millions(inc.at["Total Revenue", col]) if "Total Revenue" in inc.index else None
+        except Exception as e:
+            print(f"    [WARN] Income statement error for {ticker_str}: {e}")
+
+        # Forward estimates from analyst data
+        try:
+            rev_est = tk.revenue_estimate
+            if rev_est is not None and not rev_est.empty:
+                for col in rev_est.columns:
+                    col_str = str(col)
+                    if "2025" in col_str or "+1y" in col_str.lower():
+                        avg_val = rev_est.at["avg", col] if "avg" in rev_est.index else None
+                        data["revenue_2025e"] = millions(avg_val)
+                    elif "2026" in col_str or "+2y" in col_str.lower():
+                        avg_val = rev_est.at["avg", col] if "avg" in rev_est.index else None
+                        data["revenue_2026e"] = millions(avg_val)
+        except Exception as e:
+            print(f"    [WARN] Revenue estimate error for {ticker_str}: {e}")
+
+        # Earnings estimates for forward PE
+        try:
+            earn_est = tk.earnings_estimate
+            if earn_est is not None and not earn_est.empty:
+                for col in earn_est.columns:
+                    col_str = str(col)
+                    if "2025" in col_str or "+1y" in col_str.lower():
+                        data["eps_2025e"] = earn_est.at["avg", col] if "avg" in earn_est.index else None
+                    elif "2026" in col_str or "+2y" in col_str.lower():
+                        data["eps_2026e"] = earn_est.at["avg", col] if "avg" in earn_est.index else None
+        except Exception as e:
+            print(f"    [WARN] Earnings estimate error for {ticker_str}: {e}")
+
+        return data
+
+    except Exception as e:
+        print(f"    [ERROR] Failed to fetch {ticker_str}: {e}")
+        return None
+
+
+def fetch_price_history(ticker_str, period="1y"):
+    """Fetch historical daily prices for indexed price series."""
+    import yfinance as yf
+
+    yf_ticker = YFINANCE_TICKER_OVERRIDES.get(ticker_str, ticker_str)
+    try:
+        tk = yf.Ticker(yf_ticker)
+        hist = tk.history(period=period)
+        if hist is not None and not hist.empty:
+            prices = []
+            for date, row in hist.iterrows():
+                prices.append({
+                    "date": date.strftime("%Y-%m-%d"),
+                    "close": round(row["Close"], 2)
+                })
+            return prices
+    except Exception as e:
+        print(f"    [WARN] Price history error for {ticker_str}: {e}")
+    return None
+
+
+# ---------------------------------------------------------------------------
+#  Perplexity API for forward estimates (optional)
+# ---------------------------------------------------------------------------
+
+def perplexity_query(prompt, api_key, system_prompt=None):
+    """Query Perplexity Sonar API."""
+    url = "https://api.perplexity.ai/chat/completions"
+    messages = []
+    if system_prompt:
+        messages.append({"role": "system", "content": system_prompt})
+    messages.append({"role": "user", "content": prompt})
+
+    payload = json.dumps({
+        "model": "sonar-pro",
+        "messages": messages,
+        "temperature": 0.1,
+        "max_tokens": 4000,
+    }).encode("utf-8")
+
+    req = urllib.request.Request(url, data=payload, headers={
+        "Authorization": f"Bearer {api_key}",
+        "Content-Type": "application/json",
+    })
+
+    try:
+        with urllib.request.urlopen(req, timeout=60) as resp:
+            data = json.loads(resp.read().decode("utf-8"))
+            return data["choices"][0]["message"]["content"]
+    except Exception as e:
+        print(f"  [ERROR] Perplexity API error: {e}")
+        return None
+
+
+def fetch_perplexity_estimates(companies_needing_estimates, api_key):
+    """Use Perplexity to fill in forward estimates for companies missing them."""
+    if not api_key or not companies_needing_estimates:
+        return {}
+
+    results = {}
+    batch_size = 5
+
+    for i in range(0, len(companies_needing_estimates), batch_size):
+        batch = companies_needing_estimates[i:i+batch_size]
+        tickers = [c["display_ticker"] for c in batch]
+        names = [f'{c["display_ticker"]} ({c["name"]})' for c in batch]
+
+        print(f"\n  [Perplexity] Fetching estimates for: {', '.join(tickers)}")
+
+        prompt = f"""For these companies, provide consensus analyst estimates in JSON format.
+Companies: {', '.join(names)}
+
+Return a JSON array where each item has:
+- "ticker_id": the ticker symbol
+- "revenue_2025e_millions": FY2025 consensus revenue estimate in USD millions (number or null)
+- "revenue_2026e_millions": FY2026 consensus revenue estimate in USD millions (number or null)
+- "ebitda_2025e_millions": FY2025 consensus EBITDA estimate in USD millions (number or null)
+- "ebitda_2026e_millions": FY2026 consensus EBITDA estimate in USD millions (number or null)
+- "net_income_2025e_millions": FY2025 consensus net income estimate in USD millions (number or null)
+- "net_income_2026e_millions": FY2026 consensus net income estimate in USD millions (number or null)
+
+Return ONLY the JSON array. No markdown, no explanations."""
+
+        response = perplexity_query(prompt, api_key,
+            system_prompt="You are a financial data assistant. Return only valid JSON arrays with numeric values in USD millions.")
+
+        if response:
+            try:
+                # Extract JSON from response
+                import re
+                json_match = re.search(r'\[.*\]', response, re.DOTALL)
+                if json_match:
+                    data = json.loads(json_match.group())
+                    for item in data:
+                        tid = item.get("ticker_id", "")
+                        results[tid] = item
+                        print(f"    Got estimates for {tid}")
+            except (json.JSONDecodeError, Exception) as e:
+                print(f"    [WARN] Failed to parse Perplexity response: {e}")
+
+        time.sleep(2)  # Rate limiting
+
+    return results
+
+
+# ---------------------------------------------------------------------------
+#  Data Processing
+# ---------------------------------------------------------------------------
+
+def process_company(yf_data, company_meta, perplexity_estimates=None):
+    """Transform yfinance data into dashboard format."""
     result = {
         "ticker": company_meta["display_ticker"],
         "fmp_ticker": company_meta["ticker"],
@@ -279,25 +319,38 @@ def process_company(raw_data, company_meta):
         "category": company_meta["category"],
     }
 
+    if yf_data is None:
+        return result
+
     # Current price metrics
-    result["share_price"] = parse_numeric(raw_data.get("share_price"))
-    result["market_cap"] = parse_numeric(raw_data.get("market_cap_millions"))
-    result["enterprise_value"] = parse_numeric(raw_data.get("enterprise_value_millions"))
+    result["share_price"] = yf_data.get("share_price")
+    result["market_cap"] = yf_data.get("market_cap")
+    result["enterprise_value"] = yf_data.get("enterprise_value")
 
     # 52-week metrics
-    high = parse_numeric(raw_data.get("high_52wk"))
-    low = parse_numeric(raw_data.get("low_52wk"))
+    high = yf_data.get("year_high")
+    low = yf_data.get("year_low")
     price = result.get("share_price")
     result["year_high"] = high
     result["year_low"] = low
     if price and high and high > 0:
-        result["pct_52wk"] = round((price / high) * 100, 1)
+        result["pct_52wk"] = round((price / high) * 100, 2)
 
-    # Revenue
-    rev_2023 = parse_numeric(raw_data.get("revenue_2023_millions"))
-    rev_2024 = parse_numeric(raw_data.get("revenue_2024_millions"))
-    rev_2025e = parse_numeric(raw_data.get("revenue_2025e_millions"))
-    rev_2026e = parse_numeric(raw_data.get("revenue_2026e_millions"))
+    # Revenue data
+    rev_2023 = yf_data.get("revenue_2023")
+    rev_2024 = yf_data.get("revenue_2024")
+    rev_2025e = yf_data.get("revenue_2025e")
+    rev_2026e = yf_data.get("revenue_2026e")
+
+    # Fill in from Perplexity estimates if available
+    pplx = perplexity_estimates or {}
+    ticker_id = company_meta["display_ticker"]
+    if ticker_id in pplx:
+        est = pplx[ticker_id]
+        if rev_2025e is None:
+            rev_2025e = est.get("revenue_2025e_millions")
+        if rev_2026e is None:
+            rev_2026e = est.get("revenue_2026e_millions")
 
     result["revenue_2024"] = rev_2024
     result["revenue_2025e"] = rev_2025e
@@ -307,10 +360,15 @@ def process_company(raw_data, company_meta):
     result["rev_growth_2024"] = safe_div(rev_2024 - rev_2023, rev_2023) if rev_2024 and rev_2023 else None
     result["rev_growth_2025"] = safe_div(rev_2025e - rev_2024, rev_2024) if rev_2025e and rev_2024 else None
 
-    # EBITDA
-    ebitda_2024 = parse_numeric(raw_data.get("ebitda_2024_millions"))
-    ebitda_2025e = parse_numeric(raw_data.get("ebitda_2025e_millions"))
-    ebitda_2026e = parse_numeric(raw_data.get("ebitda_2026e_millions"))
+    # EBITDA data
+    ebitda_2024 = yf_data.get("ebitda_2024")
+    ebitda_2025e = None
+    ebitda_2026e = None
+
+    if ticker_id in pplx:
+        est = pplx[ticker_id]
+        ebitda_2025e = est.get("ebitda_2025e_millions")
+        ebitda_2026e = est.get("ebitda_2026e_millions")
 
     result["ebitda_2024"] = ebitda_2024
     result["ebitda_2025e"] = ebitda_2025e
@@ -321,85 +379,59 @@ def process_company(raw_data, company_meta):
     result["ebitda_margin_2025"] = safe_div(ebitda_2025e, rev_2025e)
     result["ebitda_margin_2026"] = safe_div(ebitda_2026e, rev_2026e)
 
-    # Net income
-    ni_2024 = parse_numeric(raw_data.get("net_income_2024_millions"))
-    ni_2025e = parse_numeric(raw_data.get("net_income_2025e_millions"))
-    ni_2026e = parse_numeric(raw_data.get("net_income_2026e_millions"))
-
-    # Trading multiples
+    # EV multiples
     ev = result.get("enterprise_value")
-    mc = result.get("market_cap")
+    result["ev_rev_2024"] = safe_div(ev, rev_2024)
+    result["ev_rev_2025"] = safe_div(ev, rev_2025e)
+    result["ev_rev_2026"] = safe_div(ev, rev_2026e)
+    result["ev_ebitda_2024"] = safe_div(ev, ebitda_2024)
+    result["ev_ebitda_2025"] = safe_div(ev, ebitda_2025e)
+    result["ev_ebitda_2026"] = safe_div(ev, ebitda_2026e)
 
-    if ev:
-        result["ev_rev_2024"] = safe_div(ev, rev_2024)
-        result["ev_rev_2025"] = safe_div(ev, rev_2025e)
-        result["ev_rev_2026"] = safe_div(ev, rev_2026e)
-Page_DownPage_DownPage_DownPage_DownPage_DownPage_DownPage_DownPage_DownPage_DownPage_Down        result["ev_ebitda_2024"] = safe_div(ev, ebitda_2024)
-        result["ev_ebitda_2025"] = safe_div(ev, ebitda_2025e)
-        result["ev_ebitda_2026"] = safe_div(ev, ebitda_2026e)
+    # PE ratios
+    ni_2024 = yf_data.get("net_income_2024")
+    mcap = result.get("market_cap")
+    result["pe_2024"] = safe_div(mcap, ni_2024)
 
-    if mc:
-        result["pe_2024"] = safe_div(mc, ni_2024) if ni_2024 and ni_2024 > 0 else None
-        result["pe_2025"] = safe_div(mc, ni_2025e) if ni_2025e and ni_2025e > 0 else None
-        result["pe_2026"] = safe_div(mc, ni_2026e) if ni_2026e and ni_2026e > 0 else None
+    # Forward PE from share price and EPS estimates
+    eps_2025 = yf_data.get("eps_2025e")
+    eps_2026 = yf_data.get("eps_2026e")
+    if price and eps_2025 and eps_2025 > 0:
+        result["pe_2025"] = round(price / eps_2025, 2)
+    elif ticker_id in pplx:
+        ni_2025e = pplx[ticker_id].get("net_income_2025e_millions")
+        result["pe_2025"] = safe_div(mcap, ni_2025e)
+
+    if price and eps_2026 and eps_2026 > 0:
+        result["pe_2026"] = round(price / eps_2026, 2)
+    elif ticker_id in pplx:
+        ni_2026e = pplx[ticker_id].get("net_income_2026e_millions")
+        result["pe_2026"] = safe_div(mcap, ni_2026e)
 
     return result
 
 
-def match_response_to_company(raw_item, batch):
-    """Match a Perplexity response item to a company in the batch."""
-    ticker_id = raw_item.get("ticker_id", "")
-
-    # Direct match on ticker
-    for c in batch:
-        if c["ticker"] == ticker_id:
-            return c
-
-    # Fallback: match on display ticker
-    for c in batch:
-        if c["display_ticker"] == ticker_id:
-            return c
-
-    # Fallback: partial match
-    for c in batch:
-        if ticker_id in c["ticker"] or c["ticker"] in ticker_id:
-            return c
-        if ticker_id in c["name"] or c["display_ticker"] in ticker_id:
-            return c
-
-    return None
-
-
-def validate_company(data):
-    """Validate company data quality. Returns (is_valid, issues)."""
+def validate_company(company_data):
+    """Check data quality for a single company."""
     issues = []
-
-    if not data.get("share_price"):
+    if not company_data.get("share_price"):
         issues.append("no share_price")
-    if not data.get("market_cap"):
+    if not company_data.get("market_cap"):
         issues.append("no market_cap")
-    if not data.get("enterprise_value"):
+    if not company_data.get("enterprise_value"):
         issues.append("no enterprise_value")
-
-    has_revenue = any([
-        data.get("revenue_2024"),
-        data.get("revenue_2025e"),
-        data.get("revenue_2026e"),
-    ])
-    if not has_revenue:
+    if not company_data.get("revenue_2024") and not company_data.get("revenue_2025e"):
         issues.append("no revenue data")
 
-    # Sanity checks on margins
-    for suffix in ["_2024", "_2025", "_2026"]:
-        margin = data.get(f"ebitda_margin{suffix}")
-        if margin is not None and (margin < -1.0 or margin > 0.8):
-            issues.append(f"ebitda_margin{suffix} out of range: {margin:.2f}")
+    margin = company_data.get("ebitda_margin_2024")
+    if margin is not None and (margin < -1.0 or margin > 0.8):
+        issues.append(f"suspicious EBITDA margin: {margin:.2%}")
 
     return len(issues) == 0, issues
 
 
 def compute_category_averages(companies_data, categories):
-    """Compute mean and median for each category."""
+    """Compute mean/median for key metrics by category."""
     metrics = [
         "rev_growth_2024", "rev_growth_2025",
         "ebitda_margin_2024", "ebitda_margin_2025", "ebitda_margin_2026",
@@ -409,137 +441,140 @@ def compute_category_averages(companies_data, categories):
     ]
 
     summaries = {}
-    for cat in categories:
-        cat_companies = [c for c in companies_data if c["category"] == cat]
-        cat_summary = {"mean": {}, "median": {}}
+    for cat in categories + ["Overall"]:
+        if cat == "Overall":
+            group = companies_data
+        else:
+            group = [c for c in companies_data if c.get("category") == cat]
 
-        for m in metrics:
-            values = [c[m] for c in cat_companies if c.get(m) is not None and isinstance(c.get(m), (int, float)) and c[m] > 0]
+        mean_vals = {}
+        median_vals = {}
+        for metric in metrics:
+            values = [c[metric] for c in group if c.get(metric) is not None and c[metric] > 0]
             if values:
-                cat_summary["mean"][m] = round(statistics.mean(values), 4)
-                cat_summary["median"][m] = round(statistics.median(values), 4)
+                mean_vals[metric] = round(statistics.mean(values), 6)
+                median_vals[metric] = round(statistics.median(values), 6)
 
-        summaries[cat] = cat_summary
-
-    # Overall
-    all_vals = {}
-    for m in metrics:
-        values = [c[m] for c in companies_data if c.get(m) is not None and isinstance(c.get(m), (int, float)) and c[m] > 0]
-        if values:
-            all_vals[m] = {
-                "mean": round(statistics.mean(values), 4),
-                "median": round(statistics.median(values), 4),
-            }
-    summaries["Overall"] = all_vals
+        summaries[cat] = {"mean": mean_vals, "median": median_vals}
 
     return summaries
 
 
-# âââ Main âââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
+def build_price_series(companies):
+    """Build indexed price series for each category."""
+    import yfinance as yf
+
+    print("\nFetching price history for indexed series...")
+    series = {}
+
+    for cat in CATEGORIES:
+        cat_companies = [c for c in companies if c["category"] == cat]
+        cat_prices = {}
+
+        for comp in cat_companies:
+            ticker = comp["ticker"]
+            yf_ticker = YFINANCE_TICKER_OVERRIDES.get(ticker, ticker)
+            try:
+                tk = yf.Ticker(yf_ticker)
+                hist = tk.history(period="1y")
+                if hist is not None and not hist.empty:
+                    first_close = hist["Close"].iloc[0]
+                    for date, row in hist.iterrows():
+                        date_str = date.strftime("%Y-%m-%d")
+                        indexed = (row["Close"] / first_close) * 100
+                        if date_str not in cat_prices:
+                            cat_prices[date_str] = []
+                        cat_prices[date_str].append(indexed)
+                time.sleep(0.3)
+            except Exception as e:
+                print(f"  [WARN] Price history error for {ticker}: {e}")
+
+        # Average the indexed prices for each date
+        series[cat] = {}
+        for date_str in sorted(cat_prices.keys()):
+            vals = cat_prices[date_str]
+            series[cat][date_str] = round(statistics.mean(vals), 2)
+
+    return series
+
+
+# ---------------------------------------------------------------------------
+#  Main
+# ---------------------------------------------------------------------
 
 def main():
-    parser = argparse.ArgumentParser(description="CPMA Public Comps Data Feed (Perplexity)")
-    parser.add_argument("--api-key", default=None, help="Perplexity API key (default: env var)")
-    parser.add_argument("--output", default=None, help="Output JSON path")
-    parser.add_argument("--batch-size", type=int, default=5, help="Companies per API call")
+    parser = argparse.ArgumentParser(description="CPMA Public Comps Data Feed")
+    parser.add_argument("--api-key", default=os.environ.get("PERPLEXITY_API_KEY", ""),
+                        help="Perplexity API key for forward estimates")
+    parser.add_argument("--output", default="cpma_comps_data.json",
+                        help="Output JSON file path")
+    parser.add_argument("--no-perplexity", action="store_true",
+                        help="Skip Perplexity API calls (yfinance only)")
+    parser.add_argument("--no-price-series", action="store_true",
+                        help="Skip building price series (faster for testing)")
     args = parser.parse_args()
 
-    api_key = args.api_key or os.environ.get("PERPLEXITY_API_KEY", "")
-    if not api_key:
-        print("ERROR: No Perplexity API key. Set PERPLEXITY_API_KEY env var or use --api-key.")
-        sys.exit(1)
-
-    output_path = args.output or str(Path(__file__).parent / "cpma_comps_data.json")
-    batch_size = args.batch_size
+    output_path = Path(args.output)
+    api_key = args.api_key if not args.no_perplexity else ""
 
     print("=" * 60)
-    print("CPMA Public Comps Data Feed (Perplexity Sonar API)")
+    print("CPMA Public Comps Data Feed (yfinance + Perplexity)")
     print(f"Date: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
     print(f"Companies: {len(COMPANIES)}")
-    print(f"Batch size: {batch_size}")
+    print(f"Perplexity estimates: {'enabled' if api_key else 'disabled'}")
     print("=" * 60)
 
-    # ââ Fetch company data in batches ââ
+    # Step 1: Fetch yfinance data for all companies
+    print("\n--- Step 1: Fetching yfinance data ---")
+    yf_data = {}
+    for i, comp in enumerate(COMPANIES):
+        ticker = comp["ticker"]
+        print(f"\n  [{i+1}/{len(COMPANIES)}] {comp['display_ticker']} ({comp['name']})")
+        yf_data[ticker] = fetch_yfinance_data(ticker)
+        time.sleep(0.5)  # Rate limiting
+
+    # Step 2: Identify companies needing forward estimates
+    companies_needing_estimates = []
+    for comp in COMPANIES:
+        d = yf_data.get(comp["ticker"])
+        if d and not d.get("revenue_2025e"):
+            companies_needing_estimates.append(comp)
+
+    print(f"\n--- Step 2: Forward estimates needed for {len(companies_needing_estimates)}/{len(COMPANIES)} companies ---")
+
+    # Step 3: Fetch Perplexity estimates if needed
+    perplexity_estimates = {}
+    if api_key and companies_needing_estimates:
+        perplexity_estimates = fetch_perplexity_estimates(companies_needing_estimates, api_key)
+        print(f"  Got Perplexity estimates for {len(perplexity_estimates)} companies")
+    elif not api_key:
+        print("  Perplexity disabled, skipping forward estimates")
+
+    # Step 4: Process all companies
+    print("\n--- Step 3: Processing companies ---")
     companies_data = []
-    failed_companies = []
-    total_batches = (len(COMPANIES) + batch_size - 1) // batch_size
+    for comp in COMPANIES:
+        raw = yf_data.get(comp["ticker"])
+        processed = process_company(raw, comp, perplexity_estimates)
+        valid, issues = validate_company(processed)
+        if issues:
+            print(f"  [WARN] {comp['display_ticker']}: {', '.join(issues)}")
+        companies_data.append(processed)
 
-    for i in range(0, len(COMPANIES), batch_size):
-        batch = COMPANIES[i:i + batch_size]
-        batch_num = i // batch_size + 1
-        tickers = ", ".join(c["display_ticker"] for c in batch)
-        print(f"\n[Batch {batch_num}/{total_batches}] {tickers}")
-
-        raw_data = fetch_batch(batch, api_key)
-
-        if raw_data is None:
-            print(f"  [WARN] Batch failed. Retrying companies individually...")
-            for company in batch:
-                print(f"  Retrying {company['display_ticker']}...")
-                individual = fetch_batch([company], api_key)
-                if individual:
-                    raw_data = (raw_data or []) + individual
-                else:
-                    failed_companies.append(company)
-                time.sleep(2)
-
-        if raw_data:
-            matched_tickers = set()
-            for raw_item in raw_data:
-                company_meta = match_response_to_company(raw_item, batch)
-                if company_meta is None:
-                    print(f"  [WARN] Could not match response item: {raw_item.get('ticker_id', 'unknown')}")
-                    continue
-
-                matched_tickers.add(company_meta["ticker"])
-                processed = process_company(raw_item, company_meta)
-                valid, issues = validate_company(processed)
-
-                if not valid:
-                    print(f"  [WARN] {company_meta['display_ticker']}: {', '.join(issues)}")
-
-                companies_data.append(processed)
-
-            # Check for companies not in response
-            for c in batch:
-                if c["ticker"] not in matched_tickers:
-                    print(f"  [WARN] No data returned for {c['display_ticker']}")
-                    # Add stub entry
-                    companies_data.append({
-                        "ticker": c["display_ticker"],
-                        "fmp_ticker": c["ticker"],
-                        "name": c["name"],
-                        "category": c["category"],
-                    })
-        else:
-            # Complete batch failure
-            for c in batch:
-                print(f"  [ERROR] No data for {c['display_ticker']}")
-                companies_data.append({
-                    "ticker": c["display_ticker"],
-                    "fmp_ticker": c["ticker"],
-                    "name": c["name"],
-                    "category": c["category"],
-                })
-
-        # Rate limiting between batches
-        if batch_num < total_batches:
-            time.sleep(2)
-
-    # ââ Data quality gate ââ
+    # Step 5: Data quality check
     has_price = sum(1 for c in companies_data if c.get("share_price"))
     has_ev = sum(1 for c in companies_data if c.get("enterprise_value"))
-    has_revenue = sum(1 for c in companies_data if c.get("revenue_2024"))
+    has_revenue = sum(1 for c in companies_data if c.get("revenue_2024") or c.get("revenue_2025e"))
 
-    print(f"\n{'=' * 60}")
+    print(f"\n{'='*60}")
     print("Data Quality Report:")
-    print(f"  Companies with price:     {has_price}/{len(companies_data)}")
-    print(f"  Companies with EV:        {has_ev}/{len(companies_data)}")
-    print(f"  Companies with revenue:   {has_revenue}/{len(companies_data)}")
+    print(f"  Companies with price:    {has_price}/{len(COMPANIES)}")
+    print(f"  Companies with EV:       {has_ev}/{len(COMPANIES)}")
+    print(f"  Companies with revenue:  {has_revenue}/{len(COMPANIES)}")
 
-    # Abort if data quality is too low
+    # Quality gates
     MIN_PRICE_THRESHOLD = 30
-    MIN_REVENUE_THRESHOLD = 25
+    MIN_REVENUE_THRESHOLD = 15  # Lower threshold since forward estimates may be limited
 
     if has_price < MIN_PRICE_THRESHOLD:
         print(f"\n[ABORT] Only {has_price} companies have price data (need {MIN_PRICE_THRESHOLD}+).")
@@ -551,20 +586,28 @@ def main():
         print("Aborting to prevent dashboard corruption.")
         sys.exit(1)
 
-    # ââ Compute category summaries ââ
+    # Step 6: Compute category summaries
     print("\nComputing category summaries...")
     summaries = compute_category_averages(companies_data, CATEGORIES)
 
-    # ââ Build output ââ
+    # Step 7: Build price series (optional)
+    price_series = {}
+    if not args.no_price_series:
+        price_series = build_price_series(COMPANIES)
+    else:
+        print("\nSkipping price series (--no-price-series)")
+
+    # Step 8: Build output
     output = {
         "metadata": {
             "generated_at": datetime.now().isoformat(),
-            "source": "Perplexity Sonar API (Fiscal.ai/Morningstar)",
+            "source": "yfinance (Yahoo Finance) + Perplexity Sonar API",
             "num_companies": len(companies_data),
             "categories": CATEGORIES,
         },
         "companies": companies_data,
         "category_summaries": summaries,
+        "category_price_series": price_series,
     }
 
     with open(output_path, "w") as f:
@@ -577,8 +620,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
- Claude is active in this tab group  
-Open chat
- 
-Dismiss
