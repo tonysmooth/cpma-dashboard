@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2026-10-02T09:10:06.107512",
+    "generated_at": "2026-10-05T09:48:19.570837",
     "source": "yfinance (Yahoo Finance) + Perplexity Sonar API",
     "num_companies": 39,
     "categories": [
@@ -23,44 +23,44 @@
       "fmp_ticker": "ACS.MC",
       "name": "ACS, Actividades de Construccion y Servicios",
       "category": "Construction Contractors",
-      "share_price": 95.05,
-      "market_cap": 24792.143872,
-      "enterprise_value": 25252.937728,
+      "share_price": 93.95,
+      "market_cap": 24505.227264,
+      "enterprise_value": 26037.47328,
       "year_high": 141.2,
       "year_low": 69.35,
-      "pct_52wk": 67.32,
+      "pct_52wk": 66.54,
       "revenue_2025": 49847.681,
-      "revenue_2026e": null,
-      "revenue_2027e": null,
+      "revenue_2026e": 65500,
+      "revenue_2027e": 71700,
       "rev_growth_2025": 0.19730832087530298,
-      "rev_growth_2026": null,
+      "rev_growth_2026": 0.31400295231387,
       "ebitda_2025": 3387.885,
-      "ebitda_2026e": null,
-      "ebitda_2027e": null,
+      "ebitda_2026e": 2426,
+      "ebitda_2027e": 2652,
       "ebitda_margin_2025": 0.06796474644427292,
-      "ebitda_margin_2026": null,
-      "ebitda_margin_2027": null,
-      "ev_rev_2025": 0.5066020569342032,
-      "ev_rev_2026": null,
-      "ev_rev_2027": null,
-      "ev_ebitda_2025": 7.453894606221875,
-      "ev_ebitda_2026": null,
-      "ev_ebitda_2027": null,
-      "pe_2025": 26.08765691436749,
-      "pe_2026": null,
-      "pe_2027": null
+      "ebitda_margin_2026": 0.0370381679389313,
+      "ebitda_margin_2027": 0.03698744769874477,
+      "ev_rev_2025": 0.5223407139040229,
+      "ev_rev_2026": 0.3975186760305343,
+      "ev_rev_2027": 0.36314467615062757,
+      "ev_ebitda_2025": 7.6854654983861606,
+      "ev_ebitda_2026": 10.732676537510304,
+      "ev_ebitda_2027": 9.818051764705881,
+      "pe_2025": 25.785747484058337,
+      "pe_2026": 19.890606545454546,
+      "pe_2027": 17.453865572649573
     },
     {
       "ticker": "SKA.B",
       "fmp_ticker": "SKA-B.ST",
       "name": "Skanska",
       "category": "Construction Contractors",
-      "share_price": 278.3,
-      "market_cap": 115238.576128,
-      "enterprise_value": 113072.037888,
+      "share_price": 262.8,
+      "market_cap": 108820.324352,
+      "enterprise_value": 114935.27552,
       "year_high": 286.8,
       "year_low": 233.0,
-      "pct_52wk": 97.04,
+      "pct_52wk": 91.63,
       "revenue_2025": 176658.0,
       "revenue_2026e": null,
       "revenue_2027e": null,
@@ -72,13 +72,13 @@
       "ebitda_margin_2025": 0.06439561186020447,
       "ebitda_margin_2026": null,
       "ebitda_margin_2027": null,
-      "ev_rev_2025": 0.6400618023978535,
+      "ev_rev_2025": 0.6506089479106522,
       "ev_rev_2026": null,
       "ev_rev_2027": null,
-      "ev_ebitda_2025": 9.939525130801687,
+      "ev_ebitda_2025": 10.103311842475387,
       "ev_ebitda_2026": null,
       "ev_ebitda_2027": null,
-      "pe_2025": 20.21020275833041,
+      "pe_2025": 19.084588627148367,
       "pe_2026": null,
       "pe_2027": null
     },
@@ -87,12 +87,12 @@
       "fmp_ticker": "AGX",
       "name": "Argan",
       "category": "Construction Contractors",
-      "share_price": 379.58,
-      "market_cap": 5325.447168,
-      "enterprise_value": 4307.916288,
+      "share_price": 383.83,
+      "market_cap": 5385.074176,
+      "enterprise_value": 4367.543296,
       "year_high": 805.75,
       "year_low": 255.6,
-      "pct_52wk": 47.11,
+      "pct_52wk": 47.64,
       "revenue_2025": 874.179,
       "revenue_2026e": null,
       "revenue_2027e": null,
@@ -104,13 +104,13 @@
       "ebitda_margin_2025": 0.10736359487015817,
       "ebitda_margin_2026": null,
       "ebitda_margin_2027": null,
-      "ev_rev_2025": 4.927956731973658,
+      "ev_rev_2025": 4.996165883646255,
       "ev_rev_2026": null,
       "ev_rev_2027": null,
-      "ev_ebitda_2025": 45.8996994086623,
+      "ev_ebitda_2025": 46.53500928027276,
       "ev_ebitda_2026": null,
       "ev_ebitda_2027": null,
-      "pe_2025": 62.3158142267052,
+      "pe_2025": 63.01354071543079,
       "pe_2026": null,
       "pe_2027": null
     },
@@ -119,12 +119,12 @@
       "fmp_ticker": "TPC",
       "name": "Tutor Perini",
       "category": "Construction Contractors",
-      "share_price": 83.26,
-      "market_cap": 4380.70016,
-      "enterprise_value": 3972.41472,
+      "share_price": 86.73,
+      "market_cap": 4563.273216,
+      "enterprise_value": 4154.829568,
       "year_high": 102.3,
       "year_low": 57.9,
-      "pct_52wk": 81.39,
+      "pct_52wk": 84.78,
       "revenue_2025": 5543.039,
       "revenue_2026e": null,
       "revenue_2027e": null,
@@ -136,13 +136,13 @@
       "ebitda_margin_2025": 0.054976160189383484,
       "ebitda_margin_2026": null,
       "ebitda_margin_2027": null,
-      "ev_rev_2025": 0.7166492460182944,
+      "ev_rev_2025": 0.7495580615615369,
       "ev_rev_2026": null,
       "ev_rev_2027": null,
-      "ev_ebitda_2025": 13.035636602293796,
+      "ev_ebitda_2025": 13.634238167588233,
       "ev_ebitda_2026": null,
       "ev_ebitda_2027": null,
-      "pe_2025": 54.45922625559424,
+      "pe_2025": 56.728906215813026,
       "pe_2026": null,
       "pe_2027": null
     },
@@ -151,12 +151,12 @@
       "fmp_ticker": "ARE.TO",
       "name": "Aecon Group",
       "category": "Construction Contractors",
-      "share_price": 56.82,
-      "market_cap": 3893.847808,
-      "enterprise_value": 4080.187904,
-      "year_high": 57.72,
+      "share_price": 59.17,
+      "market_cap": 4054.892032,
+      "enterprise_value": 4241.232128,
+      "year_high": 59.96,
       "year_low": 23.93,
-      "pct_52wk": 98.44,
+      "pct_52wk": 98.68,
       "revenue_2025": 5434.678,
       "revenue_2026e": null,
       "revenue_2027e": null,
@@ -168,13 +168,13 @@
       "ebitda_margin_2025": 0.031216200849433953,
       "ebitda_margin_2026": null,
       "ebitda_margin_2027": null,
-      "ev_rev_2025": 0.7507690251381959,
+      "ev_rev_2025": 0.7804017327245515,
       "ev_rev_2026": null,
       "ev_rev_2027": null,
-      "ev_ebitda_2025": 24.05062130268199,
+      "ev_ebitda_2025": 24.99989465369879,
       "ev_ebitda_2026": null,
       "ev_ebitda_2027": null,
-      "pe_2025": 256.8162384909642,
+      "pe_2025": 267.43780714945257,
       "pe_2026": null,
       "pe_2027": null
     },
@@ -183,30 +183,30 @@
       "fmp_ticker": "BWMN",
       "name": "Bowman Consulting",
       "category": "Construction Contractors",
-      "share_price": 42.59,
-      "market_cap": 738.24448,
-      "enterprise_value": 1012.414464,
+      "share_price": 42.6,
+      "market_cap": 738.417792,
+      "enterprise_value": 1012.58784,
       "year_high": 45.83,
       "year_low": 25.07,
-      "pct_52wk": 92.93,
+      "pct_52wk": 92.95,
       "revenue_2025": 490.017,
-      "revenue_2026e": 530,
-      "revenue_2027e": null,
+      "revenue_2026e": 594.19,
+      "revenue_2027e": 701.28,
       "rev_growth_2025": 0.14875376262413137,
-      "rev_growth_2026": 0.08159512833228236,
+      "rev_growth_2026": 0.21259058359199795,
       "ebitda_2025": 46.479,
-      "ebitda_2026e": 92.2,
+      "ebitda_2026e": null,
       "ebitda_2027e": null,
       "ebitda_margin_2025": 0.09485181126369086,
-      "ebitda_margin_2026": 0.1739622641509434,
+      "ebitda_margin_2026": null,
       "ebitda_margin_2027": null,
-      "ev_rev_2025": 2.0660802870104504,
-      "ev_rev_2026": 1.9102159698113206,
-      "ev_rev_2027": null,
-      "ev_ebitda_2025": 21.782191183114954,
-      "ev_ebitda_2026": 10.98063409978308,
+      "ev_rev_2025": 2.0664341033066203,
+      "ev_rev_2026": 1.704148235412915,
+      "ev_rev_2027": 1.4439137577002055,
+      "ev_ebitda_2025": 21.785921383850773,
+      "ev_ebitda_2026": null,
       "ev_ebitda_2027": null,
-      "pe_2025": 57.45540353334889,
+      "pe_2025": 57.46889189820219,
       "pe_2026": null,
       "pe_2027": null
     },
@@ -215,30 +215,30 @@
       "fmp_ticker": "DG.PA",
       "name": "VINCI",
       "category": "Diversified Engineering and Construction",
-      "share_price": 106.8,
-      "market_cap": 58991.857664,
-      "enterprise_value": 87954.481152,
+      "share_price": 105.3,
+      "market_cap": 58163.32288,
+      "enterprise_value": 88619.45856,
       "year_high": 143.15,
-      "year_low": 105.8,
-      "pct_52wk": 74.61,
+      "year_low": 104.25,
+      "pct_52wk": 73.56,
       "revenue_2025": 75702.0,
-      "revenue_2026e": 86000.6,
+      "revenue_2026e": null,
       "revenue_2027e": null,
       "rev_growth_2025": 0.04031992084432718,
-      "rev_growth_2026": 0.13604131991228774,
+      "rev_growth_2026": null,
       "ebitda_2025": 13653.0,
-      "ebitda_2026e": 15210.4,
+      "ebitda_2026e": null,
       "ebitda_2027e": null,
       "ebitda_margin_2025": 0.18035190615835778,
-      "ebitda_margin_2026": 0.17686388234500688,
+      "ebitda_margin_2026": null,
       "ebitda_margin_2027": null,
-      "ev_rev_2025": 1.1618514854561306,
-      "ev_rev_2026": 1.022719389771699,
+      "ev_rev_2025": 1.1706356312911153,
+      "ev_rev_2026": null,
       "ev_rev_2027": null,
-      "ev_ebitda_2025": 6.442135878707976,
-      "ev_ebitda_2026": 5.782522560353442,
+      "ev_ebitda_2025": 6.490841467809273,
+      "ev_ebitda_2026": null,
       "ev_ebitda_2027": null,
-      "pe_2025": 12.031788224352438,
+      "pe_2025": 11.862802953293901,
       "pe_2026": null,
       "pe_2027": null
     },
@@ -247,12 +247,12 @@
       "fmp_ticker": "HOT.DE",
       "name": "HOCHTIEF",
       "category": "Diversified Engineering and Construction",
-      "share_price": 408.0,
-      "market_cap": 30700.345344,
-      "enterprise_value": 30869.069824,
+      "share_price": 401.4,
+      "market_cap": 30203.721728,
+      "enterprise_value": 31711.803392,
       "year_high": 554.0,
       "year_low": 242.4,
-      "pct_52wk": 73.65,
+      "pct_52wk": 72.45,
       "revenue_2025": 38236.464,
       "revenue_2026e": null,
       "revenue_2027e": null,
@@ -264,13 +264,13 @@
       "ebitda_margin_2025": 0.06685785589378766,
       "ebitda_margin_2026": null,
       "ebitda_margin_2027": null,
-      "ev_rev_2025": 0.8073202015751247,
+      "ev_rev_2025": 0.8293602513035725,
       "ev_rev_2026": null,
       "ev_rev_2027": null,
-      "ev_ebitda_2025": 12.075173377645509,
+      "ev_ebitda_2025": 12.404828725305196,
       "ev_ebitda_2026": null,
       "ev_ebitda_2027": null,
-      "pe_2025": 34.02329887524894,
+      "pe_2025": 33.472921557784105,
       "pe_2026": null,
       "pe_2027": null
     },
@@ -279,12 +279,12 @@
       "fmp_ticker": "EN.PA",
       "name": "Bouygues",
       "category": "Diversified Engineering and Construction",
-      "share_price": 41.27,
-      "market_cap": 15775.751168,
-      "enterprise_value": 27377.074176,
+      "share_price": 40.54,
+      "market_cap": 15496.704,
+      "enterprise_value": 27311.4624,
       "year_high": 53.48,
       "year_low": 36.72,
-      "pct_52wk": 77.17,
+      "pct_52wk": 75.8,
       "revenue_2025": 56877.0,
       "revenue_2026e": null,
       "revenue_2027e": null,
@@ -296,13 +296,13 @@
       "ebitda_margin_2025": 0.10123600049229038,
       "ebitda_margin_2026": null,
       "ebitda_margin_2027": null,
-      "ev_rev_2025": 0.4813382241679413,
+      "ev_rev_2025": 0.48018465108919245,
       "ev_rev_2026": null,
       "ev_rev_2027": null,
-      "ev_ebitda_2025": 4.754615174713442,
+      "ev_ebitda_2025": 4.743220284821119,
       "ev_ebitda_2026": null,
       "ev_ebitda_2027": null,
-      "pe_2025": 13.862698741652022,
+      "pe_2025": 13.617490333919156,
       "pe_2026": null,
       "pe_2027": null
     },
@@ -311,12 +311,12 @@
       "fmp_ticker": "J",
       "name": "Jacobs Solutions",
       "category": "Diversified Engineering and Construction",
-      "share_price": 139.79,
-      "market_cap": 16360.825856,
-      "enterprise_value": 19222.53824,
+      "share_price": 138.06,
+      "market_cap": 16158.350336,
+      "enterprise_value": 19020.060672,
       "year_high": 168.44,
       "year_low": 105.68,
-      "pct_52wk": 82.99,
+      "pct_52wk": 81.96,
       "revenue_2025": 12029.783,
       "revenue_2026e": null,
       "revenue_2027e": null,
@@ -328,13 +328,13 @@
       "ebitda_margin_2025": 0.07704552941644917,
       "ebitda_margin_2026": null,
       "ebitda_margin_2027": null,
-      "ev_rev_2025": 1.597912301493718,
+      "ev_rev_2025": 1.5810809448516236,
       "ev_rev_2026": null,
       "ev_rev_2027": null,
-      "ev_ebitda_2025": 20.73984452565219,
+      "ev_ebitda_2025": 20.52138465173638,
       "ev_ebitda_2026": null,
       "ev_ebitda_2027": null,
-      "pe_2025": 56.54611198053474,
+      "pe_2025": 55.84631824591478,
       "pe_2026": null,
       "pe_2027": null
     },
@@ -343,96 +343,96 @@
       "fmp_ticker": "1802.T",
       "name": "Obayashi Corporation",
       "category": "Diversified Engineering and Construction",
-      "share_price": 2965.0,
-      "market_cap": 2038204.727296,
-      "enterprise_value": 1993625.042944,
+      "share_price": 2948.5,
+      "market_cap": 2026862.280704,
+      "enterprise_value": 1981938.925568,
       "year_high": 4439.0,
       "year_low": 2300.0,
-      "pct_52wk": 66.79,
+      "pct_52wk": 66.42,
       "revenue_2025": 2590764.0,
-      "revenue_2026e": 16031.3,
-      "revenue_2027e": 16660.4,
+      "revenue_2026e": 16132.0,
+      "revenue_2027e": 16825.0,
       "rev_growth_2025": 0.1142294601408418,
-      "rev_growth_2026": -0.9938121341812686,
+      "rev_growth_2026": -0.9937732653379466,
       "ebitda_2025": 246644.0,
-      "ebitda_2026e": 987.6,
-      "ebitda_2027e": 1112.4,
+      "ebitda_2026e": null,
+      "ebitda_2027e": null,
       "ebitda_margin_2025": 0.09520126109518273,
-      "ebitda_margin_2026": 0.061604486223824646,
-      "ebitda_margin_2027": 0.06676910518354902,
-      "ev_rev_2025": 0.7695124075153121,
-      "ev_rev_2026": 124.35828928059485,
-      "ev_rev_2027": 119.6624956750138,
-      "ev_ebitda_2025": 8.08300645036571,
-      "ev_ebitda_2026": 2018.6563820818146,
-      "ev_ebitda_2027": 1792.183605667026,
-      "pe_2025": 14.022253980227719,
-      "pe_2026": 26164.37390623877,
-      "pe_2027": 15290.358044231058
+      "ebitda_margin_2026": null,
+      "ebitda_margin_2027": null,
+      "ev_rev_2025": 0.7650017236490857,
+      "ev_rev_2026": 122.85760758542028,
+      "ev_rev_2027": 117.79726154936107,
+      "ev_ebitda_2025": 8.035625944957104,
+      "ev_ebitda_2026": null,
+      "ev_ebitda_2027": null,
+      "pe_2025": 13.944221256262255,
+      "pe_2026": 1991.0238513791749,
+      "pe_2027": null
     },
     {
       "ticker": "ACM",
       "fmp_ticker": "ACM",
       "name": "AECOM",
       "category": "Diversified Engineering and Construction",
-      "share_price": 59.6,
-      "market_cap": 7670.306816,
-      "enterprise_value": 10185.416704,
+      "share_price": 59.66,
+      "market_cap": 7678.0288,
+      "enterprise_value": 10193.138688,
       "year_high": 135.52,
       "year_low": 58.08,
-      "pct_52wk": 43.98,
+      "pct_52wk": 44.02,
       "revenue_2025": 16139.622,
-      "revenue_2026e": 16600.0,
-      "revenue_2027e": 17300.0,
+      "revenue_2026e": 7300.0,
+      "revenue_2027e": null,
       "rev_growth_2025": 0.0021187795621097714,
-      "rev_growth_2026": 0.028524707703811193,
+      "rev_growth_2026": -0.5476969658892878,
       "ebitda_2025": 1275.79,
-      "ebitda_2026e": 1040.0,
-      "ebitda_2027e": 1120.0,
+      "ebitda_2026e": 950.0,
+      "ebitda_2027e": null,
       "ebitda_margin_2025": 0.07904708053261718,
-      "ebitda_margin_2026": 0.06265060240963856,
-      "ebitda_margin_2027": 0.06473988439306358,
-      "ev_rev_2025": 0.6310814902604286,
-      "ev_rev_2026": 0.6135793195180722,
-      "ev_rev_2027": 0.5887524106358382,
-      "ev_ebitda_2025": 7.983615410059649,
-      "ev_ebitda_2026": 9.793669907692307,
-      "ev_ebitda_2027": 9.094122057142856,
-      "pe_2025": 13.653723411905856,
-      "pe_2026": 19.667453374358974,
-      "pe_2027": 17.43251549090909
+      "ebitda_margin_2026": 0.13013698630136986,
+      "ebitda_margin_2027": null,
+      "ev_rev_2025": 0.631559939136121,
+      "ev_rev_2026": 1.396320368219178,
+      "ev_rev_2027": null,
+      "ev_ebitda_2025": 7.989668117793681,
+      "ev_ebitda_2026": 10.729619671578947,
+      "ev_ebitda_2027": null,
+      "pe_2025": 13.667469124594588,
+      "pe_2026": null,
+      "pe_2027": null
     },
     {
       "ticker": "STN",
       "fmp_ticker": "STN",
       "name": "Stantec",
       "category": "Diversified Engineering and Construction",
-      "share_price": 67.14,
-      "market_cap": 7546.515968,
-      "enterprise_value": 9917.616128,
+      "share_price": 67.45,
+      "market_cap": 7581.359616,
+      "enterprise_value": 9952.459776,
       "year_high": 114.52,
       "year_low": 66.26,
-      "pct_52wk": 58.63,
+      "pct_52wk": 58.9,
       "revenue_2025": 8144.2,
-      "revenue_2026e": 5360.0,
-      "revenue_2027e": 5680.0,
+      "revenue_2026e": null,
+      "revenue_2027e": null,
       "rev_growth_2025": 0.08589333333333331,
-      "rev_growth_2026": -0.341862920851649,
+      "rev_growth_2026": null,
       "ebitda_2025": 1096.8,
-      "ebitda_2026e": 620.0,
-      "ebitda_2027e": 670.0,
+      "ebitda_2026e": null,
+      "ebitda_2027e": null,
       "ebitda_margin_2025": 0.13467252768841628,
-      "ebitda_margin_2026": 0.11567164179104478,
-      "ebitda_margin_2027": 0.11795774647887323,
-      "ev_rev_2025": 1.217752035559048,
-      "ev_rev_2026": 1.8503015164179104,
-      "ev_rev_2027": 1.7460591774647887,
-      "ev_ebitda_2025": 9.042319591539023,
-      "ev_ebitda_2026": 15.99615504516129,
-      "ev_ebitda_2027": 14.802412131343283,
-      "pe_2025": 15.74158524822695,
-      "pe_2026": 27.95005914074074,
-      "pe_2027": 25.155053226666666
+      "ebitda_margin_2026": null,
+      "ebitda_margin_2027": null,
+      "ev_rev_2025": 1.222030374499644,
+      "ev_rev_2026": null,
+      "ev_rev_2027": null,
+      "ev_ebitda_2025": 9.074088052516412,
+      "ev_ebitda_2026": null,
+      "ev_ebitda_2027": null,
+      "pe_2025": 15.814267033792241,
+      "pe_2026": null,
+      "pe_2027": null
     },
     {
       "ticker": "ATRL",
@@ -444,17 +444,17 @@
       "enterprise_value": null,
       "year_high": null,
       "year_low": null,
-      "revenue_2025": 2425.89,
-      "revenue_2026e": 1800.0,
-      "revenue_2027e": 1900.0,
+      "revenue_2025": 2420.87,
+      "revenue_2026e": null,
+      "revenue_2027e": null,
       "rev_growth_2025": null,
-      "rev_growth_2026": -0.25800427884199195,
+      "rev_growth_2026": null,
       "ebitda_2025": null,
-      "ebitda_2026e": 210.0,
-      "ebitda_2027e": 225.0,
+      "ebitda_2026e": null,
+      "ebitda_2027e": null,
       "ebitda_margin_2025": null,
-      "ebitda_margin_2026": 0.11666666666666667,
-      "ebitda_margin_2027": 0.11842105263157894,
+      "ebitda_margin_2026": null,
+      "ebitda_margin_2027": null,
       "ev_rev_2025": null,
       "ev_rev_2026": null,
       "ev_rev_2027": null,
@@ -470,94 +470,94 @@
       "fmp_ticker": "KBR",
       "name": "KBR Inc",
       "category": "Diversified Engineering and Construction",
-      "share_price": 35.05,
-      "market_cap": 4418.674688,
-      "enterprise_value": 6899.674624,
+      "share_price": 34.24,
+      "market_cap": 4316.559872,
+      "enterprise_value": 6797.559808,
       "year_high": 48.13,
       "year_low": 29.94,
-      "pct_52wk": 72.82,
+      "pct_52wk": 71.14,
       "revenue_2025": 7786.0,
-      "revenue_2026e": 8130.0,
-      "revenue_2027e": 8500.0,
+      "revenue_2026e": null,
+      "revenue_2027e": null,
       "rev_growth_2025": 0.009857328145265888,
-      "rev_growth_2026": 0.04418186488569227,
+      "rev_growth_2026": null,
       "ebitda_2025": 941.0,
-      "ebitda_2026e": 1010.0,
-      "ebitda_2027e": 1090.0,
+      "ebitda_2026e": null,
+      "ebitda_2027e": null,
       "ebitda_margin_2025": 0.12085795016696635,
-      "ebitda_margin_2026": 0.12423124231242312,
-      "ebitda_margin_2027": 0.12823529411764706,
-      "ev_rev_2025": 0.8861642209093245,
-      "ev_rev_2026": 0.8486684654366544,
-      "ev_rev_2027": 0.8117264263529412,
-      "ev_ebitda_2025": 7.332279090329437,
-      "ev_ebitda_2026": 6.831361013861386,
-      "ev_ebitda_2027": 6.329976719266055,
-      "pe_2025": 10.647408886746987,
-      "pe_2026": 14.253789316129032,
-      "pe_2027": 12.624784822857142
+      "ebitda_margin_2026": null,
+      "ebitda_margin_2027": null,
+      "ev_rev_2025": 0.8730490377600822,
+      "ev_rev_2026": null,
+      "ev_rev_2027": null,
+      "ev_ebitda_2025": 7.223761751328374,
+      "ev_ebitda_2026": null,
+      "ev_ebitda_2027": null,
+      "pe_2025": 10.401349089156627,
+      "pe_2026": null,
+      "pe_2027": null
     },
     {
       "ticker": "ARCAD",
       "fmp_ticker": "ARCAD.PA",
       "name": "Arcadis",
       "category": "Diversified Engineering and Construction",
-      "share_price": 40.08,
-      "market_cap": 3415.064576,
-      "enterprise_value": 4418.75712,
+      "share_price": 39.78,
+      "market_cap": 3389.502464,
+      "enterprise_value": 4420.461568,
       "year_high": 51.25,
       "year_low": 25.88,
-      "pct_52wk": 78.2,
+      "pct_52wk": 77.62,
       "revenue_2025": 4875.0,
-      "revenue_2026e": null,
-      "revenue_2027e": null,
+      "revenue_2026e": 4440.0,
+      "revenue_2027e": 4662.0,
       "rev_growth_2025": -0.024024024024024024,
-      "rev_growth_2026": null,
+      "rev_growth_2026": -0.08923076923076922,
       "ebitda_2025": 499.0,
-      "ebitda_2026e": null,
-      "ebitda_2027e": null,
+      "ebitda_2026e": 646.0,
+      "ebitda_2027e": 690.0,
       "ebitda_margin_2025": 0.10235897435897436,
-      "ebitda_margin_2026": null,
-      "ebitda_margin_2027": null,
-      "ev_rev_2025": 0.906411716923077,
-      "ev_rev_2026": null,
-      "ev_rev_2027": null,
-      "ev_ebitda_2025": 8.855224689378758,
-      "ev_ebitda_2026": null,
-      "ev_ebitda_2027": null,
-      "pe_2025": 16.418579692307695,
-      "pe_2026": null,
-      "pe_2027": null
+      "ebitda_margin_2026": 0.1454954954954955,
+      "ebitda_margin_2027": 0.148005148005148,
+      "ev_rev_2025": 0.9067613472820513,
+      "ev_rev_2026": 0.9955994522522522,
+      "ev_rev_2027": 0.9481899545259544,
+      "ev_ebitda_2025": 8.858640416833667,
+      "ev_ebitda_2026": 6.842819764705882,
+      "ev_ebitda_2027": 6.406466040579709,
+      "pe_2025": 16.295684923076923,
+      "pe_2026": 15.064455395555557,
+      "pe_2027": 13.450406603174605
     },
     {
       "ticker": "WBD",
       "fmp_ticker": "WBD",
       "name": "Webuild",
       "category": "Diversified Engineering and Construction",
-      "share_price": 1.949,
-      "market_cap": 1927.16928,
-      "enterprise_value": 3005.417216,
+      "share_price": 1.915,
+      "market_cap": 1893.55008,
+      "enterprise_value": 3011.350016,
       "year_high": 3.68,
       "year_low": 1.86,
-      "pct_52wk": 52.96,
+      "pct_52wk": 52.04,
       "revenue_2025": 12636.199,
-      "revenue_2026e": 15996.0,
-      "revenue_2027e": 16331.0,
+      "revenue_2026e": 16050.0,
+      "revenue_2027e": 16385.0,
       "rev_growth_2025": 0.1459085108574845,
-      "rev_growth_2026": 0.26588699655648024,
+      "rev_growth_2026": 0.2701604335291015,
       "ebitda_2025": 1126.044,
-      "ebitda_2026e": 700.5,
-      "ebitda_2027e": 784.9,
+      "ebitda_2026e": null,
+      "ebitda_2027e": null,
       "ebitda_margin_2025": 0.0891125567110806,
-      "ebitda_margin_2026": 0.04379219804951238,
-      "ebitda_margin_2027": 0.048061968036250076,
-      "ev_rev_2025": 0.23784187127790563,
-      "ev_rev_2026": 0.1878855473868467,
-      "ev_rev_2027": 0.18403142587716612,
-      "ev_ebitda_2025": 2.6690051330143403,
-      "ev_ebitda_2026": 4.290388602426837,
-      "ev_ebitda_2027": 3.8290447394572555,
-      "pe_2025": 8.034994308871905,
+      "ebitda_margin_2026": null,
+      "ebitda_margin_2027": null,
+      "ev_rev_2025": 0.23831137955329762,
+      "ev_rev_2026": 0.1876230539563863,
+      "ev_rev_2027": 0.18378700128166003,
+      "ev_ebitda_2025": 2.6742738436508695,
+      "ev_ebitda_2026": null,
+      "ev_ebitda_2027": null,
+      "pe_2025": 7.8948249509062025,
       "pe_2026": null,
       "pe_2027": null
     },
@@ -566,30 +566,30 @@
       "fmp_ticker": "FLR",
       "name": "Fluor Corporation",
       "category": "Diversified Engineering and Construction",
-      "share_price": 49.33,
-      "market_cap": 6597.447168,
-      "enterprise_value": 4725.446656,
+      "share_price": 49.9,
+      "market_cap": 6673.67936,
+      "enterprise_value": 4801.67936,
       "year_high": 58.35,
       "year_low": 39.33,
-      "pct_52wk": 84.54,
+      "pct_52wk": 85.52,
       "revenue_2025": 15503.0,
-      "revenue_2026e": null,
-      "revenue_2027e": null,
+      "revenue_2026e": 16600.0,
+      "revenue_2027e": 17500.0,
       "rev_growth_2025": -0.04977015016855654,
-      "rev_growth_2026": null,
+      "rev_growth_2026": 0.0707604979681352,
       "ebitda_2025": -201.0,
       "ebitda_2026e": null,
       "ebitda_2027e": null,
       "ebitda_margin_2025": -0.012965232535638263,
       "ebitda_margin_2026": null,
       "ebitda_margin_2027": null,
-      "ev_rev_2025": 0.3048085309940012,
-      "ev_rev_2026": null,
-      "ev_rev_2027": null,
-      "ev_ebitda_2025": -23.509684855721392,
+      "ev_rev_2025": 0.3097258182287299,
+      "ev_rev_2026": 0.2892577927710843,
+      "ev_rev_2027": 0.27438167771428573,
+      "ev_ebitda_2025": -23.888952039800994,
       "ev_ebitda_2026": null,
       "ev_ebitda_2027": null,
-      "pe_2025": -129.36170917647058,
+      "pe_2025": -130.85645803921568,
       "pe_2026": null,
       "pe_2027": null
     },
@@ -598,30 +598,30 @@
       "fmp_ticker": "FIX",
       "name": "Comfort Systems USA",
       "category": "Specialty Engineering and Construction",
-      "share_price": 1685.29,
-      "market_cap": 59312.652288,
-      "enterprise_value": 57678.413824,
+      "share_price": 1728.01,
+      "market_cap": 60816.150528,
+      "enterprise_value": 59179.43808,
       "year_high": 2073.99,
       "year_low": 770.47,
-      "pct_52wk": 81.26,
+      "pct_52wk": 83.32,
       "revenue_2025": 9101.641,
-      "revenue_2026e": null,
-      "revenue_2027e": null,
+      "revenue_2026e": 10600.0,
+      "revenue_2027e": 11900.0,
       "rev_growth_2025": 0.2951507767511408,
-      "rev_growth_2026": null,
+      "rev_growth_2026": 0.16462514836610237,
       "ebitda_2025": 1442.393,
       "ebitda_2026e": null,
       "ebitda_2027e": null,
       "ebitda_margin_2025": 0.15847614732332335,
       "ebitda_margin_2026": null,
       "ebitda_margin_2027": null,
-      "ev_rev_2025": 6.337144458235609,
-      "ev_rev_2026": null,
-      "ev_rev_2027": null,
-      "ev_ebitda_2025": 39.98800176096251,
+      "ev_rev_2025": 6.502062439070054,
+      "ev_rev_2026": 5.582965856603773,
+      "ev_rev_2027": 4.973062023529412,
+      "ev_ebitda_2025": 41.02865036089332,
       "ev_ebitda_2026": null,
       "ev_ebitda_2027": null,
-      "pe_2025": 58.004193686812876,
+      "pe_2025": 59.474524210851605,
       "pe_2026": null,
       "pe_2027": null
     },
@@ -630,30 +630,30 @@
       "fmp_ticker": "EME",
       "name": "EMCOR Group",
       "category": "Specialty Engineering and Construction",
-      "share_price": 769.03,
-      "market_cap": 33921.837056,
-      "enterprise_value": 33546.491904,
+      "share_price": 786.61,
+      "market_cap": 34697.289728,
+      "enterprise_value": 34321.942528,
       "year_high": 951.96,
       "year_low": 564.92,
-      "pct_52wk": 80.78,
+      "pct_52wk": 82.63,
       "revenue_2025": 16986.422,
-      "revenue_2026e": null,
-      "revenue_2027e": null,
+      "revenue_2026e": 18500.0,
+      "revenue_2027e": 20100.0,
       "rev_growth_2025": 0.16616001135786634,
-      "rev_growth_2026": null,
+      "rev_growth_2026": 0.08910516882248666,
       "ebitda_2025": 1920.064,
       "ebitda_2026e": null,
       "ebitda_2027e": null,
       "ebitda_margin_2025": 0.11303522307405292,
       "ebitda_margin_2026": null,
       "ebitda_margin_2027": null,
-      "ev_rev_2025": 1.974900417757195,
-      "ev_rev_2026": null,
-      "ev_rev_2027": null,
-      "ev_ebitda_2025": 17.471548815039498,
+      "ev_rev_2025": 2.02055162223098,
+      "ev_rev_2026": 1.8552401366486486,
+      "ev_rev_2027": 1.7075593297512437,
+      "ev_ebitda_2025": 17.875415886137127,
       "ev_ebitda_2026": null,
       "ev_ebitda_2027": null,
-      "pe_2025": 26.65099307755946,
+      "pe_2025": 27.260234368334178,
       "pe_2026": null,
       "pe_2027": null
     },
@@ -662,30 +662,30 @@
       "fmp_ticker": "WSP.TO",
       "name": "WSP Global",
       "category": "Specialty Engineering and Construction",
-      "share_price": 171.04,
-      "market_cap": 23059.038208,
-      "enterprise_value": 31198.937088,
+      "share_price": 171.99,
+      "market_cap": 23187.113984,
+      "enterprise_value": 31327.012864,
       "year_high": 290.23,
       "year_low": 156.64,
-      "pct_52wk": 58.93,
+      "pct_52wk": 59.26,
       "revenue_2025": 18285.0,
-      "revenue_2026e": 12090.0,
-      "revenue_2027e": 12960.0,
+      "revenue_2026e": 16600,
+      "revenue_2027e": null,
       "rev_growth_2025": 0.13102159982185718,
-      "rev_growth_2026": -0.3388022969647252,
+      "rev_growth_2026": -0.09215203718895269,
       "ebitda_2025": 2365.6,
-      "ebitda_2026e": 2330.0,
-      "ebitda_2027e": 2520.0,
+      "ebitda_2026e": 3140,
+      "ebitda_2027e": null,
       "ebitda_margin_2025": 0.12937380366420562,
-      "ebitda_margin_2026": 0.19272125723738626,
-      "ebitda_margin_2027": 0.19444444444444445,
-      "ev_rev_2025": 1.7062585227235438,
-      "ev_rev_2026": 2.5805572446650125,
-      "ev_rev_2027": 2.4073253925925924,
-      "ev_ebitda_2025": 13.188593628677713,
-      "ev_ebitda_2026": 13.390101754506437,
-      "ev_ebitda_2027": 12.38053059047619,
-      "pe_2025": 23.912722397594113,
+      "ebitda_margin_2026": 0.1891566265060241,
+      "ebitda_margin_2027": null,
+      "ev_rev_2025": 1.7132629403336068,
+      "ev_rev_2026": 1.8871694496385543,
+      "ev_rev_2027": null,
+      "ev_ebitda_2025": 13.242734555292527,
+      "ev_ebitda_2026": 9.976755689171975,
+      "ev_ebitda_2027": null,
+      "pe_2025": 24.04553975318884,
       "pe_2026": null,
       "pe_2027": null
     },
@@ -725,15 +725,15 @@
       "fmp_ticker": "DY",
       "name": "Dycom Industries",
       "category": "Specialty Engineering and Construction",
-      "share_price": 269.96,
-      "market_cap": 8142.25152,
-      "enterprise_value": 10838.961152,
+      "share_price": 273.75,
+      "market_cap": 8256.561664,
+      "enterprise_value": 10953.271296,
       "year_high": 566.47,
       "year_low": 263.36,
-      "pct_52wk": 47.66,
+      "pct_52wk": 48.33,
       "revenue_2025": 4702.014,
       "revenue_2026e": null,
-      "revenue_2027e": null,
+      "revenue_2027e": 7000,
       "rev_growth_2025": 0.12607607960007428,
       "rev_growth_2026": null,
       "ebitda_2025": 567.355,
@@ -742,13 +742,13 @@
       "ebitda_margin_2025": 0.12066212478312485,
       "ebitda_margin_2026": null,
       "ebitda_margin_2027": null,
-      "ev_rev_2025": 2.3051741555852447,
+      "ev_rev_2025": 2.3294850453443994,
       "ev_rev_2026": null,
-      "ev_rev_2027": null,
-      "ev_ebitda_2025": 19.104372310105664,
+      "ev_rev_2027": 1.5647530422857143,
+      "ev_ebitda_2025": 19.305851355853036,
       "ev_ebitda_2026": null,
       "ev_ebitda_2027": null,
-      "pe_2025": 34.88345344946511,
+      "pe_2025": 35.37318685763004,
       "pe_2026": null,
       "pe_2027": null
     },
@@ -757,30 +757,30 @@
       "fmp_ticker": "TTEK",
       "name": "Tetra Tech",
       "category": "Specialty Engineering and Construction",
-      "share_price": 33.72,
-      "market_cap": 8633.818112,
-      "enterprise_value": 9426.98496,
+      "share_price": 33.12,
+      "market_cap": 8480.191488,
+      "enterprise_value": 9273.358336,
       "year_high": 43.14,
       "year_low": 25.81,
-      "pct_52wk": 78.16,
+      "pct_52wk": 76.77,
       "revenue_2025": 5442.59,
-      "revenue_2026e": null,
+      "revenue_2026e": 4325,
       "revenue_2027e": null,
       "rev_growth_2025": 0.04691788048463851,
-      "rev_growth_2026": null,
+      "rev_growth_2026": -0.2053415745077252,
       "ebitda_2025": 476.532,
       "ebitda_2026e": null,
       "ebitda_2027e": null,
       "ebitda_margin_2025": 0.08755610839692131,
       "ebitda_margin_2026": null,
       "ebitda_margin_2027": null,
-      "ev_rev_2025": 1.7320770001047294,
-      "ev_rev_2026": null,
+      "ev_rev_2025": 1.703850250707843,
+      "ev_rev_2026": 2.1441290950289016,
       "ev_rev_2027": null,
-      "ev_ebitda_2025": 19.782480421042028,
+      "ev_ebitda_2025": 19.46009572494607,
       "ev_ebitda_2026": null,
       "ev_ebitda_2027": null,
-      "pe_2025": 34.85257024753355,
+      "pe_2025": 34.23241788441976,
       "pe_2026": null,
       "pe_2027": null
     },
@@ -789,12 +789,12 @@
       "fmp_ticker": "GBF.VI",
       "name": "Strabag SE",
       "category": "Specialty Engineering and Construction",
-      "share_price": 56.25,
-      "market_cap": 2077.859456,
-      "enterprise_value": 2096.388352,
+      "share_price": 56.75,
+      "market_cap": 2096.329344,
+      "enterprise_value": 2083.459456,
       "year_high": 129.5,
       "year_low": 55.65,
-      "pct_52wk": 43.44,
+      "pct_52wk": 43.82,
       "revenue_2025": 5427.0,
       "revenue_2026e": null,
       "revenue_2027e": null,
@@ -806,13 +806,13 @@
       "ebitda_margin_2025": 0.08162889257416621,
       "ebitda_margin_2026": null,
       "ebitda_margin_2027": null,
-      "ev_rev_2025": 0.3862886220748111,
+      "ev_rev_2025": 0.3839062937166022,
       "ev_rev_2026": null,
       "ev_rev_2027": null,
-      "ev_ebitda_2025": 4.732253616252821,
+      "ev_ebitda_2025": 4.703068749435666,
       "ev_ebitda_2026": null,
       "ev_ebitda_2027": null,
-      "pe_2025": 11.806019636363636,
+      "pe_2025": 11.910962181818183,
       "pe_2026": null,
       "pe_2027": null
     },
@@ -821,12 +821,12 @@
       "fmp_ticker": "STRL",
       "name": "Sterling Infrastructure",
       "category": "Infrastructure Services",
-      "share_price": 505.12,
-      "market_cap": 15450.871808,
-      "enterprise_value": 15356.470272,
+      "share_price": 533.42,
+      "market_cap": 16316.526592,
+      "enterprise_value": 16222.125056,
       "year_high": 1005.68,
       "year_low": 281.58,
-      "pct_52wk": 50.23,
+      "pct_52wk": 53.04,
       "revenue_2025": 2490.049,
       "revenue_2026e": null,
       "revenue_2027e": null,
@@ -838,13 +838,13 @@
       "ebitda_margin_2025": 0.20295865663687743,
       "ebitda_margin_2026": null,
       "ebitda_margin_2027": null,
-      "ev_rev_2025": 6.1671357760429615,
+      "ev_rev_2025": 6.514781458517484,
       "ev_rev_2026": null,
       "ev_rev_2027": null,
-      "ev_ebitda_2025": 30.386167696590864,
+      "ev_ebitda_2025": 32.09905685458578,
       "ev_ebitda_2026": null,
       "ev_ebitda_2027": null,
-      "pe_2025": 53.25077392961644,
+      "pe_2025": 56.2342164030701,
       "pe_2026": null,
       "pe_2027": null
     },
@@ -853,12 +853,12 @@
       "fmp_ticker": "ROAD",
       "name": "Construction Partners",
       "category": "Infrastructure Services",
-      "share_price": 90.15,
-      "market_cap": 5116.51328,
-      "enterprise_value": 6913.550336,
+      "share_price": 91.08,
+      "market_cap": 5169.296384,
+      "enterprise_value": 6966.332928,
       "year_high": 151.0,
       "year_low": 88.47,
-      "pct_52wk": 59.7,
+      "pct_52wk": 60.32,
       "revenue_2025": 2812.356,
       "revenue_2026e": null,
       "revenue_2027e": null,
@@ -870,13 +870,13 @@
       "ebitda_margin_2025": 0.13268839364575463,
       "ebitda_margin_2026": null,
       "ebitda_margin_2027": null,
-      "ev_rev_2025": 2.458277094365009,
+      "ev_rev_2025": 2.4770451991141944,
       "ev_rev_2026": null,
       "ev_rev_2027": null,
-      "ev_ebitda_2025": 18.526692703266903,
+      "ev_ebitda_2025": 18.668137664906062,
       "ev_ebitda_2026": null,
       "ev_ebitda_2027": null,
-      "pe_2025": 50.26982717796052,
+      "pe_2025": 50.788422043406925,
       "pe_2026": null,
       "pe_2027": null
     },
@@ -885,12 +885,12 @@
       "fmp_ticker": "GVA",
       "name": "Granite Construction",
       "category": "Infrastructure Services",
-      "share_price": 116.85,
-      "market_cap": 5191.282176,
-      "enterprise_value": 5847.812096,
+      "share_price": 119.92,
+      "market_cap": 5327.672832,
+      "enterprise_value": 5982.169088,
       "year_high": 162.08,
       "year_low": 97.26,
-      "pct_52wk": 72.09,
+      "pct_52wk": 73.99,
       "revenue_2025": 4424.379,
       "revenue_2026e": null,
       "revenue_2027e": null,
@@ -902,13 +902,13 @@
       "ebitda_margin_2025": 0.11266733704323251,
       "ebitda_margin_2026": null,
       "ebitda_margin_2027": null,
-      "ev_rev_2025": 1.3217249462579945,
+      "ev_rev_2025": 1.3520923700252623,
       "ev_rev_2026": null,
       "ev_rev_2027": null,
-      "ev_ebitda_2025": 11.731216703478353,
+      "ev_ebitda_2025": 12.000748446787552,
       "ev_ebitda_2026": null,
       "ev_ebitda_2027": null,
-      "pe_2025": 26.897417014243302,
+      "pe_2025": 27.604093366424358,
       "pe_2026": null,
       "pe_2027": null
     },
@@ -917,44 +917,44 @@
       "fmp_ticker": "BBY",
       "name": "Balfour Beatty",
       "category": "Infrastructure Services",
-      "share_price": 944.5,
-      "market_cap": 4426.643456,
-      "enterprise_value": 3448.8,
+      "share_price": 919.0,
+      "market_cap": 4307.13088,
+      "enterprise_value": 3533.499904,
       "year_high": 973.0,
       "year_low": 636.5,
-      "pct_52wk": 97.07,
+      "pct_52wk": 94.45,
       "revenue_2025": 9489.0,
-      "revenue_2026e": 15069.4,
-      "revenue_2027e": 15574.2,
+      "revenue_2026e": 14552.6,
+      "revenue_2027e": 15087.2,
       "rev_growth_2025": 0.15241680835559873,
-      "rev_growth_2026": 0.5880914743387079,
+      "rev_growth_2026": 0.5336284118452946,
       "ebitda_2025": 481.0,
-      "ebitda_2026e": 536.3,
-      "ebitda_2027e": 576.5,
+      "ebitda_2026e": 530.4,
+      "ebitda_2027e": 577.9,
       "ebitda_margin_2025": 0.050690272947623564,
-      "ebitda_margin_2026": 0.03558867639056631,
-      "ebitda_margin_2027": 0.0370163475491518,
-      "ev_rev_2025": 0.36345241858994626,
-      "ev_rev_2026": 0.2288611358116448,
-      "ev_rev_2027": 0.22144315598875064,
-      "ev_ebitda_2025": 7.170062370062371,
-      "ev_ebitda_2026": 6.430729069550625,
-      "ev_ebitda_2027": 5.982307025151778,
-      "pe_2025": 16.831343939163496,
-      "pe_2026": null,
-      "pe_2027": null
+      "ebitda_margin_2026": 0.036447095364402236,
+      "ebitda_margin_2027": 0.038303992788589,
+      "ev_rev_2025": 0.37237853345979555,
+      "ev_rev_2026": 0.24280883855805832,
+      "ev_rev_2027": 0.23420514767485018,
+      "ev_ebitda_2025": 7.346153646569646,
+      "ev_ebitda_2026": 6.66195306184012,
+      "ev_ebitda_2027": 6.114379484339851,
+      "pe_2025": 16.376923498098858,
+      "pe_2026": 10.267296495828367,
+      "pe_2027": 9.096369334741288
     },
     {
       "ticker": "PWR",
       "fmp_ticker": "PWR",
       "name": "Quanta Services",
       "category": "Utility Services",
-      "share_price": 662.6,
-      "market_cap": 99617.529856,
-      "enterprise_value": 105818.23488,
+      "share_price": 676.56,
+      "market_cap": 101716.328448,
+      "enterprise_value": 107917.033472,
       "year_high": 788.75,
       "year_low": 404.51,
-      "pct_52wk": 84.01,
+      "pct_52wk": 85.78,
       "revenue_2025": 28479.697,
       "revenue_2026e": null,
       "revenue_2027e": null,
@@ -966,13 +966,13 @@
       "ebitda_margin_2025": 0.08993364641484773,
       "ebitda_margin_2026": null,
       "ebitda_margin_2027": null,
-      "ev_rev_2025": 3.715567440201348,
+      "ev_rev_2025": 3.7892619950275455,
       "ev_rev_2026": null,
       "ev_rev_2027": null,
-      "ev_ebitda_2025": 41.31454231336405,
+      "ev_ebitda_2025": 42.13397483682982,
       "ev_ebitda_2026": null,
       "ev_ebitda_2027": null,
-      "pe_2025": 96.86859292594747,
+      "pe_2025": 98.90947535633785,
       "pe_2026": null,
       "pe_2027": null
     },
@@ -981,63 +981,63 @@
       "fmp_ticker": "MTZ",
       "name": "MasTec",
       "category": "Utility Services",
-      "share_price": 213.66,
-      "market_cap": 17157.95456,
-      "enterprise_value": 19981.604864,
+      "share_price": 215.93,
+      "market_cap": 17340.246016,
+      "enterprise_value": 20161.568768,
       "year_high": 441.43,
       "year_low": 182.34,
-      "pct_52wk": 48.4,
+      "pct_52wk": 48.92,
       "revenue_2025": 14299.171,
-      "revenue_2026e": 17550,
-      "revenue_2027e": 19869,
+      "revenue_2026e": 18200,
+      "revenue_2027e": 21600,
       "rev_growth_2025": 0.1622069199373445,
-      "rev_growth_2026": 0.22734387888640534,
+      "rev_growth_2026": 0.27280105958590184,
       "ebitda_2025": 1115.465,
-      "ebitda_2026e": null,
+      "ebitda_2026e": 1600,
       "ebitda_2027e": null,
       "ebitda_margin_2025": 0.07800906779840593,
-      "ebitda_margin_2026": null,
+      "ebitda_margin_2026": 0.08791208791208792,
       "ebitda_margin_2027": null,
-      "ev_rev_2025": 1.397396035336594,
-      "ev_rev_2026": 1.1385529837037038,
-      "ev_rev_2027": 1.0056673644370628,
-      "ev_ebitda_2025": 17.91325130237166,
-      "ev_ebitda_2026": null,
+      "ev_rev_2025": 1.4099816533420015,
+      "ev_rev_2026": 1.1077785037362637,
+      "ev_rev_2027": 0.9334059614814816,
+      "ev_ebitda_2025": 18.074586623515756,
+      "ev_ebitda_2026": 12.60098048,
       "ev_ebitda_2027": null,
-      "pe_2025": 42.997866289763984,
-      "pe_2026": 31.598443020257825,
-      "pe_2027": 21.50119619047619
+      "pe_2025": 43.45468902020339,
+      "pe_2026": 30.15694959304348,
+      "pe_2027": null
     },
     {
       "ticker": "PRIM",
       "fmp_ticker": "PRIM",
       "name": "Primoris Services",
       "category": "Utility Services",
-      "share_price": 76.25,
-      "market_cap": 4136.938752,
-      "enterprise_value": 5165.615104,
+      "share_price": 79.08,
+      "market_cap": 4290.480384,
+      "enterprise_value": 5317.960192,
       "year_high": 205.5,
       "year_low": 65.0,
-      "pct_52wk": 37.1,
+      "pct_52wk": 38.48,
       "revenue_2025": 7574.9,
       "revenue_2026e": null,
       "revenue_2027e": null,
       "rev_growth_2025": 0.18974995288056787,
       "rev_growth_2026": null,
       "ebitda_2025": 504.6,
-      "ebitda_2026e": null,
+      "ebitda_2026e": 490,
       "ebitda_2027e": null,
       "ebitda_margin_2025": 0.06661474078865728,
       "ebitda_margin_2026": null,
       "ebitda_margin_2027": null,
-      "ev_rev_2025": 0.6819383891536522,
+      "ev_rev_2025": 0.7020502174286128,
       "ev_rev_2026": null,
       "ev_rev_2027": null,
-      "ev_ebitda_2025": 10.237049353943718,
-      "ev_ebitda_2026": null,
+      "ev_ebitda_2025": 10.53896193420531,
+      "ev_ebitda_2026": 10.85297998367347,
       "ev_ebitda_2027": null,
-      "pe_2025": 15.048885965805749,
-      "pe_2026": null,
+      "pe_2025": 15.60742227719171,
+      "pe_2026": 18.776719404814006,
       "pe_2027": null
     },
     {
@@ -1045,12 +1045,12 @@
       "fmp_ticker": "MYRG",
       "name": "MYR Group",
       "category": "Utility Services",
-      "share_price": 297.92,
-      "market_cap": 4638.391296,
-      "enterprise_value": 4567.623168,
+      "share_price": 304.77,
+      "market_cap": 4745.040384,
+      "enterprise_value": 4674.272256,
       "year_high": 503.57,
       "year_low": 190.14,
-      "pct_52wk": 59.16,
+      "pct_52wk": 60.52,
       "revenue_2025": 3657.889,
       "revenue_2026e": null,
       "revenue_2027e": null,
@@ -1062,13 +1062,13 @@
       "ebitda_margin_2025": 0.06381932311231969,
       "ebitda_margin_2026": null,
       "ebitda_margin_2027": null,
-      "ev_rev_2025": 1.2487046949757086,
+      "ev_rev_2025": 1.2778606064864189,
       "ev_rev_2026": null,
       "ev_rev_2027": null,
-      "ev_ebitda_2025": 19.56624787100975,
+      "ev_ebitda_2025": 20.02309871318175,
       "ev_ebitda_2026": null,
       "ev_ebitda_2027": null,
-      "pe_2025": 39.17030887717876,
+      "pe_2025": 40.07093960275638,
       "pe_2026": null,
       "pe_2027": null
     },
@@ -1077,12 +1077,12 @@
       "fmp_ticker": "AMRC",
       "name": "Ameresco",
       "category": "Utility Services",
-      "share_price": 21.0,
-      "market_cap": 1114.3904,
-      "enterprise_value": 3659.483392,
+      "share_price": 21.57,
+      "market_cap": 1144.638208,
+      "enterprise_value": 3689.731072,
       "year_high": 44.93,
       "year_low": 18.38,
-      "pct_52wk": 46.74,
+      "pct_52wk": 48.01,
       "revenue_2025": 1932.126,
       "revenue_2026e": null,
       "revenue_2027e": null,
@@ -1094,13 +1094,13 @@
       "ebitda_margin_2025": 0.12275596933119269,
       "ebitda_margin_2026": null,
       "ebitda_margin_2027": null,
-      "ev_rev_2025": 1.894019019463534,
+      "ev_rev_2025": 1.909674147545243,
       "ev_rev_2026": null,
       "ev_rev_2027": null,
-      "ev_ebitda_2025": 15.429139860021925,
+      "ev_ebitda_2025": 15.556670343199258,
       "ev_ebitda_2026": null,
       "ev_ebitda_2027": null,
-      "pe_2025": 25.164628308192576,
+      "pe_2025": 25.847669767861984,
       "pe_2026": null,
       "pe_2027": null
     },
@@ -1109,30 +1109,30 @@
       "fmp_ticker": "IBM",
       "name": "IBM",
       "category": "Management Consulting",
-      "share_price": 225.62,
-      "market_cap": 212564.361216,
-      "enterprise_value": 269793.36192,
+      "share_price": 222.64,
+      "market_cap": 209756.798976,
+      "enterprise_value": 266985.79968,
       "year_high": 332.46,
       "year_low": 199.19,
-      "pct_52wk": 67.86,
+      "pct_52wk": 66.97,
       "revenue_2025": 67536.0,
-      "revenue_2026e": 70384,
-      "revenue_2027e": 73198,
+      "revenue_2026e": null,
+      "revenue_2027e": null,
       "rev_growth_2025": 0.07621946361130146,
-      "rev_growth_2026": 0.04217010187159441,
+      "rev_growth_2026": null,
       "ebitda_2025": 17284.0,
-      "ebitda_2026e": 20153,
-      "ebitda_2027e": 21555,
+      "ebitda_2026e": null,
+      "ebitda_2027e": null,
       "ebitda_margin_2025": 0.25592276711679696,
-      "ebitda_margin_2026": 0.2863292793816777,
-      "ebitda_margin_2027": 0.29447525888685483,
-      "ev_rev_2025": 3.994808130774698,
-      "ev_rev_2026": 3.833163246192316,
-      "ev_rev_2027": 3.6858023705565723,
-      "ev_ebitda_2025": 15.609428484147188,
-      "ev_ebitda_2026": 13.38725559073091,
-      "ev_ebitda_2027": 12.516509483646486,
-      "pe_2025": 20.066493081846502,
+      "ebitda_margin_2026": null,
+      "ebitda_margin_2027": null,
+      "ev_rev_2025": 3.953236787491116,
+      "ev_rev_2026": null,
+      "ev_rev_2027": null,
+      "ev_ebitda_2025": 15.44699141865309,
+      "ev_ebitda_2026": null,
+      "ev_ebitda_2027": null,
+      "pe_2025": 19.801453693571226,
       "pe_2026": null,
       "pe_2027": null
     },
@@ -1141,30 +1141,30 @@
       "fmp_ticker": "ACN",
       "name": "Accenture",
       "category": "Management Consulting",
-      "share_price": 212.3,
-      "market_cap": 129915.305984,
-      "enterprise_value": 112046.178304,
+      "share_price": 198.9,
+      "market_cap": 121715.277824,
+      "enterprise_value": 120793.481216,
       "year_high": 291.09,
       "year_low": 118.15,
-      "pct_52wk": 72.93,
+      "pct_52wk": 68.33,
       "revenue_2025": 69672.977,
-      "revenue_2026e": 73570,
+      "revenue_2026e": 74180,
       "revenue_2027e": 76500,
       "rev_growth_2025": 0.07360205326441205,
-      "rev_growth_2026": 0.05593306282864877,
+      "rev_growth_2026": 0.06468825065419555,
       "ebitda_2025": 11867.333,
       "ebitda_2026e": null,
       "ebitda_2027e": null,
       "ebitda_margin_2025": 0.1703290645955892,
       "ebitda_margin_2026": null,
       "ebitda_margin_2027": null,
-      "ev_rev_2025": 1.608172682272497,
-      "ev_rev_2026": 1.5229873359249695,
-      "ev_rev_2027": 1.4646559255424836,
-      "ev_ebitda_2025": 9.44156351759911,
+      "ev_rev_2025": 1.7337206822094025,
+      "ev_rev_2026": 1.6283834081423565,
+      "ev_rev_2027": 1.5789997544575163,
+      "ev_ebitda_2025": 10.178654396569137,
       "ev_ebitda_2026": null,
       "ev_ebitda_2027": null,
-      "pe_2025": 16.91950766308699,
+      "pe_2025": 15.85157776645313,
       "pe_2026": null,
       "pe_2027": null
     },
@@ -1173,30 +1173,30 @@
       "fmp_ticker": "BAH",
       "name": "Booz Allen Hamilton",
       "category": "Management Consulting",
-      "share_price": 70.47,
-      "market_cap": 8476.48256,
-      "enterprise_value": 12096.482304,
+      "share_price": 67.35,
+      "market_cap": 8101.192704,
+      "enterprise_value": 11721.192448,
       "year_high": 109.1,
       "year_low": 59.5,
-      "pct_52wk": 64.59,
+      "pct_52wk": 61.73,
       "revenue_2025": 11980.0,
-      "revenue_2026e": 11093000,
-      "revenue_2027e": null,
+      "revenue_2026e": 11200,
+      "revenue_2027e": 11450,
       "rev_growth_2025": 0.12361658225473644,
-      "rev_growth_2026": 924.9599332220367,
+      "rev_growth_2026": -0.0651085141903172,
       "ebitda_2025": 1574.0,
       "ebitda_2026e": null,
-      "ebitda_2027e": null,
+      "ebitda_2027e": 1265,
       "ebitda_margin_2025": 0.1313856427378965,
       "ebitda_margin_2026": null,
-      "ebitda_margin_2027": null,
-      "ev_rev_2025": 1.0097230637729548,
-      "ev_rev_2026": 0.0010904608585594517,
-      "ev_rev_2027": null,
-      "ev_ebitda_2025": 7.685185707750953,
+      "ebitda_margin_2027": 0.11048034934497816,
+      "ev_rev_2025": 0.9783966984974958,
+      "ev_rev_2026": 1.04653504,
+      "ev_rev_2027": 1.0236849299563318,
+      "ev_ebitda_2025": 7.446755049555273,
       "ev_ebitda_2026": null,
-      "ev_ebitda_2027": null,
-      "pe_2025": 9.065756748663102,
+      "ev_ebitda_2027": 9.265764781027668,
+      "pe_2025": 8.664377223529412,
       "pe_2026": null,
       "pe_2027": null
     },
@@ -1205,12 +1205,12 @@
       "fmp_ticker": "FCN",
       "name": "FTI Consulting",
       "category": "Management Consulting",
-      "share_price": 141.72,
-      "market_cap": 3913.112576,
-      "enterprise_value": 4910.333952,
+      "share_price": 136.4,
+      "market_cap": 3766.218752,
+      "enterprise_value": 4766.494208,
       "year_high": 189.3,
       "year_low": 129.12,
-      "pct_52wk": 74.87,
+      "pct_52wk": 72.05,
       "revenue_2025": 3788.857,
       "revenue_2026e": null,
       "revenue_2027e": null,
@@ -1222,13 +1222,13 @@
       "ebitda_margin_2025": 0.11656549719348078,
       "ebitda_margin_2026": null,
       "ebitda_margin_2027": null,
-      "ev_rev_2025": 1.295993475604912,
+      "ev_rev_2025": 1.2580295872871423,
       "ev_rev_2026": null,
       "ev_rev_2027": null,
-      "ev_ebitda_2025": 11.118156802898223,
+      "ev_ebitda_2025": 10.792469620740405,
       "ev_ebitda_2026": null,
       "ev_ebitda_2027": null,
-      "pe_2025": 14.44640650346475,
+      "pe_2025": 13.904104728819256,
       "pe_2026": null,
       "pe_2027": null
     },
@@ -1237,30 +1237,30 @@
       "fmp_ticker": "HURN",
       "name": "Huron Consulting Group",
       "category": "Management Consulting",
-      "share_price": 168.42,
-      "market_cap": 2679.574272,
-      "enterprise_value": 3342.104832,
+      "share_price": 162.15,
+      "market_cap": 2579.817984,
+      "enterprise_value": 3248.70016,
       "year_high": 186.78,
       "year_low": 84.88,
-      "pct_52wk": 90.17,
+      "pct_52wk": 86.81,
       "revenue_2025": 1699.143,
-      "revenue_2026e": null,
+      "revenue_2026e": 1820,
       "revenue_2027e": null,
       "rev_growth_2025": 0.11653135585702502,
-      "rev_growth_2026": null,
+      "rev_growth_2026": 0.07112820992700436,
       "ebitda_2025": 220.135,
       "ebitda_2026e": null,
       "ebitda_2027e": null,
       "ebitda_margin_2025": 0.12955648818257204,
       "ebitda_margin_2026": null,
       "ebitda_margin_2027": null,
-      "ev_rev_2025": 1.9669355857629405,
-      "ev_rev_2026": null,
+      "ev_rev_2025": 1.9119639488848201,
+      "ev_rev_2026": 1.7850000879120878,
       "ev_rev_2027": null,
-      "ev_ebitda_2025": 15.18206933018375,
+      "ev_ebitda_2025": 14.757763009062622,
       "ev_ebitda_2026": null,
       "ev_ebitda_2027": null,
-      "pe_2025": 25.51003686214775,
+      "pe_2025": 24.56033876618431,
       "pe_2026": null,
       "pe_2027": null
     }
@@ -1269,207 +1269,217 @@
     "Construction Contractors": {
       "mean": {
         "rev_growth_2025": 0.238966,
-        "rev_growth_2026": 0.081595,
+        "rev_growth_2026": 0.263297,
         "ebitda_margin_2025": 0.070128,
-        "ebitda_margin_2026": 0.173962,
-        "ev_rev_2025": 1.601353,
-        "ev_rev_2026": 1.910216,
-        "ev_ebitda_2025": 20.360261,
-        "ev_ebitda_2026": 10.980634,
-        "pe_2025": 79.557424
+        "ebitda_margin_2026": 0.037038,
+        "ebitda_margin_2027": 0.036987,
+        "ev_rev_2025": 1.627585,
+        "ev_rev_2026": 1.050833,
+        "ev_rev_2027": 0.903529,
+        "ev_ebitda_2025": 20.79064,
+        "ev_ebitda_2026": 10.732677,
+        "ev_ebitda_2027": 9.818052,
+        "pe_2025": 81.58658,
+        "pe_2026": 19.890607,
+        "pe_2027": 17.453866
       },
       "median": {
         "rev_growth_2025": 0.239123,
-        "rev_growth_2026": 0.081595,
+        "rev_growth_2026": 0.263297,
         "ebitda_margin_2025": 0.06618,
-        "ebitda_margin_2026": 0.173962,
-        "ev_rev_2025": 0.733709,
-        "ev_rev_2026": 1.910216,
-        "ev_ebitda_2025": 17.408914,
-        "ev_ebitda_2026": 10.980634,
-        "pe_2025": 55.957315
+        "ebitda_margin_2026": 0.037038,
+        "ebitda_margin_2027": 0.036987,
+        "ev_rev_2025": 0.76498,
+        "ev_rev_2026": 1.050833,
+        "ev_rev_2027": 0.903529,
+        "ev_ebitda_2025": 17.71008,
+        "ev_ebitda_2026": 10.732677,
+        "ev_ebitda_2027": 9.818052,
+        "pe_2025": 57.098899,
+        "pe_2026": 19.890607,
+        "pe_2027": 17.453866
       }
     },
     "Diversified Engineering and Construction": {
       "mean": {
         "rev_growth_2025": 0.066079,
-        "rev_growth_2026": 0.118659,
+        "rev_growth_2026": 0.17046,
         "ebitda_margin_2025": 0.104674,
-        "ebitda_margin_2026": 0.100212,
-        "ebitda_margin_2027": 0.090698,
-        "ev_rev_2025": 0.818363,
-        "ev_rev_2026": 21.480241,
-        "ev_rev_2027": 24.598613,
-        "ev_ebitda_2025": 8.797722,
-        "ev_ebitda_2026": 343.558413,
-        "ev_ebitda_2027": 365.247832,
-        "pe_2025": 19.498244,
-        "pe_2026": 6556.561302,
-        "pe_2027": 3836.392599
+        "ebitda_margin_2026": 0.137816,
+        "ebitda_margin_2027": 0.148005,
+        "ev_rev_2025": 0.818882,
+        "ev_rev_2026": 25.145282,
+        "ev_rev_2027": 29.800905,
+        "ev_ebitda_2025": 8.801633,
+        "ev_ebitda_2026": 8.78622,
+        "ev_ebitda_2027": 6.406466,
+        "pe_2025": 19.281735,
+        "pe_2026": 1003.044153,
+        "pe_2027": 13.450407
       },
       "median": {
         "rev_growth_2025": 0.045982,
-        "rev_growth_2026": 0.090112,
+        "rev_growth_2026": 0.17046,
         "ebitda_margin_2025": 0.098219,
-        "ebitda_margin_2026": 0.115672,
-        "ebitda_margin_2027": 0.092363,
-        "ev_rev_2025": 0.80732,
-        "ev_rev_2026": 0.935694,
-        "ev_rev_2027": 0.811726,
-        "ev_ebitda_2025": 8.033311,
-        "ev_ebitda_2026": 8.312515,
-        "ev_ebitda_2027": 9.094122,
-        "pe_2025": 13.942476,
-        "pe_2026": 23.808756,
-        "pe_2027": 21.293784
+        "ebitda_margin_2026": 0.137816,
+        "ebitda_margin_2027": 0.148005,
+        "ev_rev_2025": 0.82936,
+        "ev_rev_2026": 0.995599,
+        "ev_rev_2027": 0.611286,
+        "ev_ebitda_2025": 8.012647,
+        "ev_ebitda_2026": 8.78622,
+        "ev_ebitda_2027": 6.406466,
+        "pe_2025": 13.805845,
+        "pe_2026": 1003.044153,
+        "pe_2027": 13.450407
       }
     },
     "Specialty Engineering and Construction": {
       "mean": {
         "rev_growth_2025": 0.140441,
+        "rev_growth_2026": 0.126865,
         "ebitda_margin_2025": 0.115122,
-        "ebitda_margin_2026": 0.192721,
-        "ebitda_margin_2027": 0.194444,
-        "ev_rev_2025": 2.406974,
-        "ev_rev_2026": 2.580557,
-        "ev_rev_2027": 2.407325,
-        "ev_ebitda_2025": 19.044542,
-        "ev_ebitda_2026": 13.390102,
-        "ev_ebitda_2027": 12.380531,
-        "pe_2025": 31.684992
+        "ebitda_margin_2026": 0.189157,
+        "ev_rev_2025": 2.442186,
+        "ev_rev_2026": 2.867376,
+        "ev_rev_2027": 2.748458,
+        "ev_ebitda_2025": 19.269303,
+        "ev_ebitda_2026": 9.976756,
+        "pe_2025": 32.049478
       },
       "median": {
         "rev_growth_2025": 0.128549,
+        "rev_growth_2026": 0.126865,
         "ebitda_margin_2025": 0.116849,
-        "ebitda_margin_2026": 0.192721,
-        "ebitda_margin_2027": 0.194444,
-        "ev_rev_2025": 1.853489,
-        "ev_rev_2026": 2.580557,
-        "ev_rev_2027": 2.407325,
-        "ev_ebitda_2025": 18.287961,
-        "ev_ebitda_2026": 13.390102,
-        "ev_ebitda_2027": 12.380531,
-        "pe_2025": 30.751782
+        "ebitda_margin_2026": 0.189157,
+        "ev_rev_2025": 1.866907,
+        "ev_rev_2026": 2.015649,
+        "ev_rev_2027": 1.707559,
+        "ev_ebitda_2025": 18.590634,
+        "ev_ebitda_2026": 9.976756,
+        "pe_2025": 30.746326
       }
     },
     "Infrastructure Services": {
       "mean": {
         "rev_growth_2025": 0.243821,
-        "rev_growth_2026": 0.588091,
+        "rev_growth_2026": 0.533628,
         "ebitda_margin_2025": 0.124751,
-        "ebitda_margin_2026": 0.035589,
-        "ebitda_margin_2027": 0.037016,
-        "ev_rev_2025": 2.577648,
-        "ev_rev_2026": 0.228861,
-        "ev_rev_2027": 0.221443,
-        "ev_ebitda_2025": 16.953535,
-        "ev_ebitda_2026": 6.430729,
-        "ev_ebitda_2027": 5.982307,
-        "pe_2025": 36.812341
+        "ebitda_margin_2026": 0.036447,
+        "ebitda_margin_2027": 0.038304,
+        "ev_rev_2025": 2.679074,
+        "ev_rev_2026": 0.242809,
+        "ev_rev_2027": 0.234205,
+        "ev_ebitda_2025": 17.528524,
+        "ev_ebitda_2026": 6.661953,
+        "ev_ebitda_2027": 6.114379,
+        "pe_2025": 37.750914,
+        "pe_2026": 10.267296,
+        "pe_2027": 9.096369
       },
       "median": {
         "rev_growth_2025": 0.164662,
-        "rev_growth_2026": 0.588091,
+        "rev_growth_2026": 0.533628,
         "ebitda_margin_2025": 0.122678,
-        "ebitda_margin_2026": 0.035589,
-        "ebitda_margin_2027": 0.037016,
-        "ev_rev_2025": 1.890001,
-        "ev_rev_2026": 0.228861,
-        "ev_rev_2027": 0.221443,
-        "ev_ebitda_2025": 15.128955,
-        "ev_ebitda_2026": 6.430729,
-        "ev_ebitda_2027": 5.982307,
-        "pe_2025": 38.583622
+        "ebitda_margin_2026": 0.036447,
+        "ebitda_margin_2027": 0.038304,
+        "ev_rev_2025": 1.914569,
+        "ev_rev_2026": 0.242809,
+        "ev_rev_2027": 0.234205,
+        "ev_ebitda_2025": 15.334443,
+        "ev_ebitda_2026": 6.661953,
+        "ev_ebitda_2027": 6.114379,
+        "pe_2025": 39.196258,
+        "pe_2026": 10.267296,
+        "pe_2027": 9.096369
       }
     },
     "Utility Services": {
       "mean": {
         "rev_growth_2025": 0.146914,
-        "rev_growth_2026": 0.227344,
+        "rev_growth_2026": 0.272801,
         "ebitda_margin_2025": 0.084227,
-        "ev_rev_2025": 1.787525,
-        "ev_rev_2026": 1.138553,
-        "ev_rev_2027": 1.005667,
-        "ev_ebitda_2025": 20.892046,
-        "pe_2025": 43.850056,
-        "pe_2026": 31.598443,
-        "pe_2027": 21.501196
+        "ebitda_margin_2026": 0.087912,
+        "ev_rev_2025": 1.817766,
+        "ev_rev_2026": 1.107779,
+        "ev_rev_2027": 0.933406,
+        "ev_ebitda_2025": 21.265458,
+        "ev_ebitda_2026": 11.72698,
+        "pe_2025": 44.778039,
+        "pe_2026": 24.466834
       },
       "median": {
         "rev_growth_2025": 0.162207,
-        "rev_growth_2026": 0.227344,
+        "rev_growth_2026": 0.272801,
         "ebitda_margin_2025": 0.078009,
-        "ev_rev_2025": 1.397396,
-        "ev_rev_2026": 1.138553,
-        "ev_rev_2027": 1.005667,
-        "ev_ebitda_2025": 17.913251,
-        "pe_2025": 39.170309,
-        "pe_2026": 31.598443,
-        "pe_2027": 21.501196
+        "ebitda_margin_2026": 0.087912,
+        "ev_rev_2025": 1.409982,
+        "ev_rev_2026": 1.107779,
+        "ev_rev_2027": 0.933406,
+        "ev_ebitda_2025": 18.074587,
+        "ev_ebitda_2026": 11.72698,
+        "pe_2025": 40.07094,
+        "pe_2026": 24.466834
       }
     },
     "Management Consulting": {
       "mean": {
         "rev_growth_2025": 0.082872,
-        "rev_growth_2026": 308.352679,
+        "rev_growth_2026": 0.067908,
         "ebitda_margin_2025": 0.160752,
-        "ebitda_margin_2026": 0.286329,
-        "ebitda_margin_2027": 0.294475,
-        "ev_rev_2025": 1.975127,
-        "ev_rev_2026": 1.785747,
-        "ev_rev_2027": 2.575229,
-        "ev_ebitda_2025": 11.807281,
-        "ev_ebitda_2026": 13.387256,
-        "ev_ebitda_2027": 12.516509,
-        "pe_2025": 17.20164
+        "ebitda_margin_2027": 0.11048,
+        "ev_rev_2025": 1.96707,
+        "ev_rev_2026": 1.48664,
+        "ev_rev_2027": 1.301342,
+        "ev_ebitda_2025": 11.724527,
+        "ev_ebitda_2027": 9.265765,
+        "pe_2025": 16.55637
       },
       "median": {
         "rev_growth_2025": 0.076219,
-        "rev_growth_2026": 0.055933,
+        "rev_growth_2026": 0.067908,
         "ebitda_margin_2025": 0.131386,
-        "ebitda_margin_2026": 0.286329,
-        "ebitda_margin_2027": 0.294475,
-        "ev_rev_2025": 1.608173,
-        "ev_rev_2026": 1.522987,
-        "ev_rev_2027": 2.575229,
-        "ev_ebitda_2025": 11.118157,
-        "ev_ebitda_2026": 13.387256,
-        "ev_ebitda_2027": 12.516509,
-        "pe_2025": 16.919508
+        "ebitda_margin_2027": 0.11048,
+        "ev_rev_2025": 1.733721,
+        "ev_rev_2026": 1.628383,
+        "ev_rev_2027": 1.301342,
+        "ev_ebitda_2025": 10.79247,
+        "ev_ebitda_2027": 9.265765,
+        "pe_2025": 15.851578
       }
     },
     "Overall": {
       "mean": {
         "rev_growth_2025": 0.142725,
-        "rev_growth_2026": 92.64297,
+        "rev_growth_2026": 0.206349,
         "ebitda_margin_2025": 0.107837,
-        "ebitda_margin_2026": 0.126371,
-        "ebitda_margin_2027": 0.118902,
-        "ev_rev_2025": 1.680427,
-        "ev_rev_2026": 10.776682,
-        "ev_rev_2027": 13.177796,
-        "ev_ebitda_2025": 15.436578,
-        "ev_ebitda_2026": 210.55392,
-        "ev_ebitda_2027": 232.139814,
-        "pe_2025": 36.526244,
-        "pe_2026": 5251.56873,
-        "pe_2027": 3073.414319
+        "ebitda_margin_2026": 0.104364,
+        "ebitda_margin_2027": 0.083444,
+        "ev_rev_2025": 1.704508,
+        "ev_rev_2026": 9.069255,
+        "ev_rev_2027": 10.232796,
+        "ev_ebitda_2025": 15.651111,
+        "ev_ebitda_2026": 9.771112,
+        "ev_ebitda_2027": 7.901166,
+        "pe_2025": 37.008594,
+        "pe_2026": 347.52998,
+        "pe_2027": 13.333547
       },
       "median": {
         "rev_growth_2025": 0.123617,
-        "rev_growth_2026": 0.108818,
+        "rev_growth_2026": 0.188608,
         "ebitda_margin_2025": 0.101797,
-        "ebitda_margin_2026": 0.116667,
-        "ebitda_margin_2027": 0.117958,
-        "ev_rev_2025": 1.248705,
-        "ev_rev_2026": 1.138553,
-        "ev_rev_2027": 1.235162,
-        "ev_ebitda_2025": 12.555405,
-        "ev_ebitda_2026": 10.387152,
-        "ev_ebitda_2027": 10.737326,
-        "pe_2025": 25.337333,
-        "pe_2026": 27.950059,
-        "pe_2027": 21.501196
+        "ebitda_margin_2026": 0.109025,
+        "ebitda_margin_2027": 0.074392,
+        "ev_rev_2025": 1.25803,
+        "ev_rev_2026": 1.512352,
+        "ev_rev_2027": 1.023685,
+        "ev_ebitda_2025": 12.823782,
+        "ev_ebitda_2026": 10.72962,
+        "ev_ebitda_2027": 7.836115,
+        "pe_2025": 25.173043,
+        "pe_2026": 19.333663,
+        "pe_2027": 13.450407
       }
     }
   },
@@ -1481,211 +1491,215 @@
       },
       {
         "date": "2025-10-06",
-        "indexed": 100.61
+        "indexed": 98.85
       },
       {
         "date": "2025-10-13",
-        "indexed": 102.73
+        "indexed": 101.01
       },
       {
         "date": "2025-10-20",
-        "indexed": 109.25
+        "indexed": 107.49
       },
       {
         "date": "2025-10-27",
-        "indexed": 110.1
+        "indexed": 108.37
       },
       {
         "date": "2025-11-03",
-        "indexed": 103.58
+        "indexed": 101.92
       },
       {
         "date": "2025-11-10",
-        "indexed": 105.16
+        "indexed": 103.45
       },
       {
         "date": "2025-11-17",
-        "indexed": 101.58
+        "indexed": 99.95
       },
       {
         "date": "2025-11-24",
-        "indexed": 111.64
+        "indexed": 109.96
       },
       {
         "date": "2025-12-01",
-        "indexed": 107.56
+        "indexed": 105.84
       },
       {
         "date": "2025-12-08",
-        "indexed": 110.59
+        "indexed": 108.85
       },
       {
         "date": "2025-12-15",
-        "indexed": 111.06
+        "indexed": 109.3
       },
       {
         "date": "2025-12-22",
-        "indexed": 111.42
+        "indexed": 109.67
       },
       {
         "date": "2025-12-29",
-        "indexed": 111.96
+        "indexed": 110.16
       },
       {
         "date": "2026-01-05",
-        "indexed": 114.13
+        "indexed": 112.25
       },
       {
         "date": "2026-01-12",
-        "indexed": 123.81
+        "indexed": 121.85
       },
       {
         "date": "2026-01-19",
-        "indexed": 121.6
+        "indexed": 119.69
       },
       {
         "date": "2026-01-26",
-        "indexed": 121.96
+        "indexed": 120.04
       },
       {
         "date": "2026-02-02",
-        "indexed": 125.66
+        "indexed": 123.73
       },
       {
         "date": "2026-02-09",
-        "indexed": 127.55
+        "indexed": 125.64
       },
       {
         "date": "2026-02-16",
-        "indexed": 134.05
+        "indexed": 132.03
       },
       {
         "date": "2026-02-23",
-        "indexed": 133.02
+        "indexed": 130.98
       },
       {
         "date": "2026-03-02",
-        "indexed": 127.09
+        "indexed": 125.18
       },
       {
         "date": "2026-03-09",
-        "indexed": 127.78
+        "indexed": 125.89
       },
       {
         "date": "2026-03-16",
-        "indexed": 129.0
+        "indexed": 127.18
       },
       {
         "date": "2026-03-23",
-        "indexed": 137.41
+        "indexed": 135.58
       },
       {
         "date": "2026-03-30",
-        "indexed": 141.82
+        "indexed": 139.9
       },
       {
         "date": "2026-04-06",
-        "indexed": 151.3
+        "indexed": 149.24
       },
       {
         "date": "2026-04-13",
-        "indexed": 153.18
+        "indexed": 151.07
       },
       {
         "date": "2026-04-20",
-        "indexed": 157.02
+        "indexed": 154.98
       },
       {
         "date": "2026-04-27",
-        "indexed": 165.05
+        "indexed": 163.02
       },
       {
         "date": "2026-05-04",
-        "indexed": 166.17
+        "indexed": 164.04
       },
       {
         "date": "2026-05-11",
-        "indexed": 163.44
+        "indexed": 161.37
       },
       {
         "date": "2026-05-18",
-        "indexed": 152.04
+        "indexed": 150.0
       },
       {
         "date": "2026-05-25",
-        "indexed": 152.51
+        "indexed": 150.45
       },
       {
         "date": "2026-06-01",
-        "indexed": 154.64
+        "indexed": 152.6
       },
       {
         "date": "2026-06-08",
-        "indexed": 149.38
+        "indexed": 147.38
       },
       {
         "date": "2026-06-15",
-        "indexed": 159.11
+        "indexed": 157.0
       },
       {
         "date": "2026-06-22",
-        "indexed": 161.21
+        "indexed": 159.09
       },
       {
         "date": "2026-06-29",
-        "indexed": 161.48
+        "indexed": 159.32
       },
       {
         "date": "2026-07-06",
-        "indexed": 152.04
+        "indexed": 149.99
       },
       {
         "date": "2026-07-13",
-        "indexed": 149.82
+        "indexed": 147.76
       },
       {
         "date": "2026-07-20",
-        "indexed": 150.91
+        "indexed": 148.82
       },
       {
         "date": "2026-07-27",
-        "indexed": 146.22
+        "indexed": 144.15
       },
       {
         "date": "2026-08-03",
-        "indexed": 153.1
+        "indexed": 151.01
       },
       {
         "date": "2026-08-10",
-        "indexed": 157.08
+        "indexed": 155.01
       },
       {
         "date": "2026-08-17",
-        "indexed": 148.58
+        "indexed": 146.52
       },
       {
         "date": "2026-08-24",
-        "indexed": 142.03
+        "indexed": 139.95
       },
       {
         "date": "2026-08-31",
-        "indexed": 142.23
+        "indexed": 140.18
       },
       {
         "date": "2026-09-07",
-        "indexed": 140.55
+        "indexed": 138.55
       },
       {
         "date": "2026-09-14",
-        "indexed": 138.77
+        "indexed": 136.78
       },
       {
         "date": "2026-09-21",
-        "indexed": 141.31
+        "indexed": 139.26
       },
       {
         "date": "2026-09-28",
-        "indexed": 145.36
+        "indexed": 146.09
+      },
+      {
+        "date": "2026-10-05",
+        "indexed": 144.81
       }
     ],
     "Diversified Engineering and Construction": [
@@ -1695,211 +1709,215 @@
       },
       {
         "date": "2025-10-06",
-        "indexed": 98.98
+        "indexed": 99.07
       },
       {
         "date": "2025-10-13",
-        "indexed": 101.43
+        "indexed": 101.54
       },
       {
         "date": "2025-10-20",
-        "indexed": 103.68
+        "indexed": 103.79
       },
       {
         "date": "2025-10-27",
-        "indexed": 100.51
+        "indexed": 100.6
       },
       {
         "date": "2025-11-03",
-        "indexed": 99.12
+        "indexed": 99.18
       },
       {
         "date": "2025-11-10",
-        "indexed": 100.02
+        "indexed": 100.08
       },
       {
         "date": "2025-11-17",
-        "indexed": 94.69
+        "indexed": 94.74
       },
       {
         "date": "2025-11-24",
-        "indexed": 99.04
+        "indexed": 99.08
       },
       {
         "date": "2025-12-01",
-        "indexed": 99.59
-      },
-      {
-        "date": "2025-12-08",
         "indexed": 99.64
       },
       {
+        "date": "2025-12-08",
+        "indexed": 99.67
+      },
+      {
         "date": "2025-12-15",
-        "indexed": 99.29
+        "indexed": 99.32
       },
       {
         "date": "2025-12-22",
-        "indexed": 99.16
+        "indexed": 99.19
       },
       {
         "date": "2025-12-29",
-        "indexed": 99.75
+        "indexed": 99.78
       },
       {
         "date": "2026-01-05",
-        "indexed": 103.46
+        "indexed": 103.48
       },
       {
         "date": "2026-01-12",
-        "indexed": 105.02
+        "indexed": 105.03
       },
       {
         "date": "2026-01-19",
-        "indexed": 104.38
+        "indexed": 104.39
       },
       {
         "date": "2026-01-26",
-        "indexed": 103.56
+        "indexed": 103.58
       },
       {
         "date": "2026-02-02",
-        "indexed": 109.51
+        "indexed": 109.52
       },
       {
         "date": "2026-02-09",
-        "indexed": 105.86
+        "indexed": 105.85
       },
       {
         "date": "2026-02-16",
-        "indexed": 109.91
+        "indexed": 109.89
       },
       {
         "date": "2026-02-23",
-        "indexed": 111.34
+        "indexed": 111.31
       },
       {
         "date": "2026-03-02",
-        "indexed": 103.6
+        "indexed": 103.58
       },
       {
         "date": "2026-03-09",
-        "indexed": 99.71
+        "indexed": 99.66
       },
       {
         "date": "2026-03-16",
-        "indexed": 98.33
+        "indexed": 98.26
       },
       {
         "date": "2026-03-23",
-        "indexed": 98.3
+        "indexed": 98.24
       },
       {
         "date": "2026-03-30",
-        "indexed": 101.1
+        "indexed": 101.05
       },
       {
         "date": "2026-04-06",
-        "indexed": 104.2
+        "indexed": 104.15
       },
       {
         "date": "2026-04-13",
-        "indexed": 105.89
+        "indexed": 105.84
       },
       {
         "date": "2026-04-20",
-        "indexed": 102.77
+        "indexed": 102.71
       },
       {
         "date": "2026-04-27",
-        "indexed": 106.53
+        "indexed": 106.48
       },
       {
         "date": "2026-05-04",
-        "indexed": 106.19
+        "indexed": 106.1
       },
       {
         "date": "2026-05-11",
-        "indexed": 101.46
+        "indexed": 101.39
       },
       {
         "date": "2026-05-18",
-        "indexed": 98.88
+        "indexed": 98.83
       },
       {
         "date": "2026-05-25",
-        "indexed": 100.91
+        "indexed": 100.86
       },
       {
         "date": "2026-06-01",
-        "indexed": 101.26
+        "indexed": 101.21
       },
       {
         "date": "2026-06-08",
-        "indexed": 101.61
+        "indexed": 101.56
       },
       {
         "date": "2026-06-15",
-        "indexed": 102.63
+        "indexed": 102.57
       },
       {
         "date": "2026-06-22",
-        "indexed": 101.86
+        "indexed": 101.8
       },
       {
         "date": "2026-06-29",
-        "indexed": 101.59
+        "indexed": 101.52
       },
       {
         "date": "2026-07-06",
-        "indexed": 98.32
+        "indexed": 98.26
       },
       {
         "date": "2026-07-13",
-        "indexed": 98.42
+        "indexed": 98.36
       },
       {
         "date": "2026-07-20",
-        "indexed": 100.83
+        "indexed": 100.78
       },
       {
         "date": "2026-07-27",
-        "indexed": 100.92
+        "indexed": 100.88
       },
       {
         "date": "2026-08-03",
-        "indexed": 104.47
+        "indexed": 104.45
       },
       {
         "date": "2026-08-10",
-        "indexed": 101.67
+        "indexed": 101.64
       },
       {
         "date": "2026-08-17",
-        "indexed": 100.66
+        "indexed": 100.64
       },
       {
         "date": "2026-08-24",
-        "indexed": 100.96
+        "indexed": 100.92
       },
       {
         "date": "2026-08-31",
-        "indexed": 100.34
+        "indexed": 100.31
       },
       {
         "date": "2026-09-07",
-        "indexed": 97.77
+        "indexed": 97.73
       },
       {
         "date": "2026-09-14",
-        "indexed": 96.58
+        "indexed": 96.54
       },
       {
         "date": "2026-09-21",
-        "indexed": 94.93
+        "indexed": 94.88
       },
       {
         "date": "2026-09-28",
-        "indexed": 93.74
+        "indexed": 93.25
+      },
+      {
+        "date": "2026-10-05",
+        "indexed": 92.8
       }
     ],
     "Specialty Engineering and Construction": [
@@ -1909,211 +1927,215 @@
       },
       {
         "date": "2025-10-06",
-        "indexed": 101.47
+        "indexed": 100.34
       },
       {
         "date": "2025-10-13",
-        "indexed": 100.71
+        "indexed": 99.66
       },
       {
         "date": "2025-10-20",
-        "indexed": 106.38
+        "indexed": 105.3
       },
       {
         "date": "2025-10-27",
-        "indexed": 102.08
+        "indexed": 101.03
       },
       {
         "date": "2025-11-03",
-        "indexed": 99.85
+        "indexed": 98.86
       },
       {
         "date": "2025-11-10",
-        "indexed": 101.38
+        "indexed": 100.31
       },
       {
         "date": "2025-11-17",
-        "indexed": 98.74
+        "indexed": 97.72
       },
       {
         "date": "2025-11-24",
-        "indexed": 106.38
+        "indexed": 105.25
       },
       {
         "date": "2025-12-01",
-        "indexed": 105.87
+        "indexed": 104.76
       },
       {
         "date": "2025-12-08",
-        "indexed": 106.08
+        "indexed": 104.9
       },
       {
         "date": "2025-12-15",
-        "indexed": 105.68
+        "indexed": 104.47
       },
       {
         "date": "2025-12-22",
-        "indexed": 106.84
+        "indexed": 105.63
       },
       {
         "date": "2025-12-29",
-        "indexed": 108.12
+        "indexed": 106.89
       },
       {
         "date": "2026-01-05",
-        "indexed": 110.62
+        "indexed": 109.34
       },
       {
         "date": "2026-01-12",
-        "indexed": 117.83
+        "indexed": 116.52
       },
       {
         "date": "2026-01-19",
-        "indexed": 117.94
+        "indexed": 116.59
       },
       {
         "date": "2026-01-26",
-        "indexed": 118.56
+        "indexed": 117.22
       },
       {
         "date": "2026-02-02",
-        "indexed": 125.78
+        "indexed": 124.43
       },
       {
         "date": "2026-02-09",
-        "indexed": 124.77
+        "indexed": 123.46
       },
       {
         "date": "2026-02-16",
-        "indexed": 128.79
+        "indexed": 127.44
       },
       {
         "date": "2026-02-23",
-        "indexed": 124.82
+        "indexed": 123.48
       },
       {
         "date": "2026-03-02",
-        "indexed": 113.91
+        "indexed": 112.76
       },
       {
         "date": "2026-03-09",
-        "indexed": 112.97
+        "indexed": 111.86
       },
       {
         "date": "2026-03-16",
-        "indexed": 110.86
+        "indexed": 109.78
       },
       {
         "date": "2026-03-23",
-        "indexed": 111.39
+        "indexed": 110.29
       },
       {
         "date": "2026-03-30",
-        "indexed": 115.11
+        "indexed": 113.97
       },
       {
         "date": "2026-04-06",
-        "indexed": 123.44
+        "indexed": 122.22
       },
       {
         "date": "2026-04-13",
-        "indexed": 126.45
+        "indexed": 125.21
       },
       {
         "date": "2026-04-20",
-        "indexed": 127.88
+        "indexed": 126.78
       },
       {
         "date": "2026-04-27",
-        "indexed": 133.16
+        "indexed": 132.06
       },
       {
         "date": "2026-05-04",
-        "indexed": 133.86
+        "indexed": 132.74
       },
       {
         "date": "2026-05-11",
-        "indexed": 129.43
+        "indexed": 128.46
       },
       {
         "date": "2026-05-18",
-        "indexed": 124.36
+        "indexed": 123.34
       },
       {
         "date": "2026-05-25",
-        "indexed": 129.5
+        "indexed": 128.49
       },
       {
         "date": "2026-06-01",
-        "indexed": 125.48
+        "indexed": 124.55
       },
       {
         "date": "2026-06-08",
-        "indexed": 126.28
+        "indexed": 125.36
       },
       {
         "date": "2026-06-15",
-        "indexed": 128.06
+        "indexed": 127.06
       },
       {
         "date": "2026-06-22",
-        "indexed": 126.81
+        "indexed": 125.86
       },
       {
         "date": "2026-06-29",
-        "indexed": 122.55
+        "indexed": 121.53
       },
       {
         "date": "2026-07-06",
-        "indexed": 121.52
+        "indexed": 120.57
       },
       {
         "date": "2026-07-13",
-        "indexed": 118.68
+        "indexed": 117.72
       },
       {
         "date": "2026-07-20",
-        "indexed": 119.8
+        "indexed": 118.85
       },
       {
         "date": "2026-07-27",
-        "indexed": 120.72
+        "indexed": 119.78
       },
       {
         "date": "2026-08-03",
-        "indexed": 123.12
+        "indexed": 122.18
       },
       {
         "date": "2026-08-10",
-        "indexed": 126.15
+        "indexed": 125.25
       },
       {
         "date": "2026-08-17",
-        "indexed": 120.33
+        "indexed": 119.45
       },
       {
         "date": "2026-08-24",
-        "indexed": 112.12
+        "indexed": 111.14
       },
       {
         "date": "2026-08-31",
-        "indexed": 113.78
+        "indexed": 112.84
       },
       {
         "date": "2026-09-07",
-        "indexed": 115.24
+        "indexed": 114.36
       },
       {
         "date": "2026-09-14",
-        "indexed": 108.73
+        "indexed": 108.07
       },
       {
         "date": "2026-09-21",
-        "indexed": 107.23
+        "indexed": 106.58
       },
       {
         "date": "2026-09-28",
-        "indexed": 107.13
+        "indexed": 107.78
+      },
+      {
+        "date": "2026-10-05",
+        "indexed": 107.87
       }
     ],
     "Infrastructure Services": [
@@ -2123,211 +2145,215 @@
       },
       {
         "date": "2025-10-06",
-        "indexed": 98.17
+        "indexed": 97.68
       },
       {
         "date": "2025-10-13",
-        "indexed": 97.92
+        "indexed": 97.43
       },
       {
         "date": "2025-10-20",
-        "indexed": 100.84
+        "indexed": 100.34
       },
       {
         "date": "2025-10-27",
-        "indexed": 99.48
+        "indexed": 98.98
       },
       {
         "date": "2025-11-03",
-        "indexed": 97.44
+        "indexed": 96.96
       },
       {
         "date": "2025-11-10",
-        "indexed": 94.58
+        "indexed": 94.1
       },
       {
         "date": "2025-11-17",
-        "indexed": 91.51
+        "indexed": 91.03
       },
       {
         "date": "2025-11-24",
-        "indexed": 98.31
+        "indexed": 97.79
       },
       {
         "date": "2025-12-01",
-        "indexed": 95.99
+        "indexed": 95.47
       },
       {
         "date": "2025-12-08",
-        "indexed": 98.34
+        "indexed": 97.82
       },
       {
         "date": "2025-12-15",
-        "indexed": 98.26
+        "indexed": 97.72
       },
       {
         "date": "2025-12-22",
-        "indexed": 100.33
+        "indexed": 99.8
       },
       {
         "date": "2025-12-29",
-        "indexed": 100.11
+        "indexed": 99.58
       },
       {
         "date": "2026-01-05",
-        "indexed": 100.74
+        "indexed": 100.2
       },
       {
         "date": "2026-01-12",
-        "indexed": 104.27
+        "indexed": 103.72
       },
       {
         "date": "2026-01-19",
-        "indexed": 102.32
+        "indexed": 101.79
       },
       {
         "date": "2026-01-26",
-        "indexed": 102.9
+        "indexed": 102.37
       },
       {
         "date": "2026-02-02",
-        "indexed": 112.75
+        "indexed": 112.2
       },
       {
         "date": "2026-02-09",
-        "indexed": 117.78
+        "indexed": 117.21
       },
       {
         "date": "2026-02-16",
-        "indexed": 118.68
-      },
-      {
-        "date": "2026-02-23",
-        "indexed": 117.72
-      },
-      {
-        "date": "2026-03-02",
-        "indexed": 107.6
-      },
-      {
-        "date": "2026-03-09",
-        "indexed": 108.15
-      },
-      {
-        "date": "2026-03-16",
-        "indexed": 105.21
-      },
-      {
-        "date": "2026-03-23",
-        "indexed": 107.85
-      },
-      {
-        "date": "2026-03-30",
-        "indexed": 109.0
-      },
-      {
-        "date": "2026-04-06",
-        "indexed": 116.74
-      },
-      {
-        "date": "2026-04-13",
-        "indexed": 119.04
-      },
-      {
-        "date": "2026-04-20",
-        "indexed": 119.11
-      },
-      {
-        "date": "2026-04-27",
-        "indexed": 126.87
-      },
-      {
-        "date": "2026-05-04",
-        "indexed": 154.42
-      },
-      {
-        "date": "2026-05-11",
-        "indexed": 147.3
-      },
-      {
-        "date": "2026-05-18",
-        "indexed": 135.63
-      },
-      {
-        "date": "2026-05-25",
-        "indexed": 147.14
-      },
-      {
-        "date": "2026-06-01",
-        "indexed": 149.17
-      },
-      {
-        "date": "2026-06-08",
-        "indexed": 149.01
-      },
-      {
-        "date": "2026-06-15",
-        "indexed": 153.64
-      },
-      {
-        "date": "2026-06-22",
-        "indexed": 152.9
-      },
-      {
-        "date": "2026-06-29",
-        "indexed": 140.08
-      },
-      {
-        "date": "2026-07-06",
-        "indexed": 128.86
-      },
-      {
-        "date": "2026-07-13",
-        "indexed": 128.66
-      },
-      {
-        "date": "2026-07-20",
-        "indexed": 130.61
-      },
-      {
-        "date": "2026-07-27",
-        "indexed": 124.58
-      },
-      {
-        "date": "2026-08-03",
-        "indexed": 126.69
-      },
-      {
-        "date": "2026-08-10",
-        "indexed": 130.22
-      },
-      {
-        "date": "2026-08-17",
-        "indexed": 122.13
-      },
-      {
-        "date": "2026-08-24",
         "indexed": 118.1
       },
       {
+        "date": "2026-02-23",
+        "indexed": 117.15
+      },
+      {
+        "date": "2026-03-02",
+        "indexed": 107.08
+      },
+      {
+        "date": "2026-03-09",
+        "indexed": 107.59
+      },
+      {
+        "date": "2026-03-16",
+        "indexed": 104.66
+      },
+      {
+        "date": "2026-03-23",
+        "indexed": 107.29
+      },
+      {
+        "date": "2026-03-30",
+        "indexed": 108.42
+      },
+      {
+        "date": "2026-04-06",
+        "indexed": 116.13
+      },
+      {
+        "date": "2026-04-13",
+        "indexed": 118.42
+      },
+      {
+        "date": "2026-04-20",
+        "indexed": 118.52
+      },
+      {
+        "date": "2026-04-27",
+        "indexed": 126.27
+      },
+      {
+        "date": "2026-05-04",
+        "indexed": 153.78
+      },
+      {
+        "date": "2026-05-11",
+        "indexed": 146.7
+      },
+      {
+        "date": "2026-05-18",
+        "indexed": 135.04
+      },
+      {
+        "date": "2026-05-25",
+        "indexed": 146.55
+      },
+      {
+        "date": "2026-06-01",
+        "indexed": 148.57
+      },
+      {
+        "date": "2026-06-08",
+        "indexed": 148.39
+      },
+      {
+        "date": "2026-06-15",
+        "indexed": 153.0
+      },
+      {
+        "date": "2026-06-22",
+        "indexed": 152.25
+      },
+      {
+        "date": "2026-06-29",
+        "indexed": 139.42
+      },
+      {
+        "date": "2026-07-06",
+        "indexed": 128.23
+      },
+      {
+        "date": "2026-07-13",
+        "indexed": 128.01
+      },
+      {
+        "date": "2026-07-20",
+        "indexed": 129.96
+      },
+      {
+        "date": "2026-07-27",
+        "indexed": 123.94
+      },
+      {
+        "date": "2026-08-03",
+        "indexed": 126.04
+      },
+      {
+        "date": "2026-08-10",
+        "indexed": 129.54
+      },
+      {
+        "date": "2026-08-17",
+        "indexed": 121.47
+      },
+      {
+        "date": "2026-08-24",
+        "indexed": 117.44
+      },
+      {
         "date": "2026-08-31",
-        "indexed": 117.06
+        "indexed": 116.41
       },
       {
         "date": "2026-09-07",
-        "indexed": 117.12
+        "indexed": 116.49
       },
       {
         "date": "2026-09-14",
-        "indexed": 118.19
+        "indexed": 117.51
       },
       {
         "date": "2026-09-21",
-        "indexed": 118.09
+        "indexed": 117.39
       },
       {
         "date": "2026-09-28",
-        "indexed": 117.66
+        "indexed": 119.62
+      },
+      {
+        "date": "2026-10-05",
+        "indexed": 118.89
       }
     ],
     "Utility Services": [
@@ -2541,7 +2567,11 @@
       },
       {
         "date": "2026-09-28",
-        "indexed": 103.58
+        "indexed": 105.86
+      },
+      {
+        "date": "2026-10-05",
+        "indexed": 105.86
       }
     ],
     "Management Consulting": [
@@ -2755,7 +2785,11 @@
       },
       {
         "date": "2026-09-28",
-        "indexed": 87.79
+        "indexed": 84.35
+      },
+      {
+        "date": "2026-10-05",
+        "indexed": 84.35
       }
     ],
     "S&P 500": [
@@ -2969,437 +3003,441 @@
       },
       {
         "date": "2026-09-28",
-        "indexed": 114.16
+        "indexed": 114.99
+      },
+      {
+        "date": "2026-10-05",
+        "indexed": 114.99
       }
     ]
   },
   "price_history": {
     "ACS": [
       {
-        "date": "2025-09-29",
+        "date": "2025-10-06",
         "indexed": 100.0
       },
       {
-        "date": "2025-10-06",
-        "indexed": 102.44
-      },
-      {
         "date": "2025-10-13",
-        "indexed": 100.57
+        "indexed": 98.18
       },
       {
         "date": "2025-10-20",
-        "indexed": 103.22
+        "indexed": 100.77
       },
       {
         "date": "2025-10-27",
-        "indexed": 102.01
+        "indexed": 99.58
       },
       {
         "date": "2025-11-03",
-        "indexed": 108.17
+        "indexed": 105.59
       },
       {
         "date": "2025-11-10",
-        "indexed": 111.6
+        "indexed": 108.95
       },
       {
         "date": "2025-11-17",
-        "indexed": 103.58
+        "indexed": 101.12
       },
       {
         "date": "2025-11-24",
-        "indexed": 114.11
+        "indexed": 111.4
       },
       {
         "date": "2025-12-01",
-        "indexed": 116.33
+        "indexed": 113.57
       },
       {
         "date": "2025-12-08",
-        "indexed": 121.28
+        "indexed": 118.39
       },
       {
         "date": "2025-12-15",
-        "indexed": 121.63
+        "indexed": 118.74
       },
       {
         "date": "2025-12-22",
-        "indexed": 120.63
+        "indexed": 117.76
       },
       {
         "date": "2025-12-29",
-        "indexed": 122.64
+        "indexed": 119.72
       },
       {
         "date": "2026-01-05",
-        "indexed": 131.3
+        "indexed": 128.18
       },
       {
         "date": "2026-01-12",
-        "indexed": 138.32
+        "indexed": 135.03
       },
       {
         "date": "2026-01-19",
-        "indexed": 135.76
+        "indexed": 132.53
       },
       {
         "date": "2026-01-26",
-        "indexed": 136.27
+        "indexed": 133.03
       },
       {
         "date": "2026-02-02",
-        "indexed": 139.51
+        "indexed": 136.19
       },
       {
         "date": "2026-02-09",
-        "indexed": 141.52
+        "indexed": 138.16
       },
       {
         "date": "2026-02-16",
-        "indexed": 152.61
+        "indexed": 148.98
       },
       {
         "date": "2026-02-23",
-        "indexed": 157.79
+        "indexed": 154.04
       },
       {
         "date": "2026-03-02",
-        "indexed": 147.86
+        "indexed": 144.34
       },
       {
         "date": "2026-03-09",
-        "indexed": 148.72
+        "indexed": 145.18
       },
       {
         "date": "2026-03-16",
-        "indexed": 148.43
+        "indexed": 144.9
       },
       {
         "date": "2026-03-23",
-        "indexed": 147.57
+        "indexed": 144.06
       },
       {
         "date": "2026-03-30",
-        "indexed": 159.95
+        "indexed": 156.15
       },
       {
         "date": "2026-04-06",
-        "indexed": 172.76
+        "indexed": 168.66
       },
       {
         "date": "2026-04-13",
-        "indexed": 176.51
+        "indexed": 172.31
       },
       {
         "date": "2026-04-20",
-        "indexed": 176.07
+        "indexed": 171.89
       },
       {
         "date": "2026-04-27",
-        "indexed": 176.51
+        "indexed": 172.31
       },
       {
         "date": "2026-05-04",
-        "indexed": 197.53
+        "indexed": 192.83
       },
       {
         "date": "2026-05-11",
-        "indexed": 191.77
+        "indexed": 187.21
       },
       {
         "date": "2026-05-18",
-        "indexed": 177.95
+        "indexed": 173.71
       },
       {
         "date": "2026-05-25",
-        "indexed": 178.95
+        "indexed": 174.7
       },
       {
         "date": "2026-06-01",
-        "indexed": 181.26
+        "indexed": 176.95
       },
       {
         "date": "2026-06-08",
-        "indexed": 180.68
+        "indexed": 176.39
       },
       {
         "date": "2026-06-15",
-        "indexed": 187.88
+        "indexed": 183.41
       },
       {
         "date": "2026-06-22",
-        "indexed": 184.14
+        "indexed": 179.76
       },
       {
         "date": "2026-06-29",
-        "indexed": 181.9
+        "indexed": 177.57
       },
       {
         "date": "2026-07-06",
-        "indexed": 175.32
+        "indexed": 171.15
       },
       {
         "date": "2026-07-13",
-        "indexed": 171.96
+        "indexed": 167.87
       },
       {
         "date": "2026-07-20",
-        "indexed": 167.58
+        "indexed": 163.59
       },
       {
         "date": "2026-07-27",
-        "indexed": 161.15
+        "indexed": 157.32
       },
       {
         "date": "2026-08-03",
-        "indexed": 159.25
+        "indexed": 155.46
       },
       {
         "date": "2026-08-10",
-        "indexed": 159.98
+        "indexed": 156.18
       },
       {
         "date": "2026-08-17",
-        "indexed": 153.41
+        "indexed": 149.76
       },
       {
         "date": "2026-08-24",
-        "indexed": 151.07
+        "indexed": 147.48
       },
       {
         "date": "2026-08-31",
-        "indexed": 149.17
+        "indexed": 145.62
       },
       {
         "date": "2026-09-07",
-        "indexed": 143.54
+        "indexed": 140.13
       },
       {
         "date": "2026-09-14",
-        "indexed": 136.46
+        "indexed": 133.21
       },
       {
         "date": "2026-09-21",
-        "indexed": 136.75
+        "indexed": 133.5
       },
       {
         "date": "2026-09-28",
-        "indexed": 138.87
+        "indexed": 135.5
+      },
+      {
+        "date": "2026-10-05",
+        "indexed": 134.07
       }
     ],
     "SKA.B": [
       {
-        "date": "2025-09-29",
+        "date": "2025-10-06",
         "indexed": 100.0
       },
       {
-        "date": "2025-10-06",
-        "indexed": 108.08
-      },
-      {
         "date": "2025-10-13",
-        "indexed": 106.28
+        "indexed": 98.34
       },
       {
         "date": "2025-10-20",
-        "indexed": 108.77
+        "indexed": 100.64
       },
       {
         "date": "2025-10-27",
-        "indexed": 105.87
+        "indexed": 97.96
       },
       {
         "date": "2025-11-03",
-        "indexed": 98.74
+        "indexed": 91.36
       },
       {
         "date": "2025-11-10",
-        "indexed": 101.75
+        "indexed": 94.15
       },
       {
         "date": "2025-11-17",
-        "indexed": 97.76
+        "indexed": 90.45
       },
       {
         "date": "2025-11-24",
-        "indexed": 98.78
+        "indexed": 91.4
       },
       {
         "date": "2025-12-01",
-        "indexed": 101.06
+        "indexed": 93.51
       },
       {
         "date": "2025-12-08",
-        "indexed": 101.26
+        "indexed": 93.7
       },
       {
         "date": "2025-12-15",
-        "indexed": 101.96
+        "indexed": 94.34
       },
       {
         "date": "2025-12-22",
-        "indexed": 102.53
+        "indexed": 94.87
       },
       {
         "date": "2025-12-29",
-        "indexed": 105.14
+        "indexed": 97.28
       },
       {
         "date": "2026-01-05",
-        "indexed": 109.3
+        "indexed": 101.13
       },
       {
         "date": "2026-01-12",
-        "indexed": 113.13
+        "indexed": 104.68
       },
       {
         "date": "2026-01-19",
-        "indexed": 110.11
+        "indexed": 101.89
       },
       {
         "date": "2026-01-26",
-        "indexed": 110.48
+        "indexed": 102.23
       },
       {
         "date": "2026-02-02",
-        "indexed": 111.01
+        "indexed": 102.72
       },
       {
         "date": "2026-02-09",
-        "indexed": 108.24
+        "indexed": 100.15
       },
       {
         "date": "2026-02-16",
-        "indexed": 112.93
+        "indexed": 104.49
       },
       {
         "date": "2026-02-23",
-        "indexed": 113.38
+        "indexed": 104.91
       },
       {
         "date": "2026-03-02",
-        "indexed": 106.65
+        "indexed": 98.68
       },
       {
         "date": "2026-03-09",
-        "indexed": 104.81
+        "indexed": 96.98
       },
       {
         "date": "2026-03-16",
-        "indexed": 98.94
+        "indexed": 91.55
       },
       {
         "date": "2026-03-23",
-        "indexed": 100.37
+        "indexed": 92.87
       },
       {
         "date": "2026-03-30",
-        "indexed": 103.36
+        "indexed": 95.64
       },
       {
         "date": "2026-04-06",
-        "indexed": 110.49
+        "indexed": 102.23
       },
       {
         "date": "2026-04-13",
-        "indexed": 113.64
+        "indexed": 105.15
       },
       {
         "date": "2026-04-20",
-        "indexed": 108.24
+        "indexed": 100.15
       },
       {
         "date": "2026-04-27",
-        "indexed": 106.86
+        "indexed": 98.88
       },
       {
         "date": "2026-05-04",
-        "indexed": 108.33
+        "indexed": 100.23
       },
       {
         "date": "2026-05-11",
-        "indexed": 105.0
+        "indexed": 97.16
       },
       {
         "date": "2026-05-18",
-        "indexed": 107.08
+        "indexed": 99.08
       },
       {
         "date": "2026-05-25",
-        "indexed": 108.11
+        "indexed": 100.03
       },
       {
         "date": "2026-06-01",
-        "indexed": 105.87
+        "indexed": 97.96
       },
       {
         "date": "2026-06-08",
-        "indexed": 103.71
+        "indexed": 95.96
       },
       {
         "date": "2026-06-15",
-        "indexed": 109.62
+        "indexed": 101.43
       },
       {
         "date": "2026-06-22",
-        "indexed": 111.74
+        "indexed": 103.39
       },
       {
         "date": "2026-06-29",
-        "indexed": 115.54
+        "indexed": 106.91
       },
       {
         "date": "2026-07-06",
-        "indexed": 109.49
+        "indexed": 101.31
       },
       {
         "date": "2026-07-13",
-        "indexed": 110.14
+        "indexed": 101.91
       },
       {
         "date": "2026-07-20",
-        "indexed": 114.16
+        "indexed": 105.63
       },
       {
         "date": "2026-07-27",
-        "indexed": 115.15
+        "indexed": 106.55
       },
       {
         "date": "2026-08-03",
-        "indexed": 116.7
+        "indexed": 107.98
       },
       {
         "date": "2026-08-10",
-        "indexed": 115.28
+        "indexed": 106.67
       },
       {
         "date": "2026-08-17",
-        "indexed": 117.01
+        "indexed": 108.26
       },
       {
         "date": "2026-08-24",
-        "indexed": 118.91
+        "indexed": 110.02
       },
       {
         "date": "2026-08-31",
-        "indexed": 117.4
+        "indexed": 108.62
       },
       {
         "date": "2026-09-07",
-        "indexed": 114.93
+        "indexed": 106.35
       },
       {
         "date": "2026-09-14",
-        "indexed": 116.53
+        "indexed": 107.83
       },
       {
         "date": "2026-09-21",
-        "indexed": 121.15
+        "indexed": 112.1
       },
       {
         "date": "2026-09-28",
-        "indexed": 120.29
+        "indexed": 111.22
+      },
+      {
+        "date": "2026-10-05",
+        "indexed": 104.99
       }
     ],
     "AGX": [
@@ -3613,7 +3651,11 @@
       },
       {
         "date": "2026-09-28",
-        "indexed": 145.42
+        "indexed": 147.05
+      },
+      {
+        "date": "2026-10-05",
+        "indexed": 147.05
       }
     ],
     "TPC": [
@@ -3827,7 +3869,11 @@
       },
       {
         "date": "2026-09-28",
-        "indexed": 133.87
+        "indexed": 139.45
+      },
+      {
+        "date": "2026-10-05",
+        "indexed": 139.45
       }
     ],
     "ARE": [
@@ -4041,7 +4087,11 @@
       },
       {
         "date": "2026-09-28",
-        "indexed": 231.01
+        "indexed": 240.56
+      },
+      {
+        "date": "2026-10-05",
+        "indexed": 240.56
       }
     ],
     "BWMN": [
@@ -4255,649 +4305,653 @@
       },
       {
         "date": "2026-09-28",
-        "indexed": 102.73
+        "indexed": 102.75
+      },
+      {
+        "date": "2026-10-05",
+        "indexed": 102.75
       }
     ],
     "DG": [
       {
-        "date": "2025-09-29",
+        "date": "2025-10-06",
         "indexed": 100.0
       },
       {
-        "date": "2025-10-06",
-        "indexed": 99.58
-      },
-      {
         "date": "2025-10-13",
-        "indexed": 103.85
+        "indexed": 104.29
       },
       {
         "date": "2025-10-20",
-        "indexed": 102.99
+        "indexed": 103.43
       },
       {
         "date": "2025-10-27",
-        "indexed": 99.14
+        "indexed": 99.56
       },
       {
         "date": "2025-11-03",
-        "indexed": 98.88
+        "indexed": 99.31
       },
       {
         "date": "2025-11-10",
-        "indexed": 102.22
+        "indexed": 102.66
       },
       {
         "date": "2025-11-17",
-        "indexed": 101.96
+        "indexed": 102.4
       },
       {
         "date": "2025-11-24",
-        "indexed": 104.57
+        "indexed": 105.02
       },
       {
         "date": "2025-12-01",
-        "indexed": 103.16
+        "indexed": 103.6
       },
       {
         "date": "2025-12-08",
-        "indexed": 102.05
-      },
-      {
-        "date": "2025-12-15",
         "indexed": 102.48
       },
       {
+        "date": "2025-12-15",
+        "indexed": 102.91
+      },
+      {
         "date": "2025-12-22",
-        "indexed": 102.35
+        "indexed": 102.79
       },
       {
         "date": "2025-12-29",
-        "indexed": 103.63
+        "indexed": 104.07
       },
       {
         "date": "2026-01-05",
-        "indexed": 103.5
+        "indexed": 103.94
       },
       {
         "date": "2026-01-12",
-        "indexed": 100.47
+        "indexed": 100.9
       },
       {
         "date": "2026-01-19",
-        "indexed": 100.55
+        "indexed": 100.98
       },
       {
         "date": "2026-01-26",
-        "indexed": 103.63
+        "indexed": 104.07
       },
       {
         "date": "2026-02-02",
-        "indexed": 114.8
+        "indexed": 115.28
       },
       {
         "date": "2026-02-09",
-        "indexed": 115.74
+        "indexed": 116.23
       },
       {
         "date": "2026-02-16",
-        "indexed": 119.84
+        "indexed": 120.35
       },
       {
         "date": "2026-02-23",
-        "indexed": 120.4
+        "indexed": 120.91
       },
       {
         "date": "2026-03-02",
-        "indexed": 110.35
+        "indexed": 110.82
       },
       {
         "date": "2026-03-09",
-        "indexed": 110.65
+        "indexed": 111.12
       },
       {
         "date": "2026-03-16",
-        "indexed": 106.03
+        "indexed": 106.48
       },
       {
         "date": "2026-03-23",
-        "indexed": 107.87
+        "indexed": 108.33
       },
       {
         "date": "2026-03-30",
-        "indexed": 112.57
+        "indexed": 113.05
       },
       {
         "date": "2026-04-06",
-        "indexed": 116.04
+        "indexed": 116.53
       },
       {
         "date": "2026-04-13",
-        "indexed": 117.62
+        "indexed": 118.12
       },
       {
         "date": "2026-04-20",
-        "indexed": 112.4
+        "indexed": 112.87
       },
       {
         "date": "2026-04-27",
-        "indexed": 113.19
+        "indexed": 113.67
       },
       {
         "date": "2026-05-04",
-        "indexed": 113.45
+        "indexed": 113.94
       },
       {
         "date": "2026-05-11",
-        "indexed": 109.8
+        "indexed": 110.26
       },
       {
         "date": "2026-05-18",
-        "indexed": 107.2
+        "indexed": 107.65
       },
       {
         "date": "2026-05-25",
-        "indexed": 110.15
+        "indexed": 110.62
       },
       {
         "date": "2026-06-01",
-        "indexed": 109.44
+        "indexed": 109.91
       },
       {
         "date": "2026-06-08",
-        "indexed": 110.9
+        "indexed": 111.37
       },
       {
         "date": "2026-06-15",
-        "indexed": 114.2
+        "indexed": 114.69
       },
       {
         "date": "2026-06-22",
-        "indexed": 114.6
+        "indexed": 115.09
       },
       {
         "date": "2026-06-29",
-        "indexed": 112.66
+        "indexed": 113.14
       },
       {
         "date": "2026-07-06",
-        "indexed": 104.82
+        "indexed": 105.27
       },
       {
         "date": "2026-07-13",
-        "indexed": 103.9
+        "indexed": 104.34
       },
       {
         "date": "2026-07-20",
-        "indexed": 104.25
+        "indexed": 104.69
       },
       {
         "date": "2026-07-27",
-        "indexed": 107.95
+        "indexed": 108.41
       },
       {
         "date": "2026-08-03",
-        "indexed": 110.41
+        "indexed": 110.88
       },
       {
         "date": "2026-08-10",
-        "indexed": 106.45
+        "indexed": 106.9
       },
       {
         "date": "2026-08-17",
-        "indexed": 105.08
+        "indexed": 105.53
       },
       {
         "date": "2026-08-24",
-        "indexed": 100.72
+        "indexed": 101.15
       },
       {
         "date": "2026-08-31",
-        "indexed": 100.37
+        "indexed": 100.8
       },
       {
         "date": "2026-09-07",
-        "indexed": 98.17
+        "indexed": 98.59
       },
       {
         "date": "2026-09-14",
-        "indexed": 97.6
+        "indexed": 98.01
       },
       {
         "date": "2026-09-21",
-        "indexed": 98.04
+        "indexed": 98.45
       },
       {
         "date": "2026-09-28",
-        "indexed": 94.16
+        "indexed": 94.47
+      },
+      {
+        "date": "2026-10-05",
+        "indexed": 93.19
       }
     ],
     "HOT": [
       {
-        "date": "2025-09-29",
+        "date": "2025-10-06",
         "indexed": 100.0
       },
       {
-        "date": "2025-10-06",
-        "indexed": 101.17
-      },
-      {
         "date": "2025-10-13",
-        "indexed": 98.05
+        "indexed": 96.92
       },
       {
         "date": "2025-10-20",
-        "indexed": 99.22
+        "indexed": 98.07
       },
       {
         "date": "2025-10-27",
-        "indexed": 96.96
+        "indexed": 95.84
       },
       {
         "date": "2025-11-03",
-        "indexed": 105.3
+        "indexed": 104.09
       },
       {
         "date": "2025-11-10",
-        "indexed": 110.84
+        "indexed": 109.56
       },
       {
         "date": "2025-11-17",
-        "indexed": 105.3
+        "indexed": 104.09
       },
       {
         "date": "2025-11-24",
-        "indexed": 118.88
+        "indexed": 117.5
       },
       {
         "date": "2025-12-01",
-        "indexed": 122.78
+        "indexed": 121.36
       },
       {
         "date": "2025-12-08",
-        "indexed": 127.77
+        "indexed": 126.29
       },
       {
         "date": "2025-12-15",
-        "indexed": 131.44
+        "indexed": 129.92
       },
       {
         "date": "2025-12-22",
-        "indexed": 129.17
+        "indexed": 127.68
       },
       {
         "date": "2025-12-29",
-        "indexed": 131.98
+        "indexed": 130.45
       },
       {
         "date": "2026-01-05",
-        "indexed": 138.14
+        "indexed": 136.55
       },
       {
         "date": "2026-01-12",
-        "indexed": 145.48
+        "indexed": 143.79
       },
       {
         "date": "2026-01-19",
-        "indexed": 142.12
+        "indexed": 140.48
       },
       {
         "date": "2026-01-26",
-        "indexed": 138.38
+        "indexed": 136.78
       },
       {
         "date": "2026-02-02",
-        "indexed": 142.59
+        "indexed": 140.94
       },
       {
         "date": "2026-02-09",
-        "indexed": 144.46
+        "indexed": 142.79
       },
       {
         "date": "2026-02-16",
-        "indexed": 157.8
+        "indexed": 155.98
       },
       {
         "date": "2026-02-23",
-        "indexed": 160.92
+        "indexed": 159.06
       },
       {
         "date": "2026-03-02",
-        "indexed": 146.49
+        "indexed": 144.8
       },
       {
         "date": "2026-03-09",
-        "indexed": 148.28
+        "indexed": 146.57
       },
       {
         "date": "2026-03-16",
-        "indexed": 151.25
+        "indexed": 149.5
       },
       {
         "date": "2026-03-23",
-        "indexed": 147.19
+        "indexed": 145.49
       },
       {
         "date": "2026-03-30",
-        "indexed": 158.42
+        "indexed": 156.59
       },
       {
         "date": "2026-04-06",
-        "indexed": 176.37
+        "indexed": 174.33
       },
       {
         "date": "2026-04-13",
-        "indexed": 181.36
+        "indexed": 179.26
       },
       {
         "date": "2026-04-20",
-        "indexed": 179.02
+        "indexed": 176.95
       },
       {
         "date": "2026-04-27",
-        "indexed": 180.97
+        "indexed": 178.88
       },
       {
         "date": "2026-05-04",
-        "indexed": 217.31
+        "indexed": 214.8
       },
       {
         "date": "2026-05-11",
-        "indexed": 203.66
+        "indexed": 201.3
       },
       {
         "date": "2026-05-18",
-        "indexed": 185.72
+        "indexed": 183.58
       },
       {
         "date": "2026-05-25",
-        "indexed": 192.61
+        "indexed": 190.38
       },
       {
         "date": "2026-06-01",
-        "indexed": 196.33
+        "indexed": 194.06
       },
       {
         "date": "2026-06-08",
-        "indexed": 192.14
+        "indexed": 189.91
       },
       {
         "date": "2026-06-15",
-        "indexed": 202.27
+        "indexed": 199.93
       },
       {
         "date": "2026-06-22",
-        "indexed": 197.04
+        "indexed": 194.77
       },
       {
         "date": "2026-06-29",
-        "indexed": 197.92
+        "indexed": 195.63
       },
       {
         "date": "2026-07-06",
-        "indexed": 180.18
+        "indexed": 178.1
       },
       {
         "date": "2026-07-13",
-        "indexed": 180.34
+        "indexed": 178.26
       },
       {
         "date": "2026-07-20",
-        "indexed": 177.09
+        "indexed": 175.05
       },
       {
         "date": "2026-07-27",
-        "indexed": 175.43
+        "indexed": 173.4
       },
       {
         "date": "2026-08-03",
-        "indexed": 179.07
+        "indexed": 177.0
       },
       {
         "date": "2026-08-10",
-        "indexed": 175.35
+        "indexed": 173.33
       },
       {
         "date": "2026-08-17",
-        "indexed": 169.26
+        "indexed": 167.3
       },
       {
         "date": "2026-08-24",
-        "indexed": 168.78
+        "indexed": 166.83
       },
       {
         "date": "2026-08-31",
-        "indexed": 168.62
+        "indexed": 166.67
       },
       {
         "date": "2026-09-07",
-        "indexed": 164.75
+        "indexed": 162.84
       },
       {
         "date": "2026-09-14",
-        "indexed": 156.51
+        "indexed": 154.7
       },
       {
         "date": "2026-09-21",
-        "indexed": 157.22
+        "indexed": 155.41
       },
       {
         "date": "2026-09-28",
-        "indexed": 161.5
+        "indexed": 159.4
+      },
+      {
+        "date": "2026-10-05",
+        "indexed": 157.13
       }
     ],
     "EN": [
       {
-        "date": "2025-09-29",
+        "date": "2025-10-06",
         "indexed": 100.0
       },
       {
-        "date": "2025-10-06",
-        "indexed": 99.11
-      },
-      {
         "date": "2025-10-13",
-        "indexed": 107.45
+        "indexed": 108.41
       },
       {
         "date": "2025-10-20",
-        "indexed": 107.03
+        "indexed": 107.99
       },
       {
         "date": "2025-10-27",
-        "indexed": 101.87
+        "indexed": 102.78
       },
       {
         "date": "2025-11-03",
-        "indexed": 103.67
+        "indexed": 104.6
       },
       {
         "date": "2025-11-10",
-        "indexed": 108.38
+        "indexed": 109.35
       },
       {
         "date": "2025-11-17",
-        "indexed": 108.7
+        "indexed": 109.67
       },
       {
         "date": "2025-11-24",
-        "indexed": 112.0
+        "indexed": 113.0
       },
       {
         "date": "2025-12-01",
-        "indexed": 112.39
+        "indexed": 113.4
       },
       {
         "date": "2025-12-08",
-        "indexed": 112.34
+        "indexed": 113.34
       },
       {
         "date": "2025-12-15",
-        "indexed": 116.01
+        "indexed": 117.05
       },
       {
         "date": "2025-12-22",
-        "indexed": 115.33
+        "indexed": 116.36
       },
       {
         "date": "2025-12-29",
-        "indexed": 117.68
+        "indexed": 118.73
       },
       {
         "date": "2026-01-05",
-        "indexed": 117.86
+        "indexed": 118.91
       },
       {
         "date": "2026-01-12",
-        "indexed": 117.99
+        "indexed": 119.04
       },
       {
         "date": "2026-01-19",
-        "indexed": 115.83
+        "indexed": 116.86
       },
       {
         "date": "2026-01-26",
-        "indexed": 118.75
+        "indexed": 119.81
       },
       {
         "date": "2026-02-02",
-        "indexed": 125.62
-      },
-      {
-        "date": "2026-02-09",
-        "indexed": 127.75
-      },
-      {
-        "date": "2026-02-16",
-        "indexed": 133.4
-      },
-      {
-        "date": "2026-02-23",
-        "indexed": 137.15
-      },
-      {
-        "date": "2026-03-02",
-        "indexed": 127.31
-      },
-      {
-        "date": "2026-03-09",
-        "indexed": 129.68
-      },
-      {
-        "date": "2026-03-16",
-        "indexed": 127.0
-      },
-      {
-        "date": "2026-03-23",
-        "indexed": 127.36
-      },
-      {
-        "date": "2026-03-30",
-        "indexed": 131.06
-      },
-      {
-        "date": "2026-04-06",
-        "indexed": 136.79
-      },
-      {
-        "date": "2026-04-13",
-        "indexed": 136.47
-      },
-      {
-        "date": "2026-04-20",
-        "indexed": 134.81
-      },
-      {
-        "date": "2026-04-27",
-        "indexed": 136.45
-      },
-      {
-        "date": "2026-05-04",
-        "indexed": 136.35
-      },
-      {
-        "date": "2026-05-11",
-        "indexed": 137.05
-      },
-      {
-        "date": "2026-05-18",
-        "indexed": 133.88
-      },
-      {
-        "date": "2026-05-25",
-        "indexed": 136.94
-      },
-      {
-        "date": "2026-06-01",
-        "indexed": 136.13
-      },
-      {
-        "date": "2026-06-08",
-        "indexed": 136.51
-      },
-      {
-        "date": "2026-06-15",
-        "indexed": 136.56
-      },
-      {
-        "date": "2026-06-22",
-        "indexed": 135.02
-      },
-      {
-        "date": "2026-06-29",
-        "indexed": 131.16
-      },
-      {
-        "date": "2026-07-06",
         "indexed": 126.74
       },
       {
-        "date": "2026-07-13",
-        "indexed": 129.67
+        "date": "2026-02-09",
+        "indexed": 128.89
       },
       {
-        "date": "2026-07-20",
-        "indexed": 129.02
+        "date": "2026-02-16",
+        "indexed": 134.59
       },
       {
-        "date": "2026-07-27",
+        "date": "2026-02-23",
+        "indexed": 138.38
+      },
+      {
+        "date": "2026-03-02",
+        "indexed": 128.45
+      },
+      {
+        "date": "2026-03-09",
+        "indexed": 130.84
+      },
+      {
+        "date": "2026-03-16",
+        "indexed": 128.13
+      },
+      {
+        "date": "2026-03-23",
+        "indexed": 128.5
+      },
+      {
+        "date": "2026-03-30",
+        "indexed": 132.23
+      },
+      {
+        "date": "2026-04-06",
+        "indexed": 138.01
+      },
+      {
+        "date": "2026-04-13",
+        "indexed": 137.69
+      },
+      {
+        "date": "2026-04-20",
+        "indexed": 136.01
+      },
+      {
+        "date": "2026-04-27",
+        "indexed": 137.67
+      },
+      {
+        "date": "2026-05-04",
+        "indexed": 137.56
+      },
+      {
+        "date": "2026-05-11",
+        "indexed": 138.28
+      },
+      {
+        "date": "2026-05-18",
+        "indexed": 135.07
+      },
+      {
+        "date": "2026-05-25",
+        "indexed": 138.17
+      },
+      {
+        "date": "2026-06-01",
+        "indexed": 137.34
+      },
+      {
+        "date": "2026-06-08",
+        "indexed": 137.73
+      },
+      {
+        "date": "2026-06-15",
+        "indexed": 137.78
+      },
+      {
+        "date": "2026-06-22",
+        "indexed": 136.22
+      },
+      {
+        "date": "2026-06-29",
         "indexed": 132.33
       },
       {
+        "date": "2026-07-06",
+        "indexed": 127.87
+      },
+      {
+        "date": "2026-07-13",
+        "indexed": 130.83
+      },
+      {
+        "date": "2026-07-20",
+        "indexed": 130.17
+      },
+      {
+        "date": "2026-07-27",
+        "indexed": 133.51
+      },
+      {
         "date": "2026-08-03",
-        "indexed": 132.0
+        "indexed": 133.18
       },
       {
         "date": "2026-08-10",
-        "indexed": 129.32
+        "indexed": 130.47
       },
       {
         "date": "2026-08-17",
-        "indexed": 125.35
+        "indexed": 126.47
       },
       {
         "date": "2026-08-24",
-        "indexed": 119.63
+        "indexed": 120.7
       },
       {
         "date": "2026-08-31",
-        "indexed": 120.8
+        "indexed": 121.87
       },
       {
         "date": "2026-09-07",
-        "indexed": 119.36
+        "indexed": 120.42
       },
       {
         "date": "2026-09-14",
-        "indexed": 117.73
+        "indexed": 118.78
       },
       {
         "date": "2026-09-21",
-        "indexed": 117.08
+        "indexed": 118.12
       },
       {
         "date": "2026-09-28",
-        "indexed": 112.11
+        "indexed": 111.44
+      },
+      {
+        "date": "2026-10-05",
+        "indexed": 110.98
       }
     ],
     "J": [
@@ -5111,221 +5165,225 @@
       },
       {
         "date": "2026-09-28",
-        "indexed": 91.38
+        "indexed": 90.25
+      },
+      {
+        "date": "2026-10-05",
+        "indexed": 90.25
       }
     ],
     "1802": [
       {
-        "date": "2025-09-29",
+        "date": "2025-10-06",
         "indexed": 100.0
       },
       {
-        "date": "2025-10-06",
-        "indexed": 101.13
-      },
-      {
         "date": "2025-10-13",
-        "indexed": 105.81
+        "indexed": 104.63
       },
       {
         "date": "2025-10-20",
-        "indexed": 110.73
+        "indexed": 109.49
       },
       {
         "date": "2025-10-27",
-        "indexed": 111.2
+        "indexed": 109.96
       },
       {
         "date": "2025-11-03",
-        "indexed": 119.43
+        "indexed": 118.1
       },
       {
         "date": "2025-11-10",
-        "indexed": 121.35
+        "indexed": 120.0
       },
       {
         "date": "2025-11-17",
-        "indexed": 133.04
+        "indexed": 131.55
       },
       {
         "date": "2025-11-24",
-        "indexed": 135.55
+        "indexed": 134.03
       },
       {
         "date": "2025-12-01",
-        "indexed": 131.2
+        "indexed": 129.74
       },
       {
         "date": "2025-12-08",
-        "indexed": 138.95
+        "indexed": 137.4
       },
       {
         "date": "2025-12-15",
-        "indexed": 140.91
+        "indexed": 139.34
       },
       {
         "date": "2025-12-22",
-        "indexed": 139.68
+        "indexed": 138.12
       },
       {
         "date": "2025-12-29",
-        "indexed": 139.17
+        "indexed": 137.61
       },
       {
         "date": "2026-01-05",
-        "indexed": 145.59
+        "indexed": 143.97
       },
       {
         "date": "2026-01-12",
-        "indexed": 154.15
+        "indexed": 152.43
       },
       {
         "date": "2026-01-19",
-        "indexed": 154.36
+        "indexed": 152.64
       },
       {
         "date": "2026-01-26",
-        "indexed": 148.45
+        "indexed": 146.79
       },
       {
         "date": "2026-02-02",
-        "indexed": 168.92
+        "indexed": 167.04
       },
       {
         "date": "2026-02-09",
-        "indexed": 178.63
+        "indexed": 176.64
       },
       {
         "date": "2026-02-16",
-        "indexed": 176.8
+        "indexed": 174.83
       },
       {
         "date": "2026-02-23",
-        "indexed": 187.99
+        "indexed": 185.9
       },
       {
         "date": "2026-03-02",
-        "indexed": 170.03
+        "indexed": 168.13
       },
       {
         "date": "2026-03-09",
-        "indexed": 164.75
+        "indexed": 162.91
       },
       {
         "date": "2026-03-16",
-        "indexed": 163.35
+        "indexed": 161.52
       },
       {
         "date": "2026-03-23",
-        "indexed": 166.03
+        "indexed": 164.18
       },
       {
         "date": "2026-03-30",
-        "indexed": 163.01
+        "indexed": 161.19
       },
       {
         "date": "2026-04-06",
-        "indexed": 163.44
+        "indexed": 161.62
       },
       {
         "date": "2026-04-13",
-        "indexed": 158.79
+        "indexed": 157.02
       },
       {
         "date": "2026-04-20",
-        "indexed": 155.0
+        "indexed": 153.27
       },
       {
         "date": "2026-04-27",
-        "indexed": 157.19
+        "indexed": 155.44
       },
       {
         "date": "2026-05-04",
-        "indexed": 158.53
+        "indexed": 156.76
       },
       {
         "date": "2026-05-11",
-        "indexed": 153.32
+        "indexed": 151.61
       },
       {
         "date": "2026-05-18",
-        "indexed": 137.63
+        "indexed": 136.1
       },
       {
         "date": "2026-05-25",
-        "indexed": 139.83
+        "indexed": 138.27
       },
       {
         "date": "2026-06-01",
-        "indexed": 134.92
+        "indexed": 133.41
       },
       {
         "date": "2026-06-08",
-        "indexed": 132.93
+        "indexed": 131.45
       },
       {
         "date": "2026-06-15",
-        "indexed": 141.34
+        "indexed": 139.76
       },
       {
         "date": "2026-06-22",
-        "indexed": 137.98
+        "indexed": 136.44
       },
       {
         "date": "2026-06-29",
-        "indexed": 142.41
+        "indexed": 140.83
       },
       {
         "date": "2026-07-06",
-        "indexed": 138.97
+        "indexed": 137.42
       },
       {
         "date": "2026-07-13",
-        "indexed": 138.23
+        "indexed": 136.69
       },
       {
         "date": "2026-07-20",
-        "indexed": 141.51
+        "indexed": 139.93
       },
       {
         "date": "2026-07-27",
-        "indexed": 136.34
+        "indexed": 134.82
       },
       {
         "date": "2026-08-03",
-        "indexed": 130.56
+        "indexed": 129.11
       },
       {
         "date": "2026-08-10",
-        "indexed": 131.47
+        "indexed": 130.0
       },
       {
         "date": "2026-08-17",
-        "indexed": 126.75
+        "indexed": 125.34
       },
       {
         "date": "2026-08-24",
-        "indexed": 128.86
+        "indexed": 127.42
       },
       {
         "date": "2026-08-31",
-        "indexed": 129.75
+        "indexed": 128.3
       },
       {
         "date": "2026-09-07",
-        "indexed": 129.79
+        "indexed": 128.34
       },
       {
         "date": "2026-09-14",
-        "indexed": 132.85
+        "indexed": 131.37
       },
       {
         "date": "2026-09-21",
-        "indexed": 132.16
+        "indexed": 130.68
       },
       {
         "date": "2026-09-28",
-        "indexed": 129.76
+        "indexed": 128.31
+      },
+      {
+        "date": "2026-10-05",
+        "indexed": 127.6
       }
     ],
     "ACM": [
@@ -5539,7 +5597,11 @@
       },
       {
         "date": "2026-09-28",
-        "indexed": 46.76
+        "indexed": 46.8
+      },
+      {
+        "date": "2026-10-05",
+        "indexed": 46.8
       }
     ],
     "STN": [
@@ -5753,7 +5815,11 @@
       },
       {
         "date": "2026-09-28",
-        "indexed": 61.21
+        "indexed": 61.49
+      },
+      {
+        "date": "2026-10-05",
+        "indexed": 61.49
       }
     ],
     "KBR": [
@@ -5967,435 +6033,439 @@
       },
       {
         "date": "2026-09-28",
-        "indexed": 75.21
+        "indexed": 73.47
+      },
+      {
+        "date": "2026-10-05",
+        "indexed": 73.47
       }
     ],
     "ARCAD": [
       {
-        "date": "2025-09-29",
+        "date": "2025-10-06",
         "indexed": 100.0
       },
       {
-        "date": "2025-10-06",
-        "indexed": 99.54
-      },
-      {
         "date": "2025-10-13",
-        "indexed": 101.89
+        "indexed": 102.37
       },
       {
         "date": "2025-10-20",
-        "indexed": 106.42
+        "indexed": 106.92
       },
       {
         "date": "2025-10-27",
-        "indexed": 87.2
+        "indexed": 87.61
       },
       {
         "date": "2025-11-03",
-        "indexed": 75.33
+        "indexed": 75.68
       },
       {
         "date": "2025-11-10",
-        "indexed": 76.59
+        "indexed": 76.95
       },
       {
         "date": "2025-11-17",
-        "indexed": 74.91
+        "indexed": 75.25
       },
       {
         "date": "2025-11-24",
-        "indexed": 80.25
+        "indexed": 80.63
       },
       {
         "date": "2025-12-01",
-        "indexed": 77.77
+        "indexed": 78.13
       },
       {
         "date": "2025-12-08",
-        "indexed": 75.12
+        "indexed": 75.47
       },
       {
         "date": "2025-12-15",
-        "indexed": 74.27
+        "indexed": 74.62
       },
       {
         "date": "2025-12-22",
-        "indexed": 74.02
+        "indexed": 74.37
       },
       {
         "date": "2025-12-29",
-        "indexed": 74.95
+        "indexed": 75.3
       },
       {
         "date": "2026-01-05",
-        "indexed": 77.77
+        "indexed": 78.13
       },
       {
         "date": "2026-01-12",
-        "indexed": 79.71
+        "indexed": 80.08
       },
       {
         "date": "2026-01-19",
-        "indexed": 79.16
+        "indexed": 79.53
       },
       {
         "date": "2026-01-26",
-        "indexed": 79.62
+        "indexed": 79.99
       },
       {
         "date": "2026-02-02",
-        "indexed": 81.09
+        "indexed": 81.47
       },
       {
         "date": "2026-02-09",
-        "indexed": 72.51
+        "indexed": 72.84
       },
       {
         "date": "2026-02-16",
-        "indexed": 62.15
+        "indexed": 62.44
       },
       {
         "date": "2026-02-23",
-        "indexed": 62.99
+        "indexed": 63.28
       },
       {
         "date": "2026-03-02",
-        "indexed": 64.13
+        "indexed": 64.42
       },
       {
         "date": "2026-03-09",
-        "indexed": 60.63
+        "indexed": 60.91
       },
       {
         "date": "2026-03-16",
-        "indexed": 55.45
+        "indexed": 55.71
       },
       {
         "date": "2026-03-23",
-        "indexed": 57.39
+        "indexed": 57.66
       },
       {
         "date": "2026-03-30",
-        "indexed": 60.13
+        "indexed": 60.41
       },
       {
         "date": "2026-04-06",
-        "indexed": 61.77
+        "indexed": 62.06
       },
       {
         "date": "2026-04-13",
-        "indexed": 68.97
+        "indexed": 69.29
       },
       {
         "date": "2026-04-20",
-        "indexed": 65.73
+        "indexed": 66.03
       },
       {
         "date": "2026-04-27",
-        "indexed": 76.63
+        "indexed": 76.99
       },
       {
         "date": "2026-05-04",
-        "indexed": 75.96
+        "indexed": 76.31
       },
       {
         "date": "2026-05-11",
-        "indexed": 73.52
+        "indexed": 73.86
       },
       {
         "date": "2026-05-18",
-        "indexed": 75.41
+        "indexed": 75.76
       },
       {
         "date": "2026-05-25",
-        "indexed": 75.93
+        "indexed": 76.29
       },
       {
         "date": "2026-06-01",
-        "indexed": 76.71
+        "indexed": 77.07
       },
       {
         "date": "2026-06-08",
-        "indexed": 75.63
+        "indexed": 75.98
       },
       {
         "date": "2026-06-15",
-        "indexed": 73.98
+        "indexed": 74.32
       },
       {
         "date": "2026-06-22",
-        "indexed": 71.85
+        "indexed": 72.19
       },
       {
         "date": "2026-06-29",
-        "indexed": 73.29
+        "indexed": 73.63
       },
       {
         "date": "2026-07-06",
-        "indexed": 74.89
+        "indexed": 75.24
       },
       {
         "date": "2026-07-13",
-        "indexed": 75.2
+        "indexed": 75.54
       },
       {
         "date": "2026-07-20",
-        "indexed": 89.82
+        "indexed": 90.24
       },
       {
         "date": "2026-07-27",
-        "indexed": 88.13
+        "indexed": 88.54
       },
       {
         "date": "2026-08-03",
-        "indexed": 94.42
+        "indexed": 94.86
       },
       {
         "date": "2026-08-10",
-        "indexed": 94.11
+        "indexed": 94.55
       },
       {
         "date": "2026-08-17",
-        "indexed": 94.63
+        "indexed": 95.07
       },
       {
         "date": "2026-08-24",
-        "indexed": 99.84
+        "indexed": 100.31
       },
       {
         "date": "2026-08-31",
-        "indexed": 96.37
+        "indexed": 96.82
       },
       {
         "date": "2026-09-07",
-        "indexed": 93.98
+        "indexed": 94.42
       },
       {
         "date": "2026-09-14",
-        "indexed": 91.77
+        "indexed": 92.2
       },
       {
         "date": "2026-09-21",
-        "indexed": 91.03
+        "indexed": 91.46
       },
       {
         "date": "2026-09-28",
-        "indexed": 86.95
+        "indexed": 86.27
+      },
+      {
+        "date": "2026-10-05",
+        "indexed": 86.62
       }
     ],
     "WBD": [
       {
-        "date": "2025-09-29",
+        "date": "2025-10-06",
         "indexed": 100.0
       },
       {
-        "date": "2025-10-06",
-        "indexed": 98.39
-      },
-      {
         "date": "2025-10-13",
-        "indexed": 97.42
+        "indexed": 99.01
       },
       {
         "date": "2025-10-20",
-        "indexed": 99.89
+        "indexed": 101.52
       },
       {
         "date": "2025-10-27",
-        "indexed": 100.4
+        "indexed": 102.04
       },
       {
         "date": "2025-11-03",
-        "indexed": 93.34
+        "indexed": 94.87
       },
       {
         "date": "2025-11-10",
-        "indexed": 94.49
+        "indexed": 96.03
       },
       {
         "date": "2025-11-17",
-        "indexed": 91.04
+        "indexed": 92.53
       },
       {
         "date": "2025-11-24",
-        "indexed": 97.07
+        "indexed": 98.66
       },
       {
         "date": "2025-12-01",
-        "indexed": 96.5
+        "indexed": 98.07
       },
       {
         "date": "2025-12-08",
-        "indexed": 97.59
+        "indexed": 99.18
       },
       {
         "date": "2025-12-15",
-        "indexed": 99.66
+        "indexed": 101.28
       },
       {
         "date": "2025-12-22",
-        "indexed": 100.11
+        "indexed": 101.75
       },
       {
         "date": "2025-12-29",
-        "indexed": 97.76
+        "indexed": 99.36
       },
       {
         "date": "2026-01-05",
-        "indexed": 101.32
+        "indexed": 102.98
       },
       {
         "date": "2026-01-12",
-        "indexed": 103.16
+        "indexed": 104.84
       },
       {
         "date": "2026-01-19",
-        "indexed": 100.63
+        "indexed": 102.28
       },
       {
         "date": "2026-01-26",
-        "indexed": 100.17
+        "indexed": 101.81
       },
       {
         "date": "2026-02-02",
-        "indexed": 103.73
+        "indexed": 105.43
       },
       {
         "date": "2026-02-09",
-        "indexed": 98.91
+        "indexed": 100.53
       },
       {
         "date": "2026-02-16",
-        "indexed": 96.73
+        "indexed": 98.31
       },
       {
         "date": "2026-02-23",
-        "indexed": 94.83
+        "indexed": 96.38
       },
       {
         "date": "2026-03-02",
-        "indexed": 88.12
+        "indexed": 89.56
       },
       {
         "date": "2026-03-09",
-        "indexed": 71.07
+        "indexed": 72.23
       },
       {
         "date": "2026-03-16",
-        "indexed": 64.18
+        "indexed": 65.23
       },
       {
         "date": "2026-03-23",
-        "indexed": 65.1
+        "indexed": 66.16
       },
       {
         "date": "2026-03-30",
-        "indexed": 68.43
+        "indexed": 69.54
       },
       {
         "date": "2026-04-06",
-        "indexed": 76.18
+        "indexed": 77.42
       },
       {
         "date": "2026-04-13",
-        "indexed": 77.38
+        "indexed": 78.65
       },
       {
         "date": "2026-04-20",
-        "indexed": 70.72
+        "indexed": 71.88
       },
       {
         "date": "2026-04-27",
-        "indexed": 72.45
+        "indexed": 73.63
       },
       {
         "date": "2026-05-04",
-        "indexed": 77.67
+        "indexed": 78.94
       },
       {
         "date": "2026-05-11",
-        "indexed": 74.34
+        "indexed": 75.55
       },
       {
         "date": "2026-05-18",
-        "indexed": 72.18
+        "indexed": 73.36
       },
       {
         "date": "2026-05-25",
-        "indexed": 73.24
+        "indexed": 74.44
       },
       {
         "date": "2026-06-01",
-        "indexed": 71.94
+        "indexed": 73.12
       },
       {
         "date": "2026-06-08",
-        "indexed": 72.53
+        "indexed": 73.72
       },
       {
         "date": "2026-06-15",
-        "indexed": 72.06
+        "indexed": 73.24
       },
       {
         "date": "2026-06-22",
-        "indexed": 67.85
+        "indexed": 68.96
       },
       {
         "date": "2026-06-29",
-        "indexed": 67.44
+        "indexed": 68.54
       },
       {
         "date": "2026-07-06",
-        "indexed": 63.94
+        "indexed": 64.98
       },
       {
         "date": "2026-07-13",
-        "indexed": 63.76
+        "indexed": 64.8
       },
       {
         "date": "2026-07-20",
-        "indexed": 63.11
+        "indexed": 64.14
       },
       {
         "date": "2026-07-27",
-        "indexed": 66.55
+        "indexed": 67.63
       },
       {
         "date": "2026-08-03",
-        "indexed": 68.38
+        "indexed": 69.5
       },
       {
         "date": "2026-08-10",
-        "indexed": 67.44
+        "indexed": 68.54
       },
       {
         "date": "2026-08-17",
-        "indexed": 65.95
+        "indexed": 67.03
       },
       {
         "date": "2026-08-24",
-        "indexed": 66.31
+        "indexed": 67.39
       },
       {
         "date": "2026-08-31",
-        "indexed": 64.3
+        "indexed": 65.35
       },
       {
         "date": "2026-09-07",
-        "indexed": 59.67
+        "indexed": 60.65
       },
       {
         "date": "2026-09-14",
-        "indexed": 57.21
+        "indexed": 58.15
       },
       {
         "date": "2026-09-21",
-        "indexed": 56.74
+        "indexed": 57.67
       },
       {
         "date": "2026-09-28",
-        "indexed": 57.75
+        "indexed": 58.12
+      },
+      {
+        "date": "2026-10-05",
+        "indexed": 57.55
       }
     ],
     "FLR": [
@@ -6609,7 +6679,11 @@
       },
       {
         "date": "2026-09-28",
-        "indexed": 114.38
+        "indexed": 115.7
+      },
+      {
+        "date": "2026-10-05",
+        "indexed": 115.7
       }
     ],
     "FIX": [
@@ -6823,7 +6897,11 @@
       },
       {
         "date": "2026-09-28",
-        "indexed": 206.45
+        "indexed": 211.68
+      },
+      {
+        "date": "2026-10-05",
+        "indexed": 211.68
       }
     ],
     "EME": [
@@ -7037,7 +7115,11 @@
       },
       {
         "date": "2026-09-28",
-        "indexed": 117.75
+        "indexed": 120.44
+      },
+      {
+        "date": "2026-10-05",
+        "indexed": 120.44
       }
     ],
     "WSP": [
@@ -7251,7 +7333,11 @@
       },
       {
         "date": "2026-09-28",
-        "indexed": 62.25
+        "indexed": 62.6
+      },
+      {
+        "date": "2026-10-05",
+        "indexed": 62.6
       }
     ],
     "DY": [
@@ -7465,7 +7551,11 @@
       },
       {
         "date": "2026-09-28",
-        "indexed": 94.24
+        "indexed": 95.57
+      },
+      {
+        "date": "2026-10-05",
+        "indexed": 95.57
       }
     ],
     "TTEK": [
@@ -7679,221 +7769,225 @@
       },
       {
         "date": "2026-09-28",
-        "indexed": 100.76
+        "indexed": 98.97
+      },
+      {
+        "date": "2026-10-05",
+        "indexed": 98.97
       }
     ],
     "GBF": [
       {
-        "date": "2025-09-29",
+        "date": "2025-10-06",
         "indexed": 100.0
       },
       {
-        "date": "2025-10-06",
-        "indexed": 106.76
-      },
-      {
         "date": "2025-10-13",
-        "indexed": 98.84
+        "indexed": 92.58
       },
       {
         "date": "2025-10-20",
-        "indexed": 102.06
+        "indexed": 95.6
       },
       {
         "date": "2025-10-27",
-        "indexed": 99.0
+        "indexed": 92.73
       },
       {
         "date": "2025-11-03",
-        "indexed": 94.46
+        "indexed": 88.48
       },
       {
         "date": "2025-11-10",
-        "indexed": 101.8
+        "indexed": 95.35
       },
       {
         "date": "2025-11-17",
-        "indexed": 96.94
+        "indexed": 90.8
       },
       {
         "date": "2025-11-24",
-        "indexed": 107.29
+        "indexed": 100.49
       },
       {
         "date": "2025-12-01",
-        "indexed": 105.91
+        "indexed": 99.21
       },
       {
         "date": "2025-12-08",
-        "indexed": 112.25
+        "indexed": 105.14
       },
       {
         "date": "2025-12-15",
-        "indexed": 114.47
+        "indexed": 107.22
       },
       {
         "date": "2025-12-22",
-        "indexed": 114.57
+        "indexed": 107.32
       },
       {
         "date": "2025-12-29",
-        "indexed": 116.58
+        "indexed": 109.2
       },
       {
         "date": "2026-01-05",
-        "indexed": 121.12
+        "indexed": 113.45
       },
       {
         "date": "2026-01-12",
-        "indexed": 124.6
+        "indexed": 116.72
       },
       {
         "date": "2026-01-19",
-        "indexed": 128.3
+        "indexed": 120.18
       },
       {
         "date": "2026-01-26",
-        "indexed": 127.14
+        "indexed": 119.09
       },
       {
         "date": "2026-02-02",
-        "indexed": 128.72
+        "indexed": 120.57
       },
       {
         "date": "2026-02-09",
-        "indexed": 124.08
+        "indexed": 116.22
       },
       {
         "date": "2026-02-16",
-        "indexed": 128.51
+        "indexed": 120.38
       },
       {
         "date": "2026-02-23",
-        "indexed": 126.4
+        "indexed": 118.4
       },
       {
         "date": "2026-03-02",
-        "indexed": 109.29
+        "indexed": 102.37
       },
       {
         "date": "2026-03-09",
-        "indexed": 104.86
+        "indexed": 98.22
       },
       {
         "date": "2026-03-16",
-        "indexed": 101.8
+        "indexed": 95.35
       },
       {
         "date": "2026-03-23",
-        "indexed": 104.07
+        "indexed": 97.48
       },
       {
         "date": "2026-03-30",
-        "indexed": 107.92
+        "indexed": 101.09
       },
       {
         "date": "2026-04-06",
-        "indexed": 116.68
+        "indexed": 109.3
       },
       {
         "date": "2026-04-13",
-        "indexed": 116.9
+        "indexed": 109.5
       },
       {
         "date": "2026-04-20",
-        "indexed": 104.75
+        "indexed": 98.12
       },
       {
         "date": "2026-04-27",
-        "indexed": 104.38
+        "indexed": 97.77
       },
       {
         "date": "2026-05-04",
-        "indexed": 105.44
+        "indexed": 98.76
       },
       {
         "date": "2026-05-11",
-        "indexed": 91.92
+        "indexed": 86.1
       },
       {
         "date": "2026-05-18",
-        "indexed": 96.2
+        "indexed": 90.11
       },
       {
         "date": "2026-05-25",
-        "indexed": 95.82
+        "indexed": 89.75
       },
       {
         "date": "2026-06-01",
-        "indexed": 88.35
+        "indexed": 82.76
       },
       {
         "date": "2026-06-08",
-        "indexed": 87.04
+        "indexed": 81.53
       },
       {
         "date": "2026-06-15",
-        "indexed": 94.4
+        "indexed": 88.42
       },
       {
         "date": "2026-06-22",
-        "indexed": 89.38
+        "indexed": 83.73
       },
       {
         "date": "2026-06-29",
-        "indexed": 96.74
+        "indexed": 90.62
       },
       {
         "date": "2026-07-06",
-        "indexed": 90.69
+        "indexed": 84.95
       },
       {
         "date": "2026-07-13",
-        "indexed": 90.96
+        "indexed": 85.21
       },
       {
         "date": "2026-07-20",
-        "indexed": 89.33
+        "indexed": 83.67
       },
       {
         "date": "2026-07-27",
-        "indexed": 89.33
+        "indexed": 83.67
       },
       {
         "date": "2026-08-03",
-        "indexed": 89.22
+        "indexed": 83.57
       },
       {
         "date": "2026-08-10",
-        "indexed": 85.02
+        "indexed": 79.64
       },
       {
         "date": "2026-08-17",
-        "indexed": 83.28
+        "indexed": 78.01
       },
       {
         "date": "2026-08-24",
-        "indexed": 92.6
+        "indexed": 86.74
       },
       {
         "date": "2026-08-31",
-        "indexed": 89.98
+        "indexed": 84.29
       },
       {
         "date": "2026-09-07",
-        "indexed": 82.95
+        "indexed": 77.7
       },
       {
         "date": "2026-09-14",
-        "indexed": 62.73
+        "indexed": 58.76
       },
       {
         "date": "2026-09-21",
-        "indexed": 61.21
+        "indexed": 57.33
       },
       {
         "date": "2026-09-28",
-        "indexed": 61.32
+        "indexed": 57.43
+      },
+      {
+        "date": "2026-10-05",
+        "indexed": 57.94
       }
     ],
     "STRL": [
@@ -8107,7 +8201,11 @@
       },
       {
         "date": "2026-09-28",
-        "indexed": 144.61
+        "indexed": 152.71
+      },
+      {
+        "date": "2026-10-05",
+        "indexed": 152.71
       }
     ],
     "ROAD": [
@@ -8321,7 +8419,11 @@
       },
       {
         "date": "2026-09-28",
-        "indexed": 71.75
+        "indexed": 72.49
+      },
+      {
+        "date": "2026-10-05",
+        "indexed": 72.49
       }
     ],
     "GVA": [
@@ -8535,221 +8637,225 @@
       },
       {
         "date": "2026-09-28",
-        "indexed": 107.4
+        "indexed": 110.22
+      },
+      {
+        "date": "2026-10-05",
+        "indexed": 110.22
       }
     ],
     "BBY": [
       {
-        "date": "2025-09-29",
+        "date": "2025-10-06",
         "indexed": 100.0
       },
       {
-        "date": "2025-10-06",
-        "indexed": 101.94
-      },
-      {
         "date": "2025-10-13",
-        "indexed": 102.18
+        "indexed": 100.23
       },
       {
         "date": "2025-10-20",
-        "indexed": 105.21
+        "indexed": 103.2
       },
       {
         "date": "2025-10-27",
-        "indexed": 104.52
+        "indexed": 102.52
       },
       {
         "date": "2025-11-03",
-        "indexed": 102.81
+        "indexed": 100.85
       },
       {
         "date": "2025-11-10",
-        "indexed": 102.49
+        "indexed": 100.54
       },
       {
         "date": "2025-11-17",
-        "indexed": 100.24
+        "indexed": 98.33
       },
       {
         "date": "2025-11-24",
-        "indexed": 109.49
+        "indexed": 107.41
       },
       {
         "date": "2025-12-01",
-        "indexed": 109.96
+        "indexed": 107.86
       },
       {
         "date": "2025-12-08",
-        "indexed": 110.19
+        "indexed": 108.09
       },
       {
         "date": "2025-12-15",
-        "indexed": 112.14
+        "indexed": 110.0
       },
       {
         "date": "2025-12-22",
-        "indexed": 111.44
+        "indexed": 109.31
       },
       {
         "date": "2025-12-29",
-        "indexed": 111.05
+        "indexed": 108.93
       },
       {
         "date": "2026-01-05",
-        "indexed": 112.37
+        "indexed": 110.23
       },
       {
         "date": "2026-01-12",
-        "indexed": 114.32
+        "indexed": 112.14
       },
       {
         "date": "2026-01-19",
-        "indexed": 110.12
+        "indexed": 108.02
       },
       {
         "date": "2026-01-26",
-        "indexed": 111.05
+        "indexed": 108.93
       },
       {
         "date": "2026-02-02",
-        "indexed": 115.71
+        "indexed": 113.51
       },
       {
         "date": "2026-02-09",
-        "indexed": 119.21
+        "indexed": 116.94
       },
       {
         "date": "2026-02-16",
-        "indexed": 120.61
+        "indexed": 118.31
       },
       {
         "date": "2026-02-23",
-        "indexed": 118.13
-      },
-      {
-        "date": "2026-03-02",
-        "indexed": 110.27
-      },
-      {
-        "date": "2026-03-09",
-        "indexed": 117.27
-      },
-      {
-        "date": "2026-03-16",
         "indexed": 115.87
       },
       {
+        "date": "2026-03-02",
+        "indexed": 108.17
+      },
+      {
+        "date": "2026-03-09",
+        "indexed": 115.03
+      },
+      {
+        "date": "2026-03-16",
+        "indexed": 113.66
+      },
+      {
         "date": "2026-03-23",
-        "indexed": 116.03
+        "indexed": 113.81
       },
       {
         "date": "2026-03-30",
-        "indexed": 121.0
+        "indexed": 118.7
       },
       {
         "date": "2026-04-06",
-        "indexed": 128.08
+        "indexed": 125.64
       },
       {
         "date": "2026-04-13",
-        "indexed": 129.4
+        "indexed": 126.93
       },
       {
         "date": "2026-04-20",
-        "indexed": 125.28
+        "indexed": 122.89
       },
       {
         "date": "2026-04-27",
-        "indexed": 126.37
+        "indexed": 123.96
       },
       {
         "date": "2026-05-04",
-        "indexed": 133.83
+        "indexed": 131.28
       },
       {
         "date": "2026-05-11",
-        "indexed": 125.14
+        "indexed": 122.75
       },
       {
         "date": "2026-05-18",
-        "indexed": 123.66
+        "indexed": 121.3
       },
       {
         "date": "2026-05-25",
-        "indexed": 123.89
+        "indexed": 121.53
       },
       {
         "date": "2026-06-01",
-        "indexed": 126.38
+        "indexed": 123.97
       },
       {
         "date": "2026-06-08",
-        "indexed": 130.51
+        "indexed": 128.02
       },
       {
         "date": "2026-06-15",
-        "indexed": 135.56
+        "indexed": 132.98
       },
       {
         "date": "2026-06-22",
-        "indexed": 136.26
+        "indexed": 133.66
       },
       {
         "date": "2026-06-29",
-        "indexed": 139.84
+        "indexed": 137.17
       },
       {
         "date": "2026-07-06",
-        "indexed": 132.14
+        "indexed": 129.62
       },
       {
         "date": "2026-07-13",
-        "indexed": 134.78
+        "indexed": 132.21
       },
       {
         "date": "2026-07-20",
-        "indexed": 136.73
+        "indexed": 134.12
       },
       {
         "date": "2026-07-27",
-        "indexed": 134.16
+        "indexed": 131.6
       },
       {
         "date": "2026-08-03",
-        "indexed": 137.04
+        "indexed": 134.43
       },
       {
         "date": "2026-08-10",
-        "indexed": 142.41
+        "indexed": 139.69
       },
       {
         "date": "2026-08-17",
-        "indexed": 137.66
+        "indexed": 135.04
       },
       {
         "date": "2026-08-24",
-        "indexed": 137.58
+        "indexed": 134.96
       },
       {
         "date": "2026-08-31",
-        "indexed": 136.11
+        "indexed": 133.51
       },
       {
         "date": "2026-09-07",
-        "indexed": 133.69
+        "indexed": 131.14
       },
       {
         "date": "2026-09-14",
-        "indexed": 142.72
+        "indexed": 139.99
       },
       {
         "date": "2026-09-21",
-        "indexed": 145.44
+        "indexed": 142.66
       },
       {
         "date": "2026-09-28",
-        "indexed": 146.88
+        "indexed": 143.05
+      },
+      {
+        "date": "2026-10-05",
+        "indexed": 140.15
       }
     ],
     "PWR": [
@@ -8963,7 +9069,11 @@
       },
       {
         "date": "2026-09-28",
-        "indexed": 157.45
+        "indexed": 160.76
+      },
+      {
+        "date": "2026-10-05",
+        "indexed": 160.76
       }
     ],
     "MTZ": [
@@ -9177,7 +9287,11 @@
       },
       {
         "date": "2026-09-28",
-        "indexed": 99.0
+        "indexed": 100.06
+      },
+      {
+        "date": "2026-10-05",
+        "indexed": 100.06
       }
     ],
     "PRIM": [
@@ -9391,7 +9505,11 @@
       },
       {
         "date": "2026-09-28",
-        "indexed": 55.89
+        "indexed": 57.96
+      },
+      {
+        "date": "2026-10-05",
+        "indexed": 57.96
       }
     ],
     "MYRG": [
@@ -9605,7 +9723,11 @@
       },
       {
         "date": "2026-09-28",
-        "indexed": 149.3
+        "indexed": 152.73
+      },
+      {
+        "date": "2026-10-05",
+        "indexed": 152.73
       }
     ],
     "AMRC": [
@@ -9819,7 +9941,11 @@
       },
       {
         "date": "2026-09-28",
-        "indexed": 56.26
+        "indexed": 57.78
+      },
+      {
+        "date": "2026-10-05",
+        "indexed": 57.78
       }
     ],
     "IBM": [
@@ -10033,7 +10159,11 @@
       },
       {
         "date": "2026-09-28",
-        "indexed": 80.27
+        "indexed": 79.21
+      },
+      {
+        "date": "2026-10-05",
+        "indexed": 79.21
       }
     ],
     "ACN": [
@@ -10247,7 +10377,11 @@
       },
       {
         "date": "2026-09-28",
-        "indexed": 88.32
+        "indexed": 82.75
+      },
+      {
+        "date": "2026-10-05",
+        "indexed": 82.75
       }
     ],
     "BAH": [
@@ -10461,7 +10595,11 @@
       },
       {
         "date": "2026-09-28",
-        "indexed": 69.75
+        "indexed": 66.67
+      },
+      {
+        "date": "2026-10-05",
+        "indexed": 66.67
       }
     ],
     "FCN": [
@@ -10675,7 +10813,11 @@
       },
       {
         "date": "2026-09-28",
-        "indexed": 88.58
+        "indexed": 85.25
+      },
+      {
+        "date": "2026-10-05",
+        "indexed": 85.25
       }
     ],
     "HURN": [
@@ -10889,7 +11031,11 @@
       },
       {
         "date": "2026-09-28",
-        "indexed": 112.04
+        "indexed": 107.87
+      },
+      {
+        "date": "2026-10-05",
+        "indexed": 107.87
       }
     ]
   }
