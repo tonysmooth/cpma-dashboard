@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2026-10-06T09:36:03.897421",
+    "generated_at": "2026-10-07T09:31:38.636848",
     "source": "yfinance (Yahoo Finance) + Perplexity Sonar API",
     "num_companies": 39,
     "categories": [
@@ -23,44 +23,44 @@
       "fmp_ticker": "ACS.MC",
       "name": "ACS, Actividades de Construccion y Servicios",
       "category": "Construction Contractors",
-      "share_price": 94.4,
-      "market_cap": 24622.60224,
-      "enterprise_value": 25891.203072,
+      "share_price": 94.55,
+      "market_cap": 24661.72928,
+      "enterprise_value": 26343.309312,
       "year_high": 141.2,
-      "year_low": 69.35,
-      "pct_52wk": 66.86,
+      "year_low": 69.5,
+      "pct_52wk": 66.96,
       "revenue_2025": 49847.681,
-      "revenue_2026e": null,
-      "revenue_2027e": null,
+      "revenue_2026e": 62320.715,
+      "revenue_2027e": 68254.133,
       "rev_growth_2025": 0.19730832087530298,
-      "rev_growth_2026": null,
+      "rev_growth_2026": 0.25022295420322566,
       "ebitda_2025": 3387.885,
-      "ebitda_2026e": null,
-      "ebitda_2027e": null,
+      "ebitda_2026e": 3488.888,
+      "ebitda_2027e": 3690.588,
       "ebitda_margin_2025": 0.06796474644427292,
-      "ebitda_margin_2026": null,
-      "ebitda_margin_2027": null,
-      "ev_rev_2025": 0.5194063706193274,
-      "ev_rev_2026": null,
-      "ev_rev_2027": null,
-      "ev_ebitda_2025": 7.642291008106827,
-      "ev_ebitda_2026": null,
-      "ev_ebitda_2027": null,
-      "pe_2025": 25.909255887366626,
-      "pe_2026": null,
-      "pe_2027": null
+      "ebitda_margin_2026": 0.05598279801507412,
+      "ebitda_margin_2027": 0.054071275068426995,
+      "ev_rev_2025": 0.5284761253387094,
+      "ev_rev_2026": 0.4227055050956974,
+      "ev_rev_2027": 0.3859591815780592,
+      "ev_ebitda_2025": 7.775738938009997,
+      "ev_ebitda_2026": 7.550631981307512,
+      "ev_ebitda_2027": 7.137970781891666,
+      "pe_2025": 25.95042751015426,
+      "pe_2026": 19.985372057611535,
+      "pe_2027": 17.540535126619417
     },
     {
       "ticker": "SKA.B",
       "fmp_ticker": "SKA-B.ST",
       "name": "Skanska",
       "category": "Construction Contractors",
-      "share_price": 266.0,
-      "market_cap": 110145.388544,
+      "share_price": 265.9,
+      "market_cap": 110103.977984,
       "enterprise_value": 108931.514368,
       "year_high": 286.8,
       "year_low": 233.0,
-      "pct_52wk": 92.75,
+      "pct_52wk": 92.71,
       "revenue_2025": 176658.0,
       "revenue_2026e": null,
       "revenue_2027e": null,
@@ -78,7 +78,7 @@
       "ev_ebitda_2025": 9.5755550604782,
       "ev_ebitda_2026": null,
       "ev_ebitda_2027": null,
-      "pe_2025": 19.316974490354262,
+      "pe_2025": 19.30971202806033,
       "pe_2026": null,
       "pe_2027": null
     },
@@ -87,12 +87,12 @@
       "fmp_ticker": "AGX",
       "name": "Argan",
       "category": "Construction Contractors",
-      "share_price": 387.74,
-      "market_cap": 5439.93088,
-      "enterprise_value": 4422.4,
+      "share_price": 419.64,
+      "market_cap": 5887.48288,
+      "enterprise_value": 4869.952,
       "year_high": 805.75,
       "year_low": 255.6,
-      "pct_52wk": 48.12,
+      "pct_52wk": 52.08,
       "revenue_2025": 874.179,
       "revenue_2026e": null,
       "revenue_2027e": null,
@@ -104,13 +104,13 @@
       "ebitda_margin_2025": 0.10736359487015817,
       "ebitda_margin_2026": null,
       "ebitda_margin_2027": null,
-      "ev_rev_2025": 5.058918139191173,
+      "ev_rev_2025": 5.570886511801359,
       "ev_rev_2026": null,
       "ev_rev_2027": null,
-      "ev_ebitda_2025": 47.119492834691805,
+      "ev_ebitda_2025": 51.888040061797454,
       "ev_ebitda_2026": null,
       "ev_ebitda_2027": null,
-      "pe_2025": 63.655447407528754,
+      "pe_2025": 68.89248505131114,
       "pe_2026": null,
       "pe_2027": null
     },
@@ -119,12 +119,12 @@
       "fmp_ticker": "TPC",
       "name": "Tutor Perini",
       "category": "Construction Contractors",
-      "share_price": 86.43,
-      "market_cap": 4547.488768,
-      "enterprise_value": 4139.058688,
+      "share_price": 89.06,
+      "market_cap": 4685.865472,
+      "enterprise_value": 4277.315584,
       "year_high": 102.3,
       "year_low": 57.9,
-      "pct_52wk": 84.49,
+      "pct_52wk": 87.06,
       "revenue_2025": 5543.039,
       "revenue_2026e": null,
       "revenue_2027e": null,
@@ -136,13 +136,13 @@
       "ebitda_margin_2025": 0.054976160189383484,
       "ebitda_margin_2026": null,
       "ebitda_margin_2027": null,
-      "ev_rev_2025": 0.7467128930537924,
+      "ev_rev_2025": 0.7716553291434537,
       "ev_rev_2026": null,
       "ev_rev_2027": null,
-      "ev_ebitda_2025": 13.582485398789112,
+      "ev_ebitda_2025": 14.036180891594336,
       "ev_ebitda_2026": null,
       "ev_ebitda_2027": null,
-      "pe_2025": 56.53267986076579,
+      "pe_2025": 58.252927299850825,
       "pe_2026": null,
       "pe_2027": null
     },
@@ -151,12 +151,12 @@
       "fmp_ticker": "ARE.TO",
       "name": "Aecon Group",
       "category": "Construction Contractors",
-      "share_price": 57.76,
-      "market_cap": 3958.265344,
-      "enterprise_value": 4144.605696,
+      "share_price": 57.45,
+      "market_cap": 3937.02144,
+      "enterprise_value": 4123.361536,
       "year_high": 59.96,
       "year_low": 23.93,
-      "pct_52wk": 96.33,
+      "pct_52wk": 95.81,
       "revenue_2025": 5434.678,
       "revenue_2026e": null,
       "revenue_2027e": null,
@@ -168,13 +168,13 @@
       "ebitda_margin_2025": 0.031216200849433953,
       "ebitda_margin_2026": null,
       "ebitda_margin_2027": null,
-      "ev_rev_2025": 0.7626221270147008,
+      "ev_rev_2025": 0.7587131263342558,
       "ev_rev_2026": null,
       "ev_rev_2027": null,
-      "ev_ebitda_2025": 24.430331246684347,
+      "ev_ebitda_2025": 24.305107786619512,
       "ev_ebitda_2026": null,
       "ev_ebitda_2027": null,
-      "pe_2025": 261.0648558237699,
+      "pe_2025": 259.6637277404036,
       "pe_2026": null,
       "pe_2027": null
     },
@@ -183,44 +183,44 @@
       "fmp_ticker": "BWMN",
       "name": "Bowman Consulting",
       "category": "Construction Contractors",
-      "share_price": 42.76,
-      "market_cap": 741.191232,
-      "enterprise_value": 1015.361472,
+      "share_price": 42.79,
+      "market_cap": 709.967936,
+      "enterprise_value": 1015.881536,
       "year_high": 45.83,
       "year_low": 25.07,
-      "pct_52wk": 93.3,
+      "pct_52wk": 93.37,
       "revenue_2025": 490.017,
-      "revenue_2026e": 594.19,
-      "revenue_2027e": null,
+      "revenue_2026e": 524.7,
+      "revenue_2027e": 590.1,
       "rev_growth_2025": 0.14875376262413137,
-      "rev_growth_2026": 0.21259058359199795,
+      "rev_growth_2026": 0.07077917704895963,
       "ebitda_2025": 46.479,
       "ebitda_2026e": null,
       "ebitda_2027e": null,
       "ebitda_margin_2025": 0.09485181126369086,
       "ebitda_margin_2026": null,
       "ebitda_margin_2027": null,
-      "ev_rev_2025": 2.0720943803990477,
-      "ev_rev_2026": 1.708816156448274,
-      "ev_rev_2027": null,
-      "ev_ebitda_2025": 21.845596333828183,
+      "ev_rev_2025": 2.073155698679842,
+      "ev_rev_2026": 1.9361188031255954,
+      "ev_rev_2027": 1.7215413251991187,
+      "ev_ebitda_2025": 21.85678555906969,
       "ev_ebitda_2026": null,
       "ev_ebitda_2027": null,
-      "pe_2025": 57.68474060238151,
-      "pe_2026": null,
-      "pe_2027": null
+      "pe_2025": 55.25472301346408,
+      "pe_2026": 23.824427382550336,
+      "pe_2027": 17.14898396135266
     },
     {
       "ticker": "DG",
       "fmp_ticker": "DG.PA",
       "name": "VINCI",
       "category": "Diversified Engineering and Construction",
-      "share_price": 108.2,
-      "market_cap": 59765.157888,
-      "enterprise_value": 88259.264512,
+      "share_price": 108.55,
+      "market_cap": 59958.484992,
+      "enterprise_value": 89977.102336,
       "year_high": 143.15,
       "year_low": 104.25,
-      "pct_52wk": 75.59,
+      "pct_52wk": 75.83,
       "revenue_2025": 75702.0,
       "revenue_2026e": null,
       "revenue_2027e": null,
@@ -232,13 +232,13 @@
       "ebitda_margin_2025": 0.18035190615835778,
       "ebitda_margin_2026": null,
       "ebitda_margin_2027": null,
-      "ev_rev_2025": 1.1658775793506115,
+      "ev_rev_2025": 1.1885696855565242,
       "ev_rev_2026": null,
       "ev_rev_2027": null,
-      "ev_ebitda_2025": 6.464459423716399,
+      "ev_ebitda_2025": 6.590280695524793,
       "ev_ebitda_2026": null,
       "ev_ebitda_2027": null,
-      "pe_2025": 12.18950803344891,
+      "pe_2025": 12.228938403426474,
       "pe_2026": null,
       "pe_2027": null
     },
@@ -247,12 +247,12 @@
       "fmp_ticker": "HOT.DE",
       "name": "HOCHTIEF",
       "category": "Diversified Engineering and Construction",
-      "share_price": 405.4,
-      "market_cap": 30504.706048,
-      "enterprise_value": 31320.53504,
+      "share_price": 405.0,
+      "market_cap": 30474.606592,
+      "enterprise_value": 32088.02304,
       "year_high": 554.0,
       "year_low": 242.4,
-      "pct_52wk": 73.18,
+      "pct_52wk": 73.1,
       "revenue_2025": 38236.464,
       "revenue_2026e": null,
       "revenue_2027e": null,
@@ -264,13 +264,13 @@
       "ebitda_margin_2025": 0.06685785589378766,
       "ebitda_margin_2026": null,
       "ebitda_margin_2027": null,
-      "ev_rev_2025": 0.8191273921145009,
+      "ev_rev_2025": 0.8391995410454273,
       "ev_rev_2026": null,
       "ev_rev_2027": null,
-      "ev_ebitda_2025": 12.251774771476228,
+      "ev_ebitda_2025": 12.551996019414743,
       "ev_ebitda_2026": null,
       "ev_ebitda_2027": null,
-      "pe_2025": 33.80648391225856,
+      "pe_2025": 33.77312654197508,
       "pe_2026": null,
       "pe_2027": null
     },
@@ -279,12 +279,12 @@
       "fmp_ticker": "EN.PA",
       "name": "Bouygues",
       "category": "Diversified Engineering and Construction",
-      "share_price": 41.21,
-      "market_cap": 15752.815616,
-      "enterprise_value": 27292.164096,
+      "share_price": 40.91,
+      "market_cap": 15638.13888,
+      "enterprise_value": 27516.018688,
       "year_high": 53.48,
-      "year_low": 36.77,
-      "pct_52wk": 77.06,
+      "year_low": 37.01,
+      "pct_52wk": 76.5,
       "revenue_2025": 56877.0,
       "revenue_2026e": null,
       "revenue_2027e": null,
@@ -296,13 +296,13 @@
       "ebitda_margin_2025": 0.10123600049229038,
       "ebitda_margin_2026": null,
       "ebitda_margin_2027": null,
-      "ev_rev_2025": 0.4798453521810222,
+      "ev_rev_2025": 0.48378111869472723,
       "ev_rev_2026": null,
       "ev_rev_2027": null,
-      "ev_ebitda_2025": 4.73986872108371,
+      "ev_ebitda_2025": 4.7787458645362975,
       "ev_ebitda_2026": null,
       "ev_ebitda_2027": null,
-      "pe_2025": 13.842544478031634,
+      "pe_2025": 13.741774059753954,
       "pe_2026": null,
       "pe_2027": null
     },
@@ -311,30 +311,30 @@
       "fmp_ticker": "J",
       "name": "Jacobs Solutions",
       "category": "Diversified Engineering and Construction",
-      "share_price": 138.67,
-      "market_cap": 16229.743616,
-      "enterprise_value": 19091.453952,
+      "share_price": 139.23,
+      "market_cap": 16295.284736,
+      "enterprise_value": 19156.996096,
       "year_high": 168.44,
       "year_low": 105.68,
-      "pct_52wk": 82.33,
+      "pct_52wk": 82.66,
       "revenue_2025": 12029.783,
-      "revenue_2026e": 15070,
-      "revenue_2027e": 15730,
+      "revenue_2026e": null,
+      "revenue_2027e": null,
       "rev_growth_2025": 0.045982498301660596,
-      "rev_growth_2026": 0.25272417632138505,
+      "rev_growth_2026": null,
       "ebitda_2025": 926.841,
       "ebitda_2026e": null,
       "ebitda_2027e": null,
       "ebitda_margin_2025": 0.07704552941644917,
       "ebitda_margin_2026": null,
       "ebitda_margin_2027": null,
-      "ev_rev_2025": 1.5870156553946153,
-      "ev_rev_2026": 1.2668516225613802,
-      "ev_rev_2027": 1.2136970090273362,
-      "ev_ebitda_2025": 20.598413268295207,
+      "ev_rev_2025": 1.5924639784441665,
+      "ev_rev_2026": null,
+      "ev_rev_2027": null,
+      "ev_ebitda_2025": 20.669128896973696,
       "ev_ebitda_2026": null,
       "ev_ebitda_2027": null,
-      "pe_2025": 56.09306693947521,
+      "pe_2025": 56.31958946000497,
       "pe_2026": null,
       "pe_2027": null
     },
@@ -343,44 +343,44 @@
       "fmp_ticker": "1802.T",
       "name": "Obayashi Corporation",
       "category": "Diversified Engineering and Construction",
-      "share_price": 2935.0,
-      "market_cap": 2017582.12096,
-      "enterprise_value": 1970596.478976,
+      "share_price": 2929.0,
+      "market_cap": 2013457.547264,
+      "enterprise_value": 1961316.319232,
       "year_high": 4439.0,
       "year_low": 2300.0,
-      "pct_52wk": 66.12,
+      "pct_52wk": 65.98,
       "revenue_2025": 2590764.0,
-      "revenue_2026e": 16300.0,
-      "revenue_2027e": 18684.0,
+      "revenue_2026e": 22834.78,
+      "revenue_2027e": 23967.03,
       "rev_growth_2025": 0.1142294601408418,
-      "rev_growth_2026": -0.9937084196013223,
+      "rev_growth_2026": -0.9911860825609744,
       "ebitda_2025": 246644.0,
-      "ebitda_2026e": null,
+      "ebitda_2026e": 1405.35,
       "ebitda_2027e": null,
       "ebitda_margin_2025": 0.09520126109518273,
-      "ebitda_margin_2026": null,
+      "ebitda_margin_2026": 0.06154427588091499,
       "ebitda_margin_2027": null,
-      "ev_rev_2025": 0.7606236920753878,
-      "ev_rev_2026": 120.89548950773006,
-      "ev_rev_2027": 105.46973233654464,
-      "ev_ebitda_2025": 7.989638827524692,
-      "ev_ebitda_2026": null,
+      "ev_rev_2025": 0.7570416754409124,
+      "ev_rev_2026": 85.8916231832319,
+      "ev_rev_2027": 81.83393266633371,
+      "ev_ebitda_2025": 7.952013100793046,
+      "ev_ebitda_2026": 1395.607015499342,
       "ev_ebitda_2027": null,
-      "pe_2025": 13.880376464242715,
-      "pe_2026": 1834.3323219929082,
-      "pe_2027": 1951.9950860681115
+      "pe_2025": 13.852000600350864,
+      "pe_2026": null,
+      "pe_2027": null
     },
     {
       "ticker": "ACM",
       "fmp_ticker": "ACM",
       "name": "AECOM",
       "category": "Diversified Engineering and Construction",
-      "share_price": 59.76,
-      "market_cap": 7690.89792,
-      "enterprise_value": 10206.00832,
+      "share_price": 60.16,
+      "market_cap": 7742.37696,
+      "enterprise_value": 10257.486848,
       "year_high": 135.52,
       "year_low": 58.08,
-      "pct_52wk": 44.1,
+      "pct_52wk": 44.39,
       "revenue_2025": 16139.622,
       "revenue_2026e": null,
       "revenue_2027e": null,
@@ -392,13 +392,13 @@
       "ebitda_margin_2025": 0.07904708053261718,
       "ebitda_margin_2026": null,
       "ebitda_margin_2027": null,
-      "ev_rev_2025": 0.6323573327801606,
+      "ev_rev_2025": 0.6355469073563186,
       "ev_rev_2026": null,
       "ev_rev_2027": null,
-      "ev_ebitda_2025": 7.999755696470423,
+      "ev_ebitda_2025": 8.04010601117739,
       "ev_ebitda_2026": null,
       "ev_ebitda_2027": null,
-      "pe_2025": 13.69037712674492,
+      "pe_2025": 13.78201369233891,
       "pe_2026": null,
       "pe_2027": null
     },
@@ -407,12 +407,12 @@
       "fmp_ticker": "STN",
       "name": "Stantec",
       "category": "Diversified Engineering and Construction",
-      "share_price": 66.86,
-      "market_cap": 7515.044352,
-      "enterprise_value": 9886.144512,
+      "share_price": 67.54,
+      "market_cap": 7591.476224,
+      "enterprise_value": 9962.575872,
       "year_high": 114.52,
       "year_low": 66.26,
-      "pct_52wk": 58.38,
+      "pct_52wk": 58.98,
       "revenue_2025": 8144.2,
       "revenue_2026e": null,
       "revenue_2027e": null,
@@ -424,13 +424,13 @@
       "ebitda_margin_2025": 0.13467252768841628,
       "ebitda_margin_2026": null,
       "ebitda_margin_2027": null,
-      "ev_rev_2025": 1.2138877375310038,
+      "ev_rev_2025": 1.2232724972372977,
       "ev_rev_2026": null,
       "ev_rev_2027": null,
-      "ev_ebitda_2025": 9.013625557986872,
+      "ev_ebitda_2025": 9.083311334792123,
       "ev_ebitda_2026": null,
       "ev_ebitda_2027": null,
-      "pe_2025": 15.675937321652066,
+      "pe_2025": 15.835369678765124,
       "pe_2026": null,
       "pe_2027": null
     },
@@ -444,7 +444,7 @@
       "enterprise_value": null,
       "year_high": null,
       "year_low": null,
-      "revenue_2025": 2331.2,
+      "revenue_2025": 2431.45,
       "revenue_2026e": null,
       "revenue_2027e": null,
       "rev_growth_2025": null,
@@ -470,12 +470,12 @@
       "fmp_ticker": "KBR",
       "name": "KBR Inc",
       "category": "Diversified Engineering and Construction",
-      "share_price": 34.52,
-      "market_cap": 4351.858688,
-      "enterprise_value": 6832.859136,
-      "year_high": 48.13,
+      "share_price": 34.61,
+      "market_cap": 4363.20512,
+      "enterprise_value": 6844.205056,
+      "year_high": 47.62,
       "year_low": 29.94,
-      "pct_52wk": 71.72,
+      "pct_52wk": 72.68,
       "revenue_2025": 7786.0,
       "revenue_2026e": null,
       "revenue_2027e": null,
@@ -487,13 +487,13 @@
       "ebitda_margin_2025": 0.12085795016696635,
       "ebitda_margin_2026": null,
       "ebitda_margin_2027": null,
-      "ev_rev_2025": 0.8775827300282558,
+      "ev_rev_2025": 0.879039950680709,
       "ev_rev_2026": null,
       "ev_rev_2027": null,
-      "ev_ebitda_2025": 7.2612743209351756,
+      "ev_ebitda_2025": 7.273331621679064,
       "ev_ebitda_2026": null,
       "ev_ebitda_2027": null,
-      "pe_2025": 10.486406477108435,
+      "pe_2025": 10.513747277108433,
       "pe_2026": null,
       "pe_2027": null
     },
@@ -502,30 +502,30 @@
       "fmp_ticker": "ARCAD.PA",
       "name": "Arcadis",
       "category": "Diversified Engineering and Construction",
-      "share_price": 41.64,
-      "market_cap": 3547.986176,
-      "enterprise_value": 4464.768512,
+      "share_price": 41.72,
+      "market_cap": 3554.802688,
+      "enterprise_value": 4590.8736,
       "year_high": 51.25,
       "year_low": 25.88,
-      "pct_52wk": 81.25,
+      "pct_52wk": 81.4,
       "revenue_2025": 4875.0,
-      "revenue_2026e": 4450.0,
-      "revenue_2027e": 4640.0,
+      "revenue_2026e": 4428.0,
+      "revenue_2027e": null,
       "rev_growth_2025": -0.024024024024024024,
-      "rev_growth_2026": -0.08717948717948718,
+      "rev_growth_2026": -0.0916923076923077,
       "ebitda_2025": 499.0,
-      "ebitda_2026e": 617.0,
-      "ebitda_2027e": 690.0,
+      "ebitda_2026e": null,
+      "ebitda_2027e": null,
       "ebitda_margin_2025": 0.10235897435897436,
-      "ebitda_margin_2026": 0.13865168539325842,
-      "ebitda_margin_2027": 0.14870689655172414,
-      "ev_rev_2025": 0.9158499511794871,
-      "ev_rev_2026": 1.003318766741573,
-      "ev_rev_2027": 0.9622345931034482,
-      "ev_ebitda_2025": 8.94743188777555,
-      "ev_ebitda_2026": 7.236253666126418,
-      "ev_ebitda_2027": 6.47067900289855,
-      "pe_2025": 17.057625846153847,
+      "ebitda_margin_2026": null,
+      "ebitda_margin_2027": null,
+      "ev_rev_2025": 0.9417176615384615,
+      "ev_rev_2026": 1.0367826558265583,
+      "ev_rev_2027": null,
+      "ev_ebitda_2025": 9.200147494989979,
+      "ev_ebitda_2026": null,
+      "ev_ebitda_2027": null,
+      "pe_2025": 17.090397538461538,
       "pe_2026": null,
       "pe_2027": null
     },
@@ -534,30 +534,30 @@
       "fmp_ticker": "WBD",
       "name": "Webuild",
       "category": "Diversified Engineering and Construction",
-      "share_price": 1.947,
-      "market_cap": 1925.191808,
-      "enterprise_value": 3031.126016,
+      "share_price": 1.964,
+      "market_cap": 1942.00128,
+      "enterprise_value": 3042.002944,
       "year_high": 3.68,
       "year_low": 1.86,
-      "pct_52wk": 52.91,
+      "pct_52wk": 53.37,
       "revenue_2025": 12636.199,
-      "revenue_2026e": 16000.0,
-      "revenue_2027e": 16300.0,
+      "revenue_2026e": 16082.4,
+      "revenue_2027e": 16418.9,
       "rev_growth_2025": 0.1459085108574845,
-      "rev_growth_2026": 0.26620354744334107,
+      "rev_growth_2026": 0.27272449571267426,
       "ebitda_2025": 1126.044,
-      "ebitda_2026e": null,
-      "ebitda_2027e": null,
+      "ebitda_2026e": 1465.0,
+      "ebitda_2027e": 1525.0,
       "ebitda_margin_2025": 0.0891125567110806,
-      "ebitda_margin_2026": null,
-      "ebitda_margin_2027": null,
-      "ev_rev_2025": 0.23987640713793762,
-      "ev_rev_2026": 0.189445376,
-      "ev_rev_2027": 0.18595865128834357,
-      "ev_ebitda_2025": 2.6918362124393007,
-      "ev_ebitda_2026": null,
-      "ev_ebitda_2027": null,
-      "pe_2025": 8.026749586194532,
+      "ebitda_margin_2026": 0.09109336914888325,
+      "ebitda_margin_2027": 0.09288076545931821,
+      "ev_rev_2025": 0.24073718243911793,
+      "ev_rev_2026": 0.18915105606128438,
+      "ev_rev_2027": 0.18527446686440624,
+      "ev_ebitda_2025": 2.7014956289452274,
+      "ev_ebitda_2026": 2.0764525215017064,
+      "ev_ebitda_2027": 1.9947560288524588,
+      "pe_2025": 8.096833731503834,
       "pe_2026": null,
       "pe_2027": null
     },
@@ -566,12 +566,12 @@
       "fmp_ticker": "FLR",
       "name": "Fluor Corporation",
       "category": "Diversified Engineering and Construction",
-      "share_price": 50.61,
-      "market_cap": 6768.635392,
-      "enterprise_value": 4896.635392,
+      "share_price": 52.0,
+      "market_cap": 6954.535424,
+      "enterprise_value": 5082.535424,
       "year_high": 58.35,
       "year_low": 39.33,
-      "pct_52wk": 86.74,
+      "pct_52wk": 89.12,
       "revenue_2025": 15503.0,
       "revenue_2026e": null,
       "revenue_2027e": null,
@@ -583,13 +583,13 @@
       "ebitda_margin_2025": -0.012965232535638263,
       "ebitda_margin_2026": null,
       "ebitda_margin_2027": null,
-      "ev_rev_2025": 0.31585082835580214,
+      "ev_rev_2025": 0.3278420579242727,
       "ev_rev_2026": null,
       "ev_rev_2027": null,
-      "ev_ebitda_2025": -24.361370109452736,
+      "ev_ebitda_2025": -25.286245890547264,
       "ev_ebitda_2026": null,
       "ev_ebitda_2027": null,
-      "pe_2025": -132.71834101960783,
+      "pe_2025": -136.36343968627452,
       "pe_2026": null,
       "pe_2027": null
     },
@@ -598,12 +598,12 @@
       "fmp_ticker": "FIX",
       "name": "Comfort Systems USA",
       "category": "Specialty Engineering and Construction",
-      "share_price": 1713.07,
-      "market_cap": 60290.347008,
-      "enterprise_value": 58654.502912,
+      "share_price": 1817.96,
+      "market_cap": 63981.879296,
+      "enterprise_value": 62339.95264,
       "year_high": 2073.99,
       "year_low": 770.47,
-      "pct_52wk": 82.6,
+      "pct_52wk": 87.66,
       "revenue_2025": 9101.641,
       "revenue_2026e": null,
       "revenue_2027e": null,
@@ -615,13 +615,13 @@
       "ebitda_margin_2025": 0.15847614732332335,
       "ebitda_margin_2026": null,
       "ebitda_margin_2027": null,
-      "ev_rev_2025": 6.444387656247923,
+      "ev_rev_2025": 6.849309112499604,
       "ev_rev_2026": null,
       "ev_rev_2027": null,
-      "ev_ebitda_2025": 40.66471683653484,
+      "ev_ebitda_2025": 43.21981085598724,
       "ev_ebitda_2026": null,
       "ev_ebitda_2027": null,
-      "pe_2025": 58.96032010702571,
+      "pe_2025": 62.57041585513976,
       "pe_2026": null,
       "pe_2027": null
     },
@@ -630,12 +630,12 @@
       "fmp_ticker": "EME",
       "name": "EMCOR Group",
       "category": "Specialty Engineering and Construction",
-      "share_price": 779.2,
-      "market_cap": 34370.433024,
-      "enterprise_value": 33995.087872,
+      "share_price": 824.52,
+      "market_cap": 36369.494016,
+      "enterprise_value": 35994.148864,
       "year_high": 951.96,
       "year_low": 564.92,
-      "pct_52wk": 81.85,
+      "pct_52wk": 86.61,
       "revenue_2025": 16986.422,
       "revenue_2026e": null,
       "revenue_2027e": null,
@@ -647,13 +647,13 @@
       "ebitda_margin_2025": 0.11303522307405292,
       "ebitda_margin_2026": null,
       "ebitda_margin_2027": null,
-      "ev_rev_2025": 2.001309508971342,
+      "ev_rev_2025": 2.118995328386402,
       "ev_rev_2026": null,
       "ev_rev_2027": null,
-      "ev_ebitda_2025": 17.70518476050798,
+      "ev_ebitda_2025": 18.74632765574481,
       "ev_ebitda_2026": null,
       "ev_ebitda_2027": null,
-      "pe_2025": 27.00343649087025,
+      "pe_2025": 28.574016544405044,
       "pe_2026": null,
       "pe_2027": null
     },
@@ -662,30 +662,30 @@
       "fmp_ticker": "WSP.TO",
       "name": "WSP Global",
       "category": "Specialty Engineering and Construction",
-      "share_price": 168.27,
-      "market_cap": 22685.595648,
-      "enterprise_value": 30825.494528,
+      "share_price": 167.12,
+      "market_cap": 22530.555904,
+      "enterprise_value": 30670.456832,
       "year_high": 290.23,
       "year_low": 156.64,
-      "pct_52wk": 57.98,
+      "pct_52wk": 57.58,
       "revenue_2025": 18285.0,
-      "revenue_2026e": null,
+      "revenue_2026e": 11672.1,
       "revenue_2027e": null,
       "rev_growth_2025": 0.13102159982185718,
-      "rev_growth_2026": null,
+      "rev_growth_2026": -0.3616570959803117,
       "ebitda_2025": 2365.6,
-      "ebitda_2026e": null,
+      "ebitda_2026e": 2206.4,
       "ebitda_2027e": null,
       "ebitda_margin_2025": 0.12937380366420562,
-      "ebitda_margin_2026": null,
+      "ebitda_margin_2026": 0.18903196511339004,
       "ebitda_margin_2027": null,
-      "ev_rev_2025": 1.685835084933005,
-      "ev_rev_2026": null,
+      "ev_rev_2025": 1.6773561297238173,
+      "ev_rev_2026": 2.62767255523856,
       "ev_rev_2027": null,
-      "ev_ebitda_2025": 13.030729847818735,
-      "ev_ebitda_2026": null,
+      "ev_ebitda_2025": 12.965191423740277,
+      "ev_ebitda_2026": 13.900678404641043,
       "ev_ebitda_2027": null,
-      "pe_2025": 23.525454368972312,
+      "pe_2025": 23.3646747941512,
       "pe_2026": null,
       "pe_2027": null
     },
@@ -725,12 +725,12 @@
       "fmp_ticker": "DY",
       "name": "Dycom Industries",
       "category": "Specialty Engineering and Construction",
-      "share_price": 274.41,
-      "market_cap": 8276.468224,
-      "enterprise_value": 10973.176832,
+      "share_price": 290.43,
+      "market_cap": 8759.646208,
+      "enterprise_value": 11456.355328,
       "year_high": 566.47,
       "year_low": 263.36,
-      "pct_52wk": 48.44,
+      "pct_52wk": 51.27,
       "revenue_2025": 4702.014,
       "revenue_2026e": null,
       "revenue_2027e": null,
@@ -742,13 +742,13 @@
       "ebitda_margin_2025": 0.12066212478312485,
       "ebitda_margin_2026": null,
       "ebitda_margin_2027": null,
-      "ev_rev_2025": 2.3337184517102667,
+      "ev_rev_2025": 2.4364783533183862,
       "ev_rev_2026": null,
       "ev_rev_2027": null,
-      "ev_ebitda_2025": 19.34093615461219,
+      "ev_ebitda_2025": 20.19256960456857,
       "ev_ebitda_2026": null,
       "ev_ebitda_2027": null,
-      "pe_2025": 35.458471567564786,
+      "pe_2025": 37.528527579869156,
       "pe_2026": null,
       "pe_2027": null
     },
@@ -757,12 +757,12 @@
       "fmp_ticker": "TTEK",
       "name": "Tetra Tech",
       "category": "Specialty Engineering and Construction",
-      "share_price": 33.33,
-      "market_cap": 8533.961216,
-      "enterprise_value": 9327.127552,
+      "share_price": 33.38,
+      "market_cap": 8546.763264,
+      "enterprise_value": 9339.9296,
       "year_high": 43.14,
       "year_low": 25.81,
-      "pct_52wk": 77.26,
+      "pct_52wk": 77.38,
       "revenue_2025": 5442.59,
       "revenue_2026e": null,
       "revenue_2027e": null,
@@ -774,13 +774,13 @@
       "ebitda_margin_2025": 0.08755610839692131,
       "ebitda_margin_2026": null,
       "ebitda_margin_2027": null,
-      "ev_rev_2025": 1.7137295941821815,
+      "ev_rev_2025": 1.7160817919409692,
       "ev_rev_2026": null,
       "ev_rev_2027": null,
-      "ev_ebitda_2025": 19.572930153693772,
+      "ev_ebitda_2025": 19.59979518689196,
       "ev_ebitda_2026": null,
       "ev_ebitda_2027": null,
-      "pe_2025": 34.44947286496262,
+      "pe_2025": 34.50115153961667,
       "pe_2026": null,
       "pe_2027": null
     },
@@ -789,12 +789,12 @@
       "fmp_ticker": "GBF.VI",
       "name": "Strabag SE",
       "category": "Specialty Engineering and Construction",
-      "share_price": 57.45,
-      "market_cap": 2122.187136,
-      "enterprise_value": 2094.541312,
+      "share_price": 56.85,
+      "market_cap": 2100.023296,
+      "enterprise_value": 2125.940096,
       "year_high": 129.5,
       "year_low": 55.65,
-      "pct_52wk": 44.36,
+      "pct_52wk": 43.9,
       "revenue_2025": 5427.0,
       "revenue_2026e": null,
       "revenue_2027e": null,
@@ -806,13 +806,13 @@
       "ebitda_margin_2025": 0.08162889257416621,
       "ebitda_margin_2026": null,
       "ebitda_margin_2027": null,
-      "ev_rev_2025": 0.3859482793440206,
+      "ev_rev_2025": 0.39173394066703515,
       "ev_rev_2026": null,
       "ev_rev_2027": null,
-      "ev_ebitda_2025": 4.7280842257336335,
+      "ev_ebitda_2025": 4.798961841986456,
       "ev_ebitda_2026": null,
       "ev_ebitda_2027": null,
-      "pe_2025": 12.057881454545454,
+      "pe_2025": 11.931950545454544,
       "pe_2026": null,
       "pe_2027": null
     },
@@ -821,12 +821,12 @@
       "fmp_ticker": "STRL",
       "name": "Sterling Infrastructure",
       "category": "Infrastructure Services",
-      "share_price": 523.33,
-      "market_cap": 16007.88992,
-      "enterprise_value": 15913.48736,
+      "share_price": 563.69,
+      "market_cap": 17242.441728,
+      "enterprise_value": 17148.040192,
       "year_high": 1005.68,
       "year_low": 281.58,
-      "pct_52wk": 52.04,
+      "pct_52wk": 56.05,
       "revenue_2025": 2490.049,
       "revenue_2026e": null,
       "revenue_2027e": null,
@@ -838,13 +838,13 @@
       "ebitda_margin_2025": 0.20295865663687743,
       "ebitda_margin_2026": null,
       "ebitda_margin_2027": null,
-      "ev_rev_2025": 6.390833015735835,
+      "ev_rev_2025": 6.886627609336202,
       "ev_rev_2026": null,
       "ev_rev_2027": null,
-      "ev_ebitda_2025": 31.488349014695956,
+      "ev_ebitda_2025": 33.93118442667553,
       "ev_ebitda_2026": null,
       "ev_ebitda_2027": null,
-      "pe_2025": 55.17051321199504,
+      "pe_2025": 59.42534362215797,
       "pe_2026": null,
       "pe_2027": null
     },
@@ -853,12 +853,12 @@
       "fmp_ticker": "ROAD",
       "name": "Construction Partners",
       "category": "Infrastructure Services",
-      "share_price": 90.5,
-      "market_cap": 5136.377856,
-      "enterprise_value": 6933.414912,
+      "share_price": 93.89,
+      "market_cap": 5328.779264,
+      "enterprise_value": 7125.815808,
       "year_high": 151.0,
       "year_low": 87.65,
-      "pct_52wk": 59.93,
+      "pct_52wk": 62.18,
       "revenue_2025": 2812.356,
       "revenue_2026e": null,
       "revenue_2027e": null,
@@ -870,13 +870,13 @@
       "ebitda_margin_2025": 0.13268839364575463,
       "ebitda_margin_2026": null,
       "ebitda_margin_2027": null,
-      "ev_rev_2025": 2.465340416362651,
+      "ev_rev_2025": 2.5337531265600797,
       "ev_rev_2026": null,
       "ev_rev_2027": null,
-      "ev_ebitda_2025": 18.579925105917727,
+      "ev_ebitda_2025": 19.095514362202447,
       "ev_ebitda_2026": null,
       "ev_ebitda_2027": null,
-      "pe_2025": 50.46499696406991,
+      "pe_2025": 52.355343964001136,
       "pe_2026": null,
       "pe_2027": null
     },
@@ -885,12 +885,12 @@
       "fmp_ticker": "GVA",
       "name": "Granite Construction",
       "category": "Infrastructure Services",
-      "share_price": 118.9,
-      "market_cap": 5282.35776,
-      "enterprise_value": 5937.529344,
+      "share_price": 120.92,
+      "market_cap": 5372.099584,
+      "enterprise_value": 6025.933312,
       "year_high": 162.08,
       "year_low": 97.26,
-      "pct_52wk": 73.36,
+      "pct_52wk": 74.61,
       "revenue_2025": 4424.379,
       "revenue_2026e": null,
       "revenue_2027e": null,
@@ -902,13 +902,13 @@
       "ebitda_margin_2025": 0.11266733704323251,
       "ebitda_margin_2026": null,
       "ebitda_margin_2027": null,
-      "ev_rev_2025": 1.3420028763358653,
+      "ev_rev_2025": 1.361983978316505,
       "ev_rev_2026": null,
       "ev_rev_2027": null,
-      "ev_ebitda_2025": 11.91119726048832,
+      "ev_ebitda_2025": 12.088543264263777,
       "ev_ebitda_2026": null,
       "ev_ebitda_2027": null,
-      "pe_2025": 27.36930389683062,
+      "pe_2025": 27.834280213260932,
       "pe_2026": null,
       "pe_2027": null
     },
@@ -917,12 +917,12 @@
       "fmp_ticker": "BBY",
       "name": "Balfour Beatty",
       "category": "Infrastructure Services",
-      "share_price": 914.0,
-      "market_cap": 4283.697152,
-      "enterprise_value": 3405.240064,
+      "share_price": 891.5,
+      "market_cap": 4176.589568,
+      "enterprise_value": 3352.0,
       "year_high": 973.0,
       "year_low": 636.5,
-      "pct_52wk": 93.94,
+      "pct_52wk": 91.62,
       "revenue_2025": 9489.0,
       "revenue_2026e": null,
       "revenue_2027e": null,
@@ -934,13 +934,13 @@
       "ebitda_margin_2025": 0.050690272947623564,
       "ebitda_margin_2026": null,
       "ebitda_margin_2027": null,
-      "ev_rev_2025": 0.35886184676994415,
+      "ev_rev_2025": 0.3532511328907156,
       "ev_rev_2026": null,
       "ev_rev_2027": null,
-      "ev_ebitda_2025": 7.079501172557173,
+      "ev_ebitda_2025": 6.968814968814969,
       "ev_ebitda_2026": null,
       "ev_ebitda_2027": null,
-      "pe_2025": 16.287821870722432,
+      "pe_2025": 15.880568699619774,
       "pe_2026": null,
       "pe_2027": null
     },
@@ -949,12 +949,12 @@
       "fmp_ticker": "PWR",
       "name": "Quanta Services",
       "category": "Utility Services",
-      "share_price": 683.42,
-      "market_cap": 102747.676672,
-      "enterprise_value": 108948.389888,
+      "share_price": 719.56,
+      "market_cap": 108181.0944,
+      "enterprise_value": 114381.799424,
       "year_high": 788.75,
       "year_low": 404.51,
-      "pct_52wk": 86.65,
+      "pct_52wk": 91.23,
       "revenue_2025": 28479.697,
       "revenue_2026e": null,
       "revenue_2027e": null,
@@ -966,13 +966,13 @@
       "ebitda_margin_2025": 0.08993364641484773,
       "ebitda_margin_2026": null,
       "ebitda_margin_2027": null,
-      "ev_rev_2025": 3.8254757376105513,
+      "ev_rev_2025": 4.016257596560806,
       "ev_rev_2026": null,
       "ev_rev_2027": null,
-      "ev_ebitda_2025": 42.53664662905271,
+      "ev_ebitda_2025": 44.658009061864696,
       "ev_ebitda_2026": null,
       "ev_ebitda_2027": null,
-      "pe_2025": 99.91236361726915,
+      "pe_2025": 105.19584666338643,
       "pe_2026": null,
       "pe_2027": null
     },
@@ -981,30 +981,30 @@
       "fmp_ticker": "MTZ",
       "name": "MasTec",
       "category": "Utility Services",
-      "share_price": 219.4,
-      "market_cap": 17618.905088,
-      "enterprise_value": 20436.668416,
+      "share_price": 228.3,
+      "market_cap": 18333.618176,
+      "enterprise_value": 21142.25152,
       "year_high": 441.43,
       "year_low": 182.34,
-      "pct_52wk": 49.7,
+      "pct_52wk": 51.72,
       "revenue_2025": 14299.171,
-      "revenue_2026e": 18191,
-      "revenue_2027e": 21633,
+      "revenue_2026e": 18190,
+      "revenue_2027e": 21520,
       "rev_growth_2025": 0.1622069199373445,
-      "rev_growth_2026": 0.2721716524685242,
+      "rev_growth_2026": 0.27210171834437114,
       "ebitda_2025": 1115.465,
-      "ebitda_2026e": 1601,
-      "ebitda_2027e": 2017,
+      "ebitda_2026e": null,
+      "ebitda_2027e": null,
       "ebitda_margin_2025": 0.07800906779840593,
-      "ebitda_margin_2026": 0.0880105546698917,
-      "ebitda_margin_2027": 0.0932371839319558,
-      "ev_rev_2025": 1.4292205062796997,
-      "ev_rev_2026": 1.1234494209224342,
-      "ev_rev_2027": 0.944698766514122,
-      "ev_ebitda_2025": 18.321209913354522,
-      "ev_ebitda_2026": 12.76493967270456,
-      "ev_ebitda_2027": 10.132210419434804,
-      "pe_2025": 44.15300917697886,
+      "ebitda_margin_2026": null,
+      "ebitda_margin_2027": null,
+      "ev_rev_2025": 1.4785648426751454,
+      "ev_rev_2026": 1.1623007982407918,
+      "ev_rev_2027": 0.9824466319702603,
+      "ev_ebitda_2025": 18.953756074820816,
+      "ev_ebitda_2026": null,
+      "ev_ebitda_2027": null,
+      "pe_2025": 45.94408151522897,
       "pe_2026": null,
       "pe_2027": null
     },
@@ -1013,12 +1013,12 @@
       "fmp_ticker": "PRIM",
       "name": "Primoris Services",
       "category": "Utility Services",
-      "share_price": 80.57,
-      "market_cap": 4371.32032,
-      "enterprise_value": 5398.170624,
+      "share_price": 84.97,
+      "market_cap": 4610.041856,
+      "enterprise_value": 5635.032576,
       "year_high": 205.5,
       "year_low": 65.0,
-      "pct_52wk": 39.21,
+      "pct_52wk": 41.35,
       "revenue_2025": 7574.9,
       "revenue_2026e": null,
       "revenue_2027e": null,
@@ -1030,13 +1030,13 @@
       "ebitda_margin_2025": 0.06661474078865728,
       "ebitda_margin_2026": null,
       "ebitda_margin_2027": null,
-      "ev_rev_2025": 0.7126391931246618,
+      "ev_rev_2025": 0.7439085104753858,
       "ev_rev_2026": null,
       "ev_rev_2027": null,
-      "ev_ebitda_2025": 10.697920380499406,
+      "ev_ebitda_2025": 11.167325755053506,
       "ev_ebitda_2026": null,
       "ev_ebitda_2027": null,
-      "pe_2025": 15.901492615496545,
+      "pe_2025": 16.76988670789378,
       "pe_2026": null,
       "pe_2027": null
     },
@@ -1045,12 +1045,12 @@
       "fmp_ticker": "MYRG",
       "name": "MYR Group",
       "category": "Utility Services",
-      "share_price": 302.65,
-      "market_cap": 4712.03328,
-      "enterprise_value": 4641.265664,
+      "share_price": 324.51,
+      "market_cap": 5052.3776,
+      "enterprise_value": 4981.609472,
       "year_high": 503.57,
       "year_low": 190.14,
-      "pct_52wk": 60.1,
+      "pct_52wk": 64.44,
       "revenue_2025": 3657.889,
       "revenue_2026e": null,
       "revenue_2027e": null,
@@ -1062,13 +1062,13 @@
       "ebitda_margin_2025": 0.06381932311231969,
       "ebitda_margin_2026": null,
       "ebitda_margin_2027": null,
-      "ev_rev_2025": 1.2688372074713037,
+      "ev_rev_2025": 1.361880984360105,
       "ev_rev_2026": null,
       "ev_rev_2027": null,
-      "ev_ebitda_2025": 19.88170894946968,
+      "ev_ebitda_2025": 21.339633796542213,
       "ev_ebitda_2026": null,
       "ev_ebitda_2027": null,
-      "pe_2025": 39.79220105391163,
+      "pe_2025": 42.66634238616403,
       "pe_2026": null,
       "pe_2027": null
     },
@@ -1077,12 +1077,12 @@
       "fmp_ticker": "AMRC",
       "name": "Ameresco",
       "category": "Utility Services",
-      "share_price": 21.49,
-      "market_cap": 1140.392832,
-      "enterprise_value": 3685.485824,
+      "share_price": 22.68,
+      "market_cap": 1203.54176,
+      "enterprise_value": 3748.634624,
       "year_high": 44.93,
       "year_low": 18.38,
-      "pct_52wk": 47.83,
+      "pct_52wk": 50.48,
       "revenue_2025": 1932.126,
       "revenue_2026e": null,
       "revenue_2027e": null,
@@ -1094,13 +1094,13 @@
       "ebitda_margin_2025": 0.12275596933119269,
       "ebitda_margin_2026": null,
       "ebitda_margin_2027": null,
-      "ev_rev_2025": 1.907476957506912,
+      "ev_rev_2025": 1.940160540254621,
       "ev_rev_2026": null,
       "ev_rev_2027": null,
-      "ev_ebitda_2025": 15.538771498440003,
+      "ev_ebitda_2025": 15.805019917362339,
       "ev_ebitda_2026": null,
       "ev_ebitda_2027": null,
-      "pe_2025": 25.75180272784753,
+      "pe_2025": 27.177801463282453,
       "pe_2026": null,
       "pe_2027": null
     },
@@ -1109,12 +1109,12 @@
       "fmp_ticker": "IBM",
       "name": "IBM",
       "category": "Management Consulting",
-      "share_price": 221.58,
-      "market_cap": 208758.145024,
-      "enterprise_value": 265987.145728,
+      "share_price": 221.29,
+      "market_cap": 208484.909056,
+      "enterprise_value": 265713.926144,
       "year_high": 332.46,
       "year_low": 199.19,
-      "pct_52wk": 66.65,
+      "pct_52wk": 66.56,
       "revenue_2025": 67536.0,
       "revenue_2026e": null,
       "revenue_2027e": null,
@@ -1126,13 +1126,13 @@
       "ebitda_margin_2025": 0.25592276711679696,
       "ebitda_margin_2026": null,
       "ebitda_margin_2027": null,
-      "ev_rev_2025": 3.938449800521203,
+      "ev_rev_2025": 3.9344042606017537,
       "ev_rev_2026": null,
       "ev_rev_2027": null,
-      "ev_ebitda_2025": 15.389212319370515,
+      "ev_ebitda_2025": 15.373404660032401,
       "ev_ebitda_2026": null,
       "ev_ebitda_2027": null,
-      "pe_2025": 19.707178799584632,
+      "pe_2025": 19.681384787689986,
       "pe_2026": null,
       "pe_2027": null
     },
@@ -1141,15 +1141,15 @@
       "fmp_ticker": "ACN",
       "name": "Accenture",
       "category": "Management Consulting",
-      "share_price": 195.05,
-      "market_cap": 119359.307776,
-      "enterprise_value": 118498.87744,
+      "share_price": 193.4,
+      "market_cap": 118349.594624,
+      "enterprise_value": 117515.476992,
       "year_high": 291.09,
       "year_low": 118.15,
-      "pct_52wk": 67.01,
+      "pct_52wk": 66.44,
       "revenue_2025": 69672.977,
       "revenue_2026e": 73570,
-      "revenue_2027e": 81320,
+      "revenue_2027e": 81230,
       "rev_growth_2025": 0.07360205326441205,
       "rev_growth_2026": 0.05593306282864877,
       "ebitda_2025": 11867.333,
@@ -1158,13 +1158,13 @@
       "ebitda_margin_2025": 0.1703290645955892,
       "ebitda_margin_2026": null,
       "ebitda_margin_2027": null,
-      "ev_rev_2025": 1.7007867690223715,
-      "ev_rev_2026": 1.6106956291966834,
-      "ev_rev_2027": 1.457192295130349,
-      "ev_ebitda_2025": 9.98529976701589,
+      "ev_rev_2025": 1.6866722515961963,
+      "ev_rev_2026": 1.5973287616147887,
+      "ev_rev_2027": 1.4467004430875292,
+      "ev_ebitda_2025": 9.902433595821403,
       "ev_ebitda_2026": null,
       "ev_ebitda_2027": null,
-      "pe_2025": 15.544748228707602,
+      "pe_2025": 15.41324833126759,
       "pe_2026": null,
       "pe_2027": null
     },
@@ -1173,30 +1173,30 @@
       "fmp_ticker": "BAH",
       "name": "Booz Allen Hamilton",
       "category": "Management Consulting",
-      "share_price": 68.61,
-      "market_cap": 8252.752384,
-      "enterprise_value": 11872.751616,
+      "share_price": 68.14,
+      "market_cap": 8196.218368,
+      "enterprise_value": 11816.2176,
       "year_high": 109.1,
       "year_low": 59.5,
-      "pct_52wk": 62.89,
+      "pct_52wk": 62.46,
       "revenue_2025": 11980.0,
-      "revenue_2026e": null,
+      "revenue_2026e": 11093,
       "revenue_2027e": null,
       "rev_growth_2025": 0.12361658225473644,
-      "rev_growth_2026": null,
+      "rev_growth_2026": -0.07404006677796328,
       "ebitda_2025": 1574.0,
       "ebitda_2026e": null,
       "ebitda_2027e": null,
       "ebitda_margin_2025": 0.1313856427378965,
       "ebitda_margin_2026": null,
       "ebitda_margin_2027": null,
-      "ev_rev_2025": 0.9910477141903171,
-      "ev_rev_2026": null,
+      "ev_rev_2025": 0.9863286811352253,
+      "ev_rev_2026": 1.0651958532407824,
       "ev_rev_2027": null,
-      "ev_ebitda_2025": 7.543044228716645,
+      "ev_ebitda_2025": 7.5071268106734435,
       "ev_ebitda_2026": null,
       "ev_ebitda_2027": null,
-      "pe_2025": 8.826473137967914,
+      "pe_2025": 8.76600894973262,
       "pe_2026": null,
       "pe_2027": null
     },
@@ -1205,12 +1205,12 @@
       "fmp_ticker": "FCN",
       "name": "FTI Consulting",
       "category": "Management Consulting",
-      "share_price": 138.02,
-      "market_cap": 3810.949888,
-      "enterprise_value": 4810.295296,
+      "share_price": 137.61,
+      "market_cap": 3799.629056,
+      "enterprise_value": 4799.209472,
       "year_high": 189.3,
       "year_low": 129.12,
-      "pct_52wk": 72.91,
+      "pct_52wk": 72.69,
       "revenue_2025": 3788.857,
       "revenue_2026e": null,
       "revenue_2027e": null,
@@ -1222,13 +1222,13 @@
       "ebitda_margin_2025": 0.11656549719348078,
       "ebitda_margin_2026": null,
       "ebitda_margin_2027": null,
-      "ev_rev_2025": 1.269590089042685,
+      "ev_rev_2025": 1.2666641871150057,
       "ev_rev_2026": null,
       "ev_rev_2027": null,
-      "ev_ebitda_2025": 10.891645637948603,
+      "ev_ebitda_2025": 10.86654471187592,
       "ev_ebitda_2026": null,
       "ev_ebitda_2027": null,
-      "pe_2025": 14.069242879451844,
+      "pe_2025": 14.02744869698122,
       "pe_2026": null,
       "pe_2027": null
     },
@@ -1237,30 +1237,30 @@
       "fmp_ticker": "HURN",
       "name": "Huron Consulting Group",
       "category": "Management Consulting",
-      "share_price": 160.1,
-      "market_cap": 2547.20256,
-      "enterprise_value": 3218.161152,
+      "share_price": 157.26,
+      "market_cap": 2502.017792,
+      "enterprise_value": 3175.853568,
       "year_high": 186.78,
       "year_low": 84.88,
-      "pct_52wk": 85.72,
+      "pct_52wk": 84.2,
       "revenue_2025": 1699.143,
-      "revenue_2026e": null,
+      "revenue_2026e": 1820,
       "revenue_2027e": null,
       "rev_growth_2025": 0.11653135585702502,
-      "rev_growth_2026": null,
+      "rev_growth_2026": 0.07112820992700436,
       "ebitda_2025": 220.135,
       "ebitda_2026e": null,
       "ebitda_2027e": null,
       "ebitda_margin_2025": 0.12955648818257204,
       "ebitda_margin_2026": null,
       "ebitda_margin_2027": null,
-      "ev_rev_2025": 1.8939907659331794,
-      "ev_rev_2026": null,
+      "ev_rev_2025": 1.8690913996055658,
+      "ev_rev_2026": 1.7449744879120879,
       "ev_rev_2027": null,
-      "ev_ebitda_2025": 14.61903446521453,
+      "ev_ebitda_2025": 14.426845199536649,
       "ev_ebitda_2026": null,
       "ev_ebitda_2027": null,
-      "pe_2025": 24.249833968012187,
+      "pe_2025": 23.819666717440974,
       "pe_2026": null,
       "pe_2027": null
     }
@@ -1269,173 +1269,181 @@
     "Construction Contractors": {
       "mean": {
         "rev_growth_2025": 0.238966,
-        "rev_growth_2026": 0.212591,
+        "rev_growth_2026": 0.160501,
         "ebitda_margin_2025": 0.070128,
-        "ev_rev_2025": 1.629396,
-        "ev_rev_2026": 1.708816,
-        "ev_ebitda_2025": 20.699292,
-        "pe_2025": 80.693992
+        "ebitda_margin_2026": 0.055983,
+        "ebitda_margin_2027": 0.054071,
+        "ev_rev_2025": 1.719918,
+        "ev_rev_2026": 1.179412,
+        "ev_rev_2027": 1.05375,
+        "ev_ebitda_2025": 21.572901,
+        "ev_ebitda_2026": 7.550632,
+        "ev_ebitda_2027": 7.137971,
+        "pe_2025": 81.220667,
+        "pe_2026": 21.9049,
+        "pe_2027": 17.34476
       },
       "median": {
         "rev_growth_2025": 0.239123,
-        "rev_growth_2026": 0.212591,
+        "rev_growth_2026": 0.160501,
         "ebitda_margin_2025": 0.06618,
-        "ev_rev_2025": 0.754668,
-        "ev_rev_2026": 1.708816,
-        "ev_ebitda_2025": 17.714041,
-        "pe_2025": 57.10871
+        "ebitda_margin_2026": 0.055983,
+        "ebitda_margin_2027": 0.054071,
+        "ev_rev_2025": 0.765184,
+        "ev_rev_2026": 1.179412,
+        "ev_rev_2027": 1.05375,
+        "ev_ebitda_2025": 17.946483,
+        "ev_ebitda_2026": 7.550632,
+        "ev_ebitda_2027": 7.137971,
+        "pe_2025": 56.753825,
+        "pe_2026": 21.9049,
+        "pe_2027": 17.34476
       }
     },
     "Diversified Engineering and Construction": {
       "mean": {
         "rev_growth_2025": 0.066079,
-        "rev_growth_2026": 0.259464,
+        "rev_growth_2026": 0.272724,
         "ebitda_margin_2025": 0.104674,
-        "ebitda_margin_2026": 0.138652,
-        "ebitda_margin_2027": 0.148707,
-        "ev_rev_2025": 0.8189,
-        "ev_rev_2026": 30.838776,
-        "ev_rev_2027": 26.957906,
-        "ev_ebitda_2025": 8.795808,
-        "ev_ebitda_2026": 7.236254,
-        "ev_ebitda_2027": 6.470679,
-        "pe_2025": 19.474908,
-        "pe_2026": 1834.332322,
-        "pe_2027": 1951.995086
+        "ebitda_margin_2026": 0.076319,
+        "ebitda_margin_2027": 0.092881,
+        "ev_rev_2025": 0.82811,
+        "ev_rev_2026": 29.039186,
+        "ev_rev_2027": 41.009604,
+        "ev_ebitda_2025": 8.884056,
+        "ev_ebitda_2026": 698.841734,
+        "ev_ebitda_2027": 1.994756,
+        "pe_2025": 19.523379
       },
       "median": {
         "rev_growth_2025": 0.045982,
-        "rev_growth_2026": 0.259464,
+        "rev_growth_2026": 0.272724,
         "ebitda_margin_2025": 0.098219,
-        "ebitda_margin_2026": 0.138652,
-        "ebitda_margin_2027": 0.148707,
-        "ev_rev_2025": 0.819127,
-        "ev_rev_2026": 1.135085,
-        "ev_rev_2027": 1.087966,
-        "ev_ebitda_2025": 7.994697,
-        "ev_ebitda_2026": 7.236254,
-        "ev_ebitda_2027": 6.470679,
-        "pe_2025": 13.86146,
-        "pe_2026": 1834.332322,
-        "pe_2027": 1951.995086
+        "ebitda_margin_2026": 0.076319,
+        "ebitda_margin_2027": 0.092881,
+        "ev_rev_2025": 0.8392,
+        "ev_rev_2026": 1.036783,
+        "ev_rev_2027": 41.009604,
+        "ev_ebitda_2025": 7.99606,
+        "ev_ebitda_2026": 698.841734,
+        "ev_ebitda_2027": 1.994756,
+        "pe_2025": 13.817007
       }
     },
     "Specialty Engineering and Construction": {
       "mean": {
         "rev_growth_2025": 0.140441,
         "ebitda_margin_2025": 0.115122,
-        "ev_rev_2025": 2.427488,
-        "ev_ebitda_2025": 19.173764,
-        "pe_2025": 31.909173
+        "ebitda_margin_2026": 0.189032,
+        "ev_rev_2025": 2.531659,
+        "ev_rev_2026": 2.627673,
+        "ev_ebitda_2025": 19.920443,
+        "ev_ebitda_2026": 13.900678,
+        "pe_2025": 33.078456
       },
       "median": {
         "rev_growth_2025": 0.128549,
         "ebitda_margin_2025": 0.116849,
-        "ev_rev_2025": 1.85752,
-        "ev_ebitda_2025": 18.52306,
-        "pe_2025": 30.726455
+        "ebitda_margin_2026": 0.189032,
+        "ev_rev_2025": 1.917539,
+        "ev_rev_2026": 2.627673,
+        "ev_ebitda_2025": 19.173061,
+        "ev_ebitda_2026": 13.900678,
+        "pe_2025": 31.537584
       }
     },
     "Infrastructure Services": {
       "mean": {
         "rev_growth_2025": 0.243821,
         "ebitda_margin_2025": 0.124751,
-        "ev_rev_2025": 2.63926,
-        "ev_ebitda_2025": 17.264743,
-        "pe_2025": 37.323159
+        "ev_rev_2025": 2.783904,
+        "ev_ebitda_2025": 18.021014,
+        "pe_2025": 38.873884
       },
       "median": {
         "rev_growth_2025": 0.164662,
         "ebitda_margin_2025": 0.122678,
-        "ev_rev_2025": 1.903672,
-        "ev_ebitda_2025": 15.245561,
-        "pe_2025": 38.91715
+        "ev_rev_2025": 1.947869,
+        "ev_ebitda_2025": 15.592029,
+        "pe_2025": 40.094812
       }
     },
     "Utility Services": {
       "mean": {
         "rev_growth_2025": 0.146914,
-        "rev_growth_2026": 0.272172,
+        "rev_growth_2026": 0.272102,
         "ebitda_margin_2025": 0.084227,
-        "ebitda_margin_2026": 0.088011,
-        "ebitda_margin_2027": 0.093237,
-        "ev_rev_2025": 1.82873,
-        "ev_rev_2026": 1.123449,
-        "ev_rev_2027": 0.944699,
-        "ev_ebitda_2025": 21.395251,
-        "ev_ebitda_2026": 12.76494,
-        "ev_ebitda_2027": 10.13221,
-        "pe_2025": 45.102174
+        "ev_rev_2025": 1.908154,
+        "ev_rev_2026": 1.162301,
+        "ev_rev_2027": 0.982447,
+        "ev_ebitda_2025": 22.384749,
+        "pe_2025": 47.550792
       },
       "median": {
         "rev_growth_2025": 0.162207,
-        "rev_growth_2026": 0.272172,
+        "rev_growth_2026": 0.272102,
         "ebitda_margin_2025": 0.078009,
-        "ebitda_margin_2026": 0.088011,
-        "ebitda_margin_2027": 0.093237,
-        "ev_rev_2025": 1.429221,
-        "ev_rev_2026": 1.123449,
-        "ev_rev_2027": 0.944699,
-        "ev_ebitda_2025": 18.32121,
-        "ev_ebitda_2026": 12.76494,
-        "ev_ebitda_2027": 10.13221,
-        "pe_2025": 39.792201
+        "ev_rev_2025": 1.478565,
+        "ev_rev_2026": 1.162301,
+        "ev_rev_2027": 0.982447,
+        "ev_ebitda_2025": 18.953756,
+        "pe_2025": 42.666342
       }
     },
     "Management Consulting": {
       "mean": {
         "rev_growth_2025": 0.082872,
-        "rev_growth_2026": 0.055933,
+        "rev_growth_2026": 0.063531,
         "ebitda_margin_2025": 0.160752,
-        "ev_rev_2025": 1.958773,
-        "ev_rev_2026": 1.610696,
-        "ev_rev_2027": 1.457192,
-        "ev_ebitda_2025": 11.685647,
-        "pe_2025": 16.479495
+        "ev_rev_2025": 1.948632,
+        "ev_rev_2026": 1.469166,
+        "ev_rev_2027": 1.4467,
+        "ev_ebitda_2025": 11.615271,
+        "pe_2025": 16.341551
       },
       "median": {
         "rev_growth_2025": 0.076219,
-        "rev_growth_2026": 0.055933,
+        "rev_growth_2026": 0.063531,
         "ebitda_margin_2025": 0.131386,
-        "ev_rev_2025": 1.700787,
-        "ev_rev_2026": 1.610696,
-        "ev_rev_2027": 1.457192,
-        "ev_ebitda_2025": 10.891646,
-        "pe_2025": 15.544748
+        "ev_rev_2025": 1.686672,
+        "ev_rev_2026": 1.597329,
+        "ev_rev_2027": 1.4467,
+        "ev_ebitda_2025": 10.866545,
+        "pe_2025": 15.413248
       }
     },
     "Overall": {
       "mean": {
         "rev_growth_2025": 0.142725,
-        "rev_growth_2026": 0.211925,
+        "rev_growth_2026": 0.165482,
         "ebitda_margin_2025": 0.107837,
-        "ebitda_margin_2026": 0.113331,
-        "ebitda_margin_2027": 0.120972,
-        "ev_rev_2025": 1.69848,
-        "ev_rev_2026": 18.256867,
-        "ev_rev_2027": 18.372252,
-        "ev_ebitda_2025": 15.601663,
-        "ev_ebitda_2026": 10.000597,
-        "ev_ebitda_2027": 8.301445,
-        "pe_2025": 36.876918,
-        "pe_2026": 1834.332322,
-        "pe_2027": 1951.995086
+        "ebitda_margin_2026": 0.099413,
+        "ebitda_margin_2027": 0.073476,
+        "ev_rev_2025": 1.75779,
+        "ev_rev_2026": 9.767385,
+        "ev_rev_2027": 14.425976,
+        "ev_ebitda_2025": 16.107911,
+        "ev_ebitda_2026": 354.783695,
+        "ev_ebitda_2027": 4.566363,
+        "pe_2025": 37.666272,
+        "pe_2026": 21.9049,
+        "pe_2027": 17.34476
       },
       "median": {
         "rev_growth_2025": 0.123617,
-        "rev_growth_2026": 0.252724,
+        "rev_growth_2026": 0.160676,
         "ebitda_margin_2025": 0.101797,
-        "ebitda_margin_2026": 0.113331,
-        "ebitda_margin_2027": 0.120972,
-        "ev_rev_2025": 1.268837,
-        "ev_rev_2026": 1.266852,
-        "ev_rev_2027": 1.087966,
-        "ev_ebitda_2025": 12.641252,
-        "ev_ebitda_2026": 10.000597,
-        "ev_ebitda_2027": 8.301445,
-        "pe_2025": 25.000818,
-        "pe_2026": 1834.332322,
-        "pe_2027": 1951.995086
+        "ebitda_margin_2026": 0.076319,
+        "ebitda_margin_2027": 0.073476,
+        "ev_rev_2025": 1.266664,
+        "ev_rev_2026": 1.379815,
+        "ev_rev_2027": 1.214574,
+        "ev_ebitda_2025": 12.758594,
+        "ev_ebitda_2026": 10.725655,
+        "ev_ebitda_2027": 4.566363,
+        "pe_2025": 24.885047,
+        "pe_2026": 21.9049,
+        "pe_2027": 17.34476
       }
     }
   },
@@ -1651,7 +1659,7 @@
       },
       {
         "date": "2026-10-05",
-        "indexed": 146.64
+        "indexed": 149.2
       }
     ],
     "Diversified Engineering and Construction": [
@@ -1865,7 +1873,7 @@
       },
       {
         "date": "2026-10-05",
-        "indexed": 94.64
+        "indexed": 95.0
       }
     ],
     "Specialty Engineering and Construction": [
@@ -2079,7 +2087,7 @@
       },
       {
         "date": "2026-10-05",
-        "indexed": 107.12
+        "indexed": 111.2
       }
     ],
     "Infrastructure Services": [
@@ -2293,7 +2301,7 @@
       },
       {
         "date": "2026-10-05",
-        "indexed": 120.46
+        "indexed": 123.76
       }
     ],
     "Utility Services": [
@@ -2507,7 +2515,7 @@
       },
       {
         "date": "2026-10-05",
-        "indexed": 109.42
+        "indexed": 115.58
       }
     ],
     "Management Consulting": [
@@ -2721,7 +2729,7 @@
       },
       {
         "date": "2026-10-05",
-        "indexed": 86.59
+        "indexed": 85.88
       }
     ],
     "S&P 500": [
@@ -2935,7 +2943,7 @@
       },
       {
         "date": "2026-10-05",
-        "indexed": 118.64
+        "indexed": 119.33
       }
     ]
   },
@@ -3151,7 +3159,7 @@
       },
       {
         "date": "2026-10-05",
-        "indexed": 134.71
+        "indexed": 134.78
       }
     ],
     "SKA.B": [
@@ -3365,7 +3373,7 @@
       },
       {
         "date": "2026-10-05",
-        "indexed": 106.47
+        "indexed": 106.15
       }
     ],
     "AGX": [
@@ -3579,7 +3587,7 @@
       },
       {
         "date": "2026-10-05",
-        "indexed": 152.09
+        "indexed": 164.61
       }
     ],
     "TPC": [
@@ -3793,7 +3801,7 @@
       },
       {
         "date": "2026-10-05",
-        "indexed": 143.1
+        "indexed": 147.45
       }
     ],
     "ARE": [
@@ -3827,7 +3835,7 @@
       },
       {
         "date": "2025-11-24",
-        "indexed": 111.89
+        "indexed": 111.9
       },
       {
         "date": "2025-12-01",
@@ -4007,7 +4015,7 @@
       },
       {
         "date": "2026-10-05",
-        "indexed": 241.38
+        "indexed": 240.08
       }
     ],
     "BWMN": [
@@ -4221,7 +4229,7 @@
       },
       {
         "date": "2026-10-05",
-        "indexed": 102.08
+        "indexed": 102.15
       }
     ],
     "DG": [
@@ -4435,7 +4443,7 @@
       },
       {
         "date": "2026-10-05",
-        "indexed": 95.76
+        "indexed": 95.93
       }
     ],
     "HOT": [
@@ -4649,7 +4657,7 @@
       },
       {
         "date": "2026-10-05",
-        "indexed": 158.46
+        "indexed": 158.07
       }
     ],
     "EN": [
@@ -4863,7 +4871,7 @@
       },
       {
         "date": "2026-10-05",
-        "indexed": 112.84
+        "indexed": 112.04
       }
     ],
     "J": [
@@ -5077,7 +5085,7 @@
       },
       {
         "date": "2026-10-05",
-        "indexed": 92.73
+        "indexed": 93.11
       }
     ],
     "1802": [
@@ -5291,7 +5299,7 @@
       },
       {
         "date": "2026-10-05",
-        "indexed": 127.01
+        "indexed": 126.75
       }
     ],
     "ACM": [
@@ -5505,7 +5513,7 @@
       },
       {
         "date": "2026-10-05",
-        "indexed": 46.92
+        "indexed": 47.24
       }
     ],
     "STN": [
@@ -5719,7 +5727,7 @@
       },
       {
         "date": "2026-10-05",
-        "indexed": 61.59
+        "indexed": 62.22
       }
     ],
     "KBR": [
@@ -5933,7 +5941,7 @@
       },
       {
         "date": "2026-10-05",
-        "indexed": 81.22
+        "indexed": 81.43
       }
     ],
     "ARCAD": [
@@ -6147,7 +6155,7 @@
       },
       {
         "date": "2026-10-05",
-        "indexed": 90.85
+        "indexed": 90.93
       }
     ],
     "WBD": [
@@ -6361,7 +6369,7 @@
       },
       {
         "date": "2026-10-05",
-        "indexed": 58.63
+        "indexed": 58.99
       }
     ],
     "FLR": [
@@ -6575,7 +6583,7 @@
       },
       {
         "date": "2026-10-05",
-        "indexed": 115.08
+        "indexed": 118.24
       }
     ],
     "FIX": [
@@ -6789,7 +6797,7 @@
       },
       {
         "date": "2026-10-05",
-        "indexed": 210.35
+        "indexed": 223.23
       }
     ],
     "EME": [
@@ -7003,7 +7011,7 @@
       },
       {
         "date": "2026-10-05",
-        "indexed": 117.63
+        "indexed": 124.47
       }
     ],
     "WSP": [
@@ -7217,7 +7225,7 @@
       },
       {
         "date": "2026-10-05",
-        "indexed": 60.69
+        "indexed": 60.27
       }
     ],
     "DY": [
@@ -7431,7 +7439,7 @@
       },
       {
         "date": "2026-10-05",
-        "indexed": 96.51
+        "indexed": 102.15
       }
     ],
     "TTEK": [
@@ -7645,7 +7653,7 @@
       },
       {
         "date": "2026-10-05",
-        "indexed": 98.89
+        "indexed": 99.04
       }
     ],
     "GBF": [
@@ -7859,7 +7867,7 @@
       },
       {
         "date": "2026-10-05",
-        "indexed": 58.66
+        "indexed": 58.05
       }
     ],
     "STRL": [
@@ -8073,7 +8081,7 @@
       },
       {
         "date": "2026-10-05",
-        "indexed": 155.46
+        "indexed": 167.45
       }
     ],
     "ROAD": [
@@ -8287,7 +8295,7 @@
       },
       {
         "date": "2026-10-05",
-        "indexed": 73.59
+        "indexed": 76.35
       }
     ],
     "GVA": [
@@ -8501,7 +8509,7 @@
       },
       {
         "date": "2026-10-05",
-        "indexed": 113.27
+        "indexed": 115.19
       }
     ],
     "BBY": [
@@ -8715,7 +8723,7 @@
       },
       {
         "date": "2026-10-05",
-        "indexed": 139.54
+        "indexed": 136.03
       }
     ],
     "PWR": [
@@ -8929,7 +8937,7 @@
       },
       {
         "date": "2026-10-05",
-        "indexed": 163.78
+        "indexed": 172.44
       }
     ],
     "MTZ": [
@@ -9143,7 +9151,7 @@
       },
       {
         "date": "2026-10-05",
-        "indexed": 112.17
+        "indexed": 116.72
       }
     ],
     "PRIM": [
@@ -9357,7 +9365,7 @@
       },
       {
         "date": "2026-10-05",
-        "indexed": 60.91
+        "indexed": 64.24
       }
     ],
     "MYRG": [
@@ -9571,7 +9579,7 @@
       },
       {
         "date": "2026-10-05",
-        "indexed": 153.97
+        "indexed": 165.09
       }
     ],
     "AMRC": [
@@ -9785,7 +9793,7 @@
       },
       {
         "date": "2026-10-05",
-        "indexed": 56.29
+        "indexed": 59.4
       }
     ],
     "IBM": [
@@ -9999,7 +10007,7 @@
       },
       {
         "date": "2026-10-05",
-        "indexed": 81.83
+        "indexed": 81.72
       }
     ],
     "ACN": [
@@ -10213,7 +10221,7 @@
       },
       {
         "date": "2026-10-05",
-        "indexed": 82.62
+        "indexed": 81.92
       }
     ],
     "BAH": [
@@ -10427,7 +10435,7 @@
       },
       {
         "date": "2026-10-05",
-        "indexed": 72.72
+        "indexed": 72.23
       }
     ],
     "FCN": [
@@ -10641,7 +10649,7 @@
       },
       {
         "date": "2026-10-05",
-        "indexed": 85.36
+        "indexed": 85.1
       }
     ],
     "HURN": [
@@ -10855,7 +10863,7 @@
       },
       {
         "date": "2026-10-05",
-        "indexed": 110.41
+        "indexed": 108.45
       }
     ]
   }
